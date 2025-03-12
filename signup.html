@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Sign up for Drake's Newsletter" />
-    <meta name="author" content="Replit AI" />
-    <title>Drake - Sign Up</title>
+    <meta name="description" content="Generate your favorite Drake song!" />
+    <meta name="author" content="Replit AI & xAI" />
+    <title>Drake - Fav Song Gen</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -23,40 +23,153 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="albums.html">Albums</a></li>
                     <li class="nav-item"><a class="nav-link" href="ovo.html">OVO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Fav Song Gen</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="bg-dark d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div class="card bg-dark text-white p-4" style="max-width: 500px; width: 100%;">
-            <h2 class="card-title text-center">Sign Up</h2>
-            <form action="index.html">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control bg-dark text-white" id="email" placeholder="name@example.com" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control bg-dark text-white" id="password" required>
-                </div>
+            <h2 class="card-title text-center">Fav Song Gen</h2>
+            <form id="songGenForm">
                 <div class="mb-3">
                     <label for="favoriteAlbum" class="form-label">Favorite Drake Album</label>
-                    <input type="text" class="form-control bg-dark text-white" id="favoriteAlbum" required>
+                    <select class="form-control bg-dark text-white" id="favoriteAlbum" required>
+                        <option value="" disabled selected>Select an album</option>
+                        <option value="Take Care">Take Care</option>
+                        <option value="Nothing Was the Same">Nothing Was the Same</option>
+                        <option value="Views">Views</option>
+                        <option value="Scorpion">Scorpion</option>
+                        <option value="Certified Lover Boy">Certified Lover Boy</option>
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <label for="note" class="form-label">Note to Drake</label>
-                    <textarea class="form-control bg-dark text-white" id="note" rows="3"></textarea>
+                    <label for="favoriteGenre" class="form-label">Favorite Music Genre</label>
+                    <select class="form-control bg-dark text-white" id="favoriteGenre" required>
+                        <option value="" disabled selected>Select a genre</option>
+                        <option value="Hip-Hop">Hip-Hop</option>
+                        <option value="R&B">R&B</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Trap">Trap</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-outline-light w-100">Submit</button>
+                <div class="mb-3">
+                    <label for="mood" class="form-label">What’s Your Mood?</label>
+                    <select class="form-control bg-dark text-white" id="mood" required>
+                        <option value="" disabled selected>Select a mood</option>
+                        <option value="Chill">Chill</option>
+                        <option value="Hype">Hype</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Romantic">Romantic</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="vibe" class="form-label">Preferred Vibe</label>
+                    <select class="form-control bg-dark text-white" id="vibe" required>
+                        <option value="" disabled selected>Select a vibe</option>
+                        <option value="Introspective">Introspective</option>
+                        <option value="Party">Party</option>
+                        <option value="Nostalgic">Nostalgic</option>
+                        <option value="Confident">Confident</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="feature" class="form-label">Favorite Feature Artist</label>
+                    <select class="form-control bg-dark text-white" id="feature" required>
+                        <option value="" disabled selected>Select an artist</option>
+                        <option value="Lil Wayne">Lil Wayne</option>
+                        <option value="Rihanna">Rihanna</option>
+                        <option value="Future">Future</option>
+                        <option value="None">None (Solo Drake)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-light w-100">Get Your Song</button>
             </form>
         </div>
     </main>
+
+    <!-- Popup Modal -->
+    <div class="modal fade" id="songModal" tabindex="-1" aria-labelledby="songModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="songModalLabel">Your Drake Song</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="songImage" src="" alt="Song Cover" class="img-fluid mb-3" style="max-width: 200px;">
+                    <h4 id="songTitle"></h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="index.html" class="btn btn-outline-light w-100">Go Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark py-5">
         <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright © 2025 - Drake</div></div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        // Sample Drake song data (you can expand this)
+        const drakeSongs = {
+            "Take Care": [
+                { title: "Marvins Room", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://example.com/marvins-room.jpg" },
+                { title: "Take Care", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://example.com/take-care.jpg" }
+            ],
+            "Nothing Was the Same": [
+                { title: "Started From the Bottom", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://example.com/started.jpg" },
+                { title: "Hold On, We're Going Home", genre: "Pop", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://example.com/hold-on.jpg" }
+            ],
+            "Views": [
+                { title: "Hotline Bling", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://example.com/hotline-bling.jpg" },
+                { title: "One Dance", genre: "Pop", mood: "Party", vibe: "Confident", feature: "None", image: "https://example.com/one-dance.jpg" }
+            ],
+            "Scorpion": [
+                { title: "God’s Plan", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://example.com/gods-plan.jpg" },
+                { title: "In My Feelings", genre: "Trap", mood: "Party", vibe: "Confident", feature: "None", image: "https://example.com/in-my-feelings.jpg" }
+            ],
+            "Certified Lover Boy": [
+                { title: "Way 2 Sexy", genre: "Trap", mood: "Hype", vibe: "Party", feature: "Future", image: "https://example.com/way-2-sexy.jpg" },
+                { title: "Fair Trade", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://example.com/fair-trade.jpg" }
+            ]
+        };
+
+        document.getElementById('songGenForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get user inputs
+            const album = document.getElementById('favoriteAlbum').value;
+            const genre = document.getElementById('favoriteGenre').value;
+            const mood = document.getElementById('mood').value;
+            const vibe = document.getElementById('vibe').value;
+            const feature = document.getElementById('feature').value;
+
+            // Filter songs based on preferences
+            const songs = drakeSongs[album];
+            let matchedSong = songs.find(song => 
+                song.genre === genre && 
+                song.mood === mood && 
+                song.vibe === vibe && 
+                song.feature === feature
+            );
+
+            // If no exact match, pick a random song from the album
+            if (!matchedSong) {
+                matchedSong = songs[Math.floor(Math.random() * songs.length)];
+            }
+
+            // Update modal content
+            document.getElementById('songImage').src = matchedSong.image;
+            document.getElementById('songTitle').textContent = matchedSong.title;
+
+            // Show the modal
+            const songModal = new bootstrap.Modal(document.getElementById('songModal'));
+            songModal.show();
+        });
+    </script>
 </body>
 </html>
