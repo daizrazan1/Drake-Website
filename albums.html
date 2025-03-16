@@ -13,6 +13,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .favorite-btn.active {
+            color: red;
+        }
+        .like-count {
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
@@ -42,6 +51,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Some Sexy Songs 4 U (2025)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#sexySongsSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Some Sexy Songs 4 U"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Some Sexy Songs 4 U">0 likes</span>
                             <div class="collapse" id="sexySongsSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">CN Tower</li>
@@ -61,6 +72,8 @@
                         <div class="card-body">
                             <h5 class="card-title">For All the Dogs (2023)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#forAllTheDogsSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="For All the Dogs"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="For All the Dogs">0 likes</span>
                             <div class="collapse" id="forAllTheDogsSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Virginia Beach</li>
@@ -80,6 +93,8 @@
                         <div class="card-body">
                             <h5 class="card-title">100 Gigs (2023)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#hundredGigsSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="100 Gigs"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="100 Gigs">0 likes</span>
                             <div class="collapse" id="hundredGigsSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">It's Up</li>
@@ -99,6 +114,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Her Loss (2022)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#herLossSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Her Loss"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Her Loss">0 likes</span>
                             <div class="collapse" id="herLossSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Rich Flex</li>
@@ -118,6 +135,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Honestly, Nevermind (2022)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#honestlySongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Honestly, Nevermind"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Honestly, Nevermind">0 likes</span>
                             <div class="collapse" id="honestlySongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Falling Back</li>
@@ -137,6 +156,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Scary Hours 2 (2021)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#scaryHours2Songs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Scary Hours 2"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Scary Hours 2">0 likes</span>
                             <div class="collapse" id="scaryHours2Songs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">What's Next</li>
@@ -156,6 +177,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Certified Lover Boy (2021)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#clbSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Certified Lover Boy"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Certified Lover Boy">0 likes</span>
                             <div class="collapse" id="clbSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Way 2 Sexy</li>
@@ -175,6 +198,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Dark Lane Demo Tapes (2020)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#darkLaneSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Dark Lane Demo Tapes"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Dark Lane Demo Tapes">0 likes</span>
                             <div class="collapse" id="darkLaneSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Chicago Freestyle</li>
@@ -194,6 +219,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Care Package (2019)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#carePackageSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Care Package"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Care Package">0 likes</span>
                             <div class="collapse" id="carePackageSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Dreams Money Can Buy</li>
@@ -213,6 +240,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Scorpion (2018)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#scorpionSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Scorpion"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Scorpion">0 likes</span>
                             <div class="collapse" id="scorpionSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">God's Plan</li>
@@ -232,6 +261,8 @@
                         <div class="card-body">
                             <h5 class="card-title">More Life (2017)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#moreLifeSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="More Life"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="More Life">0 likes</span>
                             <div class="collapse" id="moreLifeSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Passionfruit</li>
@@ -251,6 +282,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Views (2016)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#viewsSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Views"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Views">0 likes</span>
                             <div class="collapse" id="viewsSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">One Dance</li>
@@ -263,13 +296,15 @@
                         </div>
                     </div>
                 </div>
-                <!-- What A Time Too Be Alive (2015) -->
+                <!-- What A Time To Be Alive (2015) -->
                 <div class="col">
                     <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" class="card-img-top" alt="Views">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" class="card-img-top" alt="What A Time To Be Alive">
                         <div class="card-body">
-                            <h5 class="card-title">What A Time Too Be Alive (2015)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#viewsSongs">See Songs</button>
+                            <h5 class="card-title">What A Time To Be Alive (2015)</h5>
+                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#wattbaSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="What A Time To Be Alive"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="What A Time To Be Alive">0 likes</span>
                             <div class="collapse" id="wattbaSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Scholarships</li>
@@ -289,6 +324,8 @@
                         <div class="card-body">
                             <h5 class="card-title">If You're Reading This It's Too Late (2015)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#iyrtitlSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="If You're Reading This It's Too Late"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="If You're Reading This It's Too Late">0 likes</span>
                             <div class="collapse" id="iyrtitlSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Energy</li>
@@ -308,6 +345,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Nothing Was the Same (2013)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#nothingWasTheSameSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Nothing Was the Same"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Nothing Was the Same">0 likes</span>
                             <div class="collapse" id="nothingWasTheSameSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Started From the Bottom</li>
@@ -327,6 +366,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Take Care (2011)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#takeCareSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Take Care"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Take Care">0 likes</span>
                             <div class="collapse" id="takeCareSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Headlines</li>
@@ -346,6 +387,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Thank Me Later (2010)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#thankMeLaterSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Thank Me Later"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="Thank Me Later">0 likes</span>
                             <div class="collapse" id="thankMeLaterSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Fireworks</li>
@@ -365,6 +408,8 @@
                         <div class="card-body">
                             <h5 class="card-title">So Far Gone (2009)</h5>
                             <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#soFarGoneSongs">See Songs</button>
+                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="So Far Gone"><i class="bi bi-heart"></i></button>
+                            <span class="like-count" data-album="So Far Gone">0 likes</span>
                             <div class="collapse" id="soFarGoneSongs">
                                 <ul class="list-group list-group-flush bg-dark text-white">
                                     <li class="list-group-item bg-dark text-white">Best I Ever Had</li>
@@ -380,7 +425,45 @@
             </div>
         </div>
     </main>
-    <!-- Bootstrap JS for collapse functionality -->
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript for favorite system -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load initial like counts from count.json (assuming it's fetched from a server)
+            fetch('count.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelectorAll('.like-count').forEach(span => {
+                        const album = span.getAttribute('data-album');
+                        span.textContent = `${data[album] || 0} likes`;
+                    });
+                })
+                .catch(error => console.error('Error loading count.json:', error));
+
+            // Handle favorite button clicks
+            document.querySelectorAll('.favorite-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const album = button.getAttribute('data-album');
+                    button.classList.toggle('active');
+
+                    // Update like count locally
+                    const likeSpan = button.nextElementSibling;
+                    let currentLikes = parseInt(likeSpan.textContent) || 0;
+                    currentLikes = button.classList.contains('active') ? currentLikes + 1 : currentLikes - 1;
+                    likeSpan.textContent = `${currentLikes} likes`;
+
+                    // Send updated like count to server (simulated)
+                    fetch('updateLikes.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ album: album, likes: currentLikes })
+                    })
+                    .catch(error => console.error('Error updating likes:', error));
+                });
+            });
+        });
+    </script>
 </body>
 </html>
