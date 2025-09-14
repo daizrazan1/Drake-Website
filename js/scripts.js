@@ -57,3 +57,14 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then((registration) => {
+      console.log('Drake PWA Service Worker registered successfully:', registration);
+    })
+    .catch((error) => {
+      console.error('Drake PWA Service Worker registration failed:', error);
+    });
+}

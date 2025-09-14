@@ -1,0 +1,44 @@
+{
+  "name": "Drake Official Website",
+  "short_name": "Drake",
+  "description": "Official Drake website featuring albums, OVO artists, and music",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#2c2c2c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "images/baha.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/baha.jpg", 
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Albums",
+      "short_name": "Albums",
+      "description": "View Drake's Albums",
+      "url": "/albums.html",
+      "icons": [{"src": "images/baha.jpg", "sizes": "192x192", "type": "image/jpeg"}]
+    },
+    {
+      "name": "OVO Artists",
+      "short_name": "OVO",
+      "description": "View OVO Sound Artists",
+      "url": "/ovo.html",
+      "icons": [{"src": "images/baha.jpg", "sizes": "192x192", "type": "image/jpeg"}]
+    }
+  ],
+  "categories": ["music", "entertainment"],
+  "prefer_related_applications": false
+}
