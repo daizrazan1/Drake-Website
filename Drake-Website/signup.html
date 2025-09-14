@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Generate your favorite Drake song!" />
+    <meta name="author" content="Replit AI & xAI" />
+    <title>Drake - Fav Song Gen</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2c2c2c">
+    <link rel="icon" type="image/jpeg" href="images/baha.jpg?v=2" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="albums.html">Albums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ovo.html">OVO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Fav Song Gen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="bg-dark d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="card bg-dark text-white p-4" style="max-width: 500px; width: 100%;">
+            <h2 class="card-title text-center">Fav Song Gen</h2>
+            <form id="songGenForm">
+                <div class="mb-3">
+                    <label for="favoriteAlbum" class="form-label">Favorite Drake Album</label>
+                    <select class="form-control bg-dark text-white" id="favoriteAlbum" required>
+                        <option value="" disabled selected>Select an album</option>
+                        <option value="Some Sexy Songs 4 U (2025)">Some Sexy Songs 4 U (2025)</option>
+                        <option value="For All the Dogs (2023)">For All the Dogs (2023)</option>
+                        <option value="100 Gigs (2023)">100 Gigs (2023)</option>
+                        <option value="Her Loss (2022)">Her Loss (2022)</option>
+                        <option value="Honestly, Nevermind (2022)">Honestly, Nevermind (2022)</option>
+                        <option value="Scary Hours 2 (2021)">Scary Hours 2 (2021)</option>
+                        <option value="Certified Lover Boy (2021)">Certified Lover Boy (2021)</option>
+                        <option value="Dark Lane Demo Tapes (2020)">Dark Lane Demo Tapes (2020)</option>
+                        <option value="Care Package (2019)">Care Package (2019)</option>
+                        <option value="Scorpion (2018)">Scorpion (2018)</option>
+                        <option value="More Life (2017)">More Life (2017)</option>
+                        <option value="Views (2016)">Views (2016)</option>
+                        <option value="What A Time Too Be Alive (2015)">What A Time Too Be Alive (2015)</option>
+                        <option value="If You're Reading This It's Too Late (2015)">If You're Reading This It's Too Late (2015)</option>
+                        <option value="Nothing Was the Same (2013)">Nothing Was the Same (2013)</option>
+                        <option value="Take Care (2011)">Take Care (2011)</option>
+                        <option value="Thank Me Later (2010)">Thank Me Later (2010)</option>
+                        <option value="So Far Gone (2009)">So Far Gone (2009)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="favoriteGenre" class="form-label">Favorite Music Genre</label>
+                    <select class="form-control bg-dark text-white" id="favoriteGenre" required>
+                        <option value="" disabled selected>Select a genre</option>
+                        <option value="Hip-Hop">Hip-Hop</option>
+                        <option value="R&B">R&B</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Rap">Rap</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="mood" class="form-label">What’s Your Mood?</label>
+                    <select class="form-control bg-dark text-white" id="mood" required>
+                        <option value="" disabled selected>Select a mood</option>
+                        <option value="Chill">Chill</option>
+                        <option value="Hype">Hype</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Romantic">Romantic</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="vibe" class="form-label">Preferred Vibe</label>
+                    <select class="form-control bg-dark text-white" id="vibe" required>
+                        <option value="" disabled selected>Select a vibe</option>
+                        <option value="Introspective">Introspective</option>
+                        <option value="Party">Party</option>
+                        <option value="Nostalgic">Nostalgic</option>
+                        <option value="Confident">Confident</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="feature" class="form-label">Favorite Feature Artist</label>
+                    <select class="form-control bg-dark text-white" id="feature" required>
+                        <option value="" disabled selected>Select an artist</option>
+                        <option value="Lil Wayne">Lil Wayne</option>
+                        <option value="PartyNextDoor">PartyNextDoor</option>
+                        <option value="Future">Future</option>
+                        <option value="Nicki Minaj">Nicki Minaj</option>
+                        <option value="Rihanna">Rihanna</option>
+                        <option value="Travis Scott">Travis Scott</option>
+                        <option value="J. Cole">J. Cole</option>
+                        <option value="21 Savage">21 Savage</option>
+                        <option value="None">None (Solo Drake)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-light w-100">Get Your Song</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Popup Modal -->
+    <div class="modal fade" id="songModal" tabindex="-1" aria-labelledby="songModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="songModalLabel">Your Drake Song</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="songImage" src="" alt="Album Cover" class="img-fluid mb-3" style="max-width: 200px;">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h4 id="songTitle" class="me-3"></h4>
+                        <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" class="btn btn-outline-light btn-sm">Give It a Listen!</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="index.html" class="btn btn-outline-light w-100">Go Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-5">
+        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright © 2025 - Drake</div></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Song data with images from albums.html
+        const drakeSongs = {
+            "Some Sexy Songs 4 U (2025)": [
+                { title: "CN Tower", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Moth Balls", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Something About You", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Nokia", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Spider-Man Superman", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" }
+            ],
+            "For All the Dogs (2023)": [
+                { title: "Virginia Beach", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Slime You Out", genre: "R&B", mood: "Sad", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "First Person Shooter", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }, // Updated feature
+                { title: "IDGAF", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "8AM in Charlotte", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }
+            ],
+            "100 Gigs (2023)": [
+                { title: "It's Up", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" },
+                { title: "Blue Green Red", genre: "Pop", mood: "Chill", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" },
+                { title: "Housekeeping Knows", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" },
+                { title: "No Face", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" },
+                { title: "The Motion", genre: "R&B", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" }
+            ],
+            "Her Loss (2022)": [
+                { title: "Rich Flex", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" }, // Updated feature
+                { title: "Major Distribution", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" }, // Updated feature
+                { title: "On BS", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" }, // Updated feature
+                { title: "Spin Bout U", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" }, // Updated feature
+                { title: "Circo Loco", genre: "Rap", mood: "Party", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" }
+            ],
+            "Honestly, Nevermind (2022)": [
+                { title: "Falling Back", genre: "Pop", mood: "Chill", vibe: "Romantic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" },
+                { title: "Texts Go Green", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" },
+                { title: "Massive", genre: "Pop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" },
+                { title: "Sticky", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" },
+                { title: "Jimmy Cooks", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" } // Updated feature
+            ],
+            "Scary Hours 2 (2021)": [
+                { title: "What's Next", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" },
+                { title: "Wants and Needs", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Lil Wayne", image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" },
+                { title: "Lemon Pepper Freestyle", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" },
+                { title: "What's Next (Extended)", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" },
+                { title: "Wants and Needs (Remix)", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Lil Wayne", image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" }
+            ],
+            "Certified Lover Boy (2021)": [
+                { title: "Way 2 Sexy", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" },
+                { title: "Fair Trade", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "Travis Scott", image: "https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" },
+                { title: "Knife Talk", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "21 Savage", image: "https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" }, // Updated feature
+                { title: "Girls Want Girls", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" },
+                { title: "No Friends in the Industry", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" }
+            ],
+            "Dark Lane Demo Tapes (2020)": [
+                { title: "Chicago Freestyle", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" },
+                { title: "Toosie Slide", genre: "Rap", mood: "Party", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" },
+                { title: "Pain 1993", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" },
+                { title: "When to Say When", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" },
+                { title: "Demons", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" }
+            ],
+            "Care Package (2019)": [
+                { title: "Dreams Money Can Buy", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" },
+                { title: "The Motion", genre: "R&B", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" },
+                { title: "Trust Issues", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" },
+                { title: "Jodeci Freestyle", genre: "Hip-Hop", mood: "Chill", vibe: "Nostalgic", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" }, // Updated feature
+                { title: "Girls Love Beyoncé", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" }
+            ],
+            "Scorpion (2018)": [
+                { title: "God's Plan", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Nice for What", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Nonstop", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "In My Feelings", genre: "Rap", mood: "Party", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Sicko Mode", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Travis Scott", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" }
+            ],
+            "More Life (2017)": [
+                { title: "Passionfruit", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" },
+                { title: "Free Smoke", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" },
+                { title: "Fake Love", genre: "Pop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" },
+                { title: "Portland", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Travis Scott", image: "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" },
+                { title: "Gyalchester", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" }
+            ],
+            "Views (2016)": [
+                { title: "One Dance", genre: "Pop", mood: "Party", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Hotline Bling", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Controlla", genre: "Pop", mood: "Chill", vibe: "Romantic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Too Good", genre: "Pop", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Work", genre: "Pop", mood: "Party", vibe: "Confident", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" }
+            ],
+            "What A Time Too Be Alive (2015)": [
+                { title: "Scholarships", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" },
+                { title: "Diamonds Dancing", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" },
+                { title: "Plastic Bag", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" },
+                { title: "Jumpman", genre: "Rap", mood: "Hype", vibe: "Party", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" },
+                { title: "Change Locations", genre: "Rap", mood: "Chill", vibe: "Confident", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" }
+            ],
+            "If You're Reading This It's Too Late (2015)": [
+                { title: "Energy", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" },
+                { title: "10 Bands", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" },
+                { title: "Know Yourself", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" },
+                { title: "No Tellin'", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" },
+                { title: "6 God", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" }
+            ],
+            "Nothing Was the Same (2013)": [
+                { title: "Started From the Bottom", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" },
+                { title: "Hold On, We're Going Home", genre: "Pop", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" },
+                { title: "Worst Behavior", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" },
+                { title: "Tuscan Leather", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" },
+                { title: "From Time", genre: "R&B", mood: "Sad", vibe: "Nostalgic", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" } // Updated feature (technically Jhene Aiko, but adjusted)
+            ],
+            "Take Care (2011)": [
+                { title: "Headlines", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Crew Love", genre: "R&B", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Marvins Room", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Take Care", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Make Me Proud", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "Nicki Minaj", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" }
+            ],
+            "Thank Me Later (2010)": [
+                { title: "Fireworks", genre: "R&B", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" },
+                { title: "Karaoke", genre: "R&B", mood: "Sad", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" },
+                { title: "Over", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" },
+                { title: "Find Your Love", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" },
+                { title: "Moment 4 Life", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "Nicki Minaj", image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" }
+            ],
+            "So Far Gone (2009)": [
+                { title: "Best I Ever Had", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" },
+                { title: "Successful", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "Lil Wayne", image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" },
+                { title: "Houstatlantavegas", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" },
+                { title: "Uptown", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" },
+                { title: "The Calm", genre: "R&B", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" }
+            ]
+        };
+
+        document.getElementById('songGenForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get user inputs
+            const album = document.getElementById('favoriteAlbum').value;
+            const genre = document.getElementById('favoriteGenre').value;
+            const mood = document.getElementById('mood').value;
+            const vibe = document.getElementById('vibe').value;
+            const feature = document.getElementById('feature').value;
+
+            // Filter songs based on preferences
+            const songs = drakeSongs[album];
+            let matchedSong = songs.find(song => 
+                song.genre === genre && 
+                song.mood === mood && 
+                song.vibe === vibe && 
+                song.feature === feature
+            );
+
+            // If no exact match, pick a random song from the album
+            if (!matchedSong) {
+                matchedSong = songs[Math.floor(Math.random() * songs.length)];
+            }
+
+            // Update modal content with song title and album image
+            document.getElementById('songImage').src = matchedSong.image;
+            document.getElementById('songTitle').textContent = matchedSong.title;
+
+            // Show the modal
+            const songModal = new bootstrap.Modal(document.getElementById('songModal'));
+            songModal.show();
+        });
+    </script>
+</body>
+</html>

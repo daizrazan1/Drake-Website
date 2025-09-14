@@ -1,0 +1,110 @@
+{
+  "artist": {
+    "name": "Drake",
+    "age": 37,
+    "nationality": "Canadian",
+    "genre": ["Hip-Hop", "R&B", "Pop"],
+    "albums": [
+      {
+        "title": "Some Sexy Songs 4 U",
+        "release_year": 2025,
+        "hit_songs": ["CN Tower", "Moth Balls", "Something About You", "Nokia", "Spider-Man Superman"]
+      },
+      {
+        "title": "For All the Dogs",
+        "release_year": 2023,
+        "hit_songs": ["Virginia Beach", "Slime You Out", "First Person Shooter", "IDGAF", "8AM in Charlotte"]
+      },
+      {
+        "title": "100 Gigs",
+        "release_year": 2023,
+        "hit_songs": ["It's Up", "Blue Green Red", "Housekeeping Knows", "No Face", "The Motion"]
+      },
+      {
+        "title": "Her Loss",
+        "release_year": 2022,
+        "hit_songs": ["Rich Flex", "Major Distribution", "On BS", "Spin Bout U", "Circo Loco"]
+      },
+      {
+        "title": "Honestly, Nevermind",
+        "release_year": 2022,
+        "hit_songs": ["Falling Back", "Texts Go Green", "Massive", "Sticky", "Jimmy Cooks"]
+      },
+      {
+        "title": "Scary Hours 2",
+        "release_year": 2021,
+        "hit_songs": ["What's Next", "Wants and Needs", "Lemon Pepper Freestyle", "What's Next (Extended)", "Wants and Needs (Remix)"]
+      },
+      {
+        "title": "Certified Lover Boy",
+        "release_year": 2021,
+        "hit_songs": ["Way 2 Sexy", "Fair Trade", "Knife Talk", "Girls Want Girls", "No Friends in the Industry"]
+      },
+      {
+        "title": "Dark Lane Demo Tapes",
+        "release_year": 2020,
+        "hit_songs": ["Chicago Freestyle", "Toosie Slide", "Pain 1993", "When to Say When", "Demons"]
+      },
+      {
+        "title": "Care Package",
+        "release_year": 2019,
+        "hit_songs": ["Dreams Money Can Buy", "The Motion", "Trust Issues", "Jodeci Freestyle", "Girls Love Beyoncé"]
+      },
+      {
+        "title": "Scorpion",
+        "release_year": 2018,
+        "hit_songs": ["God's Plan", "Nice for What", "Nonstop", "In My Feelings", "I'm Upset"]
+      },
+      {
+        "title": "More Life",
+        "release_year": 2017,
+        "hit_songs": ["Passionfruit", "Free Smoke", "Fake Love", "Portland", "Gyalchester"]
+      },
+      {
+        "title": "Views",
+        "release_year": 2016,
+        "hit_songs": ["One Dance", "Hotline Bling", "Controlla", "Too Good", "Feel No Ways"]
+      },
+      {
+        "title": "What A Time To Be Alive",
+        "release_year": 2015,
+        "hit_songs": ["Scholarships", "Diamonds Dancing", "Plastic Bag", "Jumpman", "Change Locations"]
+      },
+      {
+        "title": "If You're Reading This It's Too Late",
+        "release_year": 2015,
+        "hit_songs": ["Energy", "10 Bands", "Know Yourself", "No Tellin'", "6 God"]
+      },
+      {
+        "title": "Nothing Was the Same",
+        "release_year": 2013,
+        "hit_songs": ["Started From the Bottom", "Hold On, We're Going Home", "Worst Behavior", "Tuscan Leather", "From Time"]
+      },
+      {
+        "title": "Take Care",
+        "release_year": 2011,
+        "hit_songs": ["Headlines", "Crew Love", "Marvins Room", "Take Care", "HYFR"]
+      },
+      {
+        "title": "Thank Me Later",
+        "release_year": 2010,
+        "hit_songs": ["Fireworks", "Karaoke", "Over", "Find Your Love", "Miss Me"]
+      },
+      {
+        "title": "So Far Gone",
+        "release_year": 2009,
+        "hit_songs": ["Best I Ever Had", "Successful", "Houstatlantavegas", "Uptown", "The Calm"]
+      }
+    ],
+    "awards": {
+      "Grammy_Wins": 4,
+      "Billboard_Music_Awards": 27,
+      "American_Music_Awards": 20
+    },
+    "social_media": {
+      "instagram": "@champagnepapi",
+      "twitter": "@Drake",
+      "youtube": "DrakeOfficial"
+    }
+  }
+}
