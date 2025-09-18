@@ -1,50 +1,426 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Drake's Official Website" />
-    <meta name="author" content="Replit AI" />
-    <title>Drake</title>
+    <meta name="description" content="Drake's Official Fan Website - Discover music, play games, and explore Drake's incredible journey" />
+    <meta name="author" content="Drake Fan" />
+    <title>Drake - Official Fan Website</title>
+    
+    <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#2c2c2c">
-    <link rel="icon" type="image/jpeg" href="images/baha.jpg?v=2" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <meta name="theme-color" content="#FFD700">
+    <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
+    
+    <!-- Styles -->
+    <link href="css/modern-styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="albums.html">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ovo.html">OVO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="signup.html">Fav Song Gen</a></li>
-                </ul>
-            </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-music-note-beamed"></i> Drake
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
+                        Albums <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="albums.html">All Albums</a>
+                        <a class="dropdown-item" href="singles.html">Singles</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ovo.html">OVO Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fav-song-gen.html">Fav Song Gen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="song-creator.html">Song Creator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="song-guesser.html">Song Guesser</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <header class="masthead d-flex flex-column align-items-center justify-content-center position-relative" style="min-height: 100vh;">
-        <div class="card text-white bg-dark mb-3" style="width: 100%; max-width: 1000px;">
-            <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2024%2F10%2F08%2Fdrake-ovo-family-front-new-og-campaign-collection-release-info-000.jpg" alt="Drake OVO" class="card-img-top ovo-owl-large">
-            <div class="card-body text-center">
-                <h2 class="card-title">Welcome to my Website About Drake</h2>
-                <p class="card-text">This website was made for a class project and for learning about Drake and his Music</p>
-                <p class="card-text"><small>Explore Drake's journey, albums, and OVO brand</small></p>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Drake</h1>
+                <p class="hero-subtitle">Discover the music, explore the journey, play the games</p>
+                <div class="hero-cta">
+                    <a href="albums.html" class="btn btn-primary">
+                        <i class="bi bi-music-note-beamed"></i>
+                        Explore Music
+                    </a>
+                    <a href="song-guesser.html" class="btn btn-secondary">
+                        <i class="bi bi-play-circle"></i>
+                        Play Song Guesser
+                    </a>
+                    <a href="fav-song-gen.html" class="btn btn-ghost">
+                        <i class="bi bi-heart"></i>
+                        Find Your Song
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
-    <footer class="bg-dark py-5">
-        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright © 2025 - Drake</div></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number" data-count="19">0</div>
+                        <div class="stat-label">Studio Albums</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label">Total Songs</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Grammy Awards</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number" data-count="34">0</div>
+                        <div class="stat-label">Billboard Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Explore Drake's World</h2>
+                <p class="text-secondary">Interactive experiences for every Drake fan</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <h3 class="feature-title">Complete Discography</h3>
+                        <p class="feature-description">Explore every album, track, and collaboration from Drake's incredible career.</p>
+                        <a href="albums.html" class="btn btn-ghost">Browse Albums</a>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-gamepad2"></i>
+                        </div>
+                        <h3 class="feature-title">Song Guesser Game</h3>
+                        <p class="feature-description">Test your Drake knowledge with our interactive music guessing game.</p>
+                        <a href="song-guesser.html" class="btn btn-ghost">Play Game</a>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Song Recommendations</h3>
+                        <p class="feature-description">Get personalized Drake song recommendations based on your preferences.</p>
+                        <a href="fav-song-gen.html" class="btn btn-ghost">Find Your Song</a>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-mic-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Song Creator</h3>
+                        <p class="feature-description">Create your own Drake-style song with AI assistance and custom lyrics.</p>
+                        <a href="song-creator.html" class="btn btn-ghost">Create Song</a>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3 class="feature-title">OVO Sound Artists</h3>
+                        <p class="feature-description">Discover the talented artists under Drake's OVO Sound label.</p>
+                        <a href="ovo.html" class="btn btn-ghost">Meet the Artists</a>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Singles Collection</h3>
+                        <p class="feature-description">Browse through Drake's extensive collection of hit singles and chart-toppers.</p>
+                        <a href="singles.html" class="btn btn-ghost">View Singles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-5" style="background: var(--card-bg); margin-top: 2rem;">
+        <div class="container">
+            <p class="text-secondary mb-3">
+                Follow Drake on social media for the latest updates
+            </p>
+            <div class="d-flex justify-center gap-3 mb-4">
+                <a href="https://www.instagram.com/champagnepapi" target="_blank" class="btn btn-ghost">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://twitter.com/drake" target="_blank" class="btn btn-ghost">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" class="btn btn-ghost">
+                    <i class="bi bi-spotify"></i>
+                </a>
+                <a href="https://www.youtube.com/DrakeOfficial" target="_blank" class="btn btn-ghost">
+                    <i class="bi bi-youtube"></i>
+                </a>
+            </div>
+            <p class="text-muted">&copy; 2025 Drake Fan Website. Built with 💛 for fans, by fans.</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <script src="js/scripts.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-nav').classList.toggle('active');
+        });
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        if (entry.target.querySelector('[data-count]')) {
+                            setTimeout(animateCounters, 500);
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.stat-card, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('SW registered:', registration))
+                .catch(error => console.log('SW registration failed:', error));
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #b3b3b3;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--secondary-bg);
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .features-section {
+            padding: 4rem 0;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </body>
 </html>

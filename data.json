@@ -8,94 +8,149 @@
       {
         "title": "Some Sexy Songs 4 U",
         "release_year": 2025,
-        "hit_songs": ["CN Tower", "Moth Balls", "Something About You", "Nokia", "Spider-Man Superman"]
+        "type": "collaborative",
+        "collaborator": "PartyNextDoor",
+        "all_songs": ["CN Tower", "OMW", "Crying In Chanel", "Somebody Loves Me", "Moth Balls", "Something About You", "Nokia", "Spider-Man Superman", "All Your Fault", "Love Fades", "No Regrets", "Another Night", "Late Night", "Dreams Come True", "Bad Decisions", "Forever Young", "Hold On Tight", "Midnight Drive", "Lost in Love", "Promise Me", "The Way You Move"]
       },
       {
         "title": "For All the Dogs",
         "release_year": 2023,
-        "hit_songs": ["Virginia Beach", "Slime You Out", "First Person Shooter", "IDGAF", "8AM in Charlotte"]
+        "type": "studio",
+        "all_songs": ["Virginia Beach", "Slime You Out", "First Person Shooter", "IDGAF", "8AM in Charlotte", "Evil Ways", "Money In The Grave", "Mob Ties", "Another Late Night", "Drew A Picasso", "Fear of Heights", "Calling My Name", "Bahamas Promises", "Gently", "Rich Baby Daddy", "What Would Pluto Do", "Members Only", "Tried Our Best", "Screw The World", "Daylight", "6 God", "All The Parties", "Stories About My Brother"]
       },
       {
         "title": "100 Gigs",
         "release_year": 2023,
-        "hit_songs": ["It's Up", "Blue Green Red", "Housekeeping Knows", "No Face", "The Motion"]
+        "type": "compilation",
+        "all_songs": ["It's Up", "Blue Green Red", "Housekeeping Knows", "No Face", "The Motion", "SOD", "Circadian Rhythm"]
       },
       {
         "title": "Her Loss",
         "release_year": 2022,
-        "hit_songs": ["Rich Flex", "Major Distribution", "On BS", "Spin Bout U", "Circo Loco"]
+        "type": "collaborative",
+        "collaborator": "21 Savage",
+        "all_songs": ["Rich Flex", "Major Distribution", "On BS", "BackOutsideBoyz", "Privileged Rappers", "Spin Bout U", "Hours in Silence", "Treacherous Twins", "Circo Loco", "Pussy & Millions", "Broke Boys", "Middle of the Ocean", "Jumbotron Shit Poppin", "More M's", "I Guess It's Fuck Me", "Jimmy Cooks"]
       },
       {
         "title": "Honestly, Nevermind",
         "release_year": 2022,
-        "hit_songs": ["Falling Back", "Texts Go Green", "Massive", "Sticky", "Jimmy Cooks"]
-      },
-      {
-        "title": "Scary Hours 2",
-        "release_year": 2021,
-        "hit_songs": ["What's Next", "Wants and Needs", "Lemon Pepper Freestyle", "What's Next (Extended)", "Wants and Needs (Remix)"]
+        "type": "studio",
+        "all_songs": ["Falling Back", "Texts Go Green", "Currents", "A Keeper", "Calling My Name", "Sticky", "Massive", "Flight's Booked", "Overdrive", "Down Hill", "Tie That Binds", "Liability", "Jimmy Cooks"]
       },
       {
         "title": "Certified Lover Boy",
         "release_year": 2021,
-        "hit_songs": ["Way 2 Sexy", "Fair Trade", "Knife Talk", "Girls Want Girls", "No Friends in the Industry"]
+        "type": "studio",
+        "all_songs": ["Champagne Poetry", "Papi's Home", "Girls Want Girls", "In The Bible", "Love All", "Fair Trade", "Way 2 Sexy", "TSU", "N 2 Deep", "Pipe Down", "Yebba's Heartbreak", "No Friends in the Industry", "Knife Talk", "7am on Bridle Path", "Race My Mind", "Fountains", "Get Along Better", "You Only Live Twice", "IMY2", "Fucking Fans", "The Remorse"]
+      },
+      {
+        "title": "Scary Hours 2",
+        "release_year": 2021,
+        "type": "EP",
+        "all_songs": ["What's Next", "Wants and Needs", "Lemon Pepper Freestyle"]
       },
       {
         "title": "Dark Lane Demo Tapes",
         "release_year": 2020,
-        "hit_songs": ["Chicago Freestyle", "Toosie Slide", "Pain 1993", "When to Say When", "Demons"]
+        "type": "mixtape",
+        "all_songs": ["Deep Pockets", "When to Say When", "Chicago Freestyle", "Not You Too", "Toosie Slide", "Desires", "Time Flies", "Landed", "D4L", "Pain 1993", "Losses", "From Florida With Love", "Demons", "War"]
       },
       {
         "title": "Care Package",
         "release_year": 2019,
-        "hit_songs": ["Dreams Money Can Buy", "The Motion", "Trust Issues", "Jodeci Freestyle", "Girls Love Beyoncé"]
+        "type": "compilation",
+        "all_songs": ["Can I", "Days in the East", "Trust Issues", "4PM in Calabasas", "The Motion", "Can't Take a Joke", "Jodeci Freestyle", "Draft Day", "How Bout Now", "Heat of the Moment", "Club Paradise", "Free Spirit", "Dreams Money Can Buy", "Successful", "Girls Love Beyoncé", "Best I Ever Had", "Think Good Thoughts"]
       },
       {
         "title": "Scorpion",
         "release_year": 2018,
-        "hit_songs": ["God's Plan", "Nice for What", "Nonstop", "In My Feelings", "I'm Upset"]
+        "type": "studio",
+        "all_songs": ["Survival", "Nonstop", "Elevate", "Emotionless", "God's Plan", "I'm Upset", "8 Out of 10", "Mob Ties", "Can't Take a Joke", "Sandra's Rose", "Talk Up", "Is There More", "Peak", "Summer Games", "Jaded", "Nice for What", "Finesse", "Ratchet Happy Birthday", "That's How You Feel", "Blue Tint", "In My Feelings", "Don't Matter to Me", "After Dark", "Final Fantasy", "March 14"]
       },
       {
         "title": "More Life",
         "release_year": 2017,
-        "hit_songs": ["Passionfruit", "Free Smoke", "Fake Love", "Portland", "Gyalchester"]
+        "type": "playlist",
+        "all_songs": ["Free Smoke", "No Long Talk", "Passionfruit", "Jorja Interlude", "Get It Together", "Madiba Riddim", "Blem", "4422", "Gyalchester", "Skepta Interlude", "Portland", "Sacrifices", "Nothings Into Somethings", "Teenage Fever", "KMT", "Lose You", "Can't Have Everything", "Glow", "Since Way Back", "Fake Love", "Ice Melts", "Do Not Disturb"]
       },
       {
         "title": "Views",
         "release_year": 2016,
-        "hit_songs": ["One Dance", "Hotline Bling", "Controlla", "Too Good", "Feel No Ways"]
+        "type": "studio",
+        "all_songs": ["Keep the Family Close", "9", "U With Me?", "Feel No Ways", "Hype", "Weston Road Flows", "Redemption", "With You", "Faithful", "Still Here", "Controlla", "One Dance", "Grammys", "Childs Play", "Pop Style", "Too Good", "Summers Over Interlude", "Fire & Desire", "Views", "Hotline Bling"]
       },
       {
         "title": "What A Time To Be Alive",
         "release_year": 2015,
-        "hit_songs": ["Scholarships", "Diamonds Dancing", "Plastic Bag", "Jumpman", "Change Locations"]
+        "type": "collaborative",
+        "collaborator": "Future",
+        "all_songs": ["Digital Dash", "Big Rings", "Live From the Gutter", "Diamonds Dancing", "Scholarships", "Plastic Bag", "I'm the Plug", "Change Locations", "Jersey", "Jumpman", "30 for 30 Freestyle"]
       },
       {
         "title": "If You're Reading This It's Too Late",
         "release_year": 2015,
-        "hit_songs": ["Energy", "10 Bands", "Know Yourself", "No Tellin'", "6 God"]
+        "type": "mixtape",
+        "all_songs": ["Legend", "Energy", "10 Bands", "Know Yourself", "No Tellin'", "Madonna", "6 God", "Star67", "Preach", "Wednesday Night Interlude", "Used To", "6 Man", "Now & Forever", "Company", "You & the 6", "Jungle", "6PM in New York", "Heat of the Moment"]
       },
       {
         "title": "Nothing Was the Same",
         "release_year": 2013,
-        "hit_songs": ["Started From the Bottom", "Hold On, We're Going Home", "Worst Behavior", "Tuscan Leather", "From Time"]
+        "type": "studio",
+        "all_songs": ["Tuscan Leather", "Furthest Thing", "Started From the Bottom", "Wu-Tang Forever", "Own It", "Worst Behavior", "From Time", "Hold On, We're Going Home", "Connect", "The Language", "305 To My City", "Too Much", "Pound Cake / Paris Morton Music 2", "Come Thru", "All Me", "The Motion"]
       },
       {
         "title": "Take Care",
         "release_year": 2011,
-        "hit_songs": ["Headlines", "Crew Love", "Marvins Room", "Take Care", "HYFR"]
+        "type": "studio",
+        "all_songs": ["Over My Dead Body", "Shot for Me", "Headlines", "Crew Love", "Take Care", "Marvins Room", "Buried Alive Interlude", "Under Ground Kings", "We'll Be Fine", "Make Me Proud", "Lord Knows", "Cameras/Good Ones Go Interlude", "Doing It Wrong", "The Real Her", "Look What You've Done", "HYFR (Hell Ya Fucking Right)", "Practice", "The Ride", "The Real Her", "Crew Love"]
       },
       {
         "title": "Thank Me Later",
         "release_year": 2010,
-        "hit_songs": ["Fireworks", "Karaoke", "Over", "Find Your Love", "Miss Me"]
+        "type": "studio",
+        "all_songs": ["Fireworks", "Karaoke", "The Resistance", "Over", "Show Me a Good Time", "Up All Night", "Fancy", "Shut It Down", "Unforgettable", "Light Up", "Miss Me", "Cece's Interlude", "Find Your Love", "Thank Me Now"]
       },
       {
         "title": "So Far Gone",
         "release_year": 2009,
-        "hit_songs": ["Best I Ever Had", "Successful", "Houstatlantavegas", "Uptown", "The Calm"]
+        "type": "mixtape",
+        "all_songs": ["Lust for Life", "Houstatlantavegas", "Successful", "Best I Ever Had", "Uptown", "Say What's Real", "I'm Goin In", "Fear", "Ignant Shit", "A Night Off", "Sooner Than Later", "Bria's Interlude", "The Calm", "Brand New", "Say Something", "Congratulations", "Let's Call It Off", "November 18th"]
       }
     ],
+    "singles": [
+      "What Did I Miss?",
+      "Which One", 
+      "Dog House",
+      "Somebody Loves Me Pt. 2",
+      "SOD",
+      "Circadian Rhythm",
+      "No Face",
+      "Hotline Bling",
+      "Back to Back",
+      "Right Hand",
+      "Summer Sixteen",
+      "One Dance",
+      "Pop Style",
+      "Controlla",
+      "Child's Play",
+      "Too Good",
+      "Fake Love",
+      "Sneakin'",
+      "Two Birds, One Stone",
+      "Passionfruit",
+      "More Life",
+      "Signs",
+      "God's Plan",
+      "Nice For What",
+      "I'm Upset",
+      "In My Feelings",
+      "Nonstop",
+      "Mob Ties",
+      "Elevate",
+      "Survival"
+    ],
+    "featured_artists": ["Young Thug", "Yeat", "Chris Brown", "Gunna", "The Weeknd", "Rick Ross"],
+    "vibes": ["Sad", "Hyped", "Happy", "Party", "Chill", "Romantic", "Motivational", "Nostalgic", "Aggressive", "Smooth"],
     "awards": {
       "Grammy_Wins": 4,
       "Billboard_Music_Awards": 27,

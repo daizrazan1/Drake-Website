@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Drake Singles - Complete collection of Drake's hit singles and chart-toppers" />
+    <meta name="author" content="Drake Fan" />
+    <title>Drake - Singles Collection</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
+    
+    <!-- Styles -->
+    <link href="css/modern-styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-music-note-beamed"></i> Drake
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
+                        Albums <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="albums.html">All Albums</a>
+                        <a class="dropdown-item active" href="singles.html">Singles</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ovo.html">OVO Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fav-song-gen.html">Fav Song Gen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="song-creator.html">Song Creator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="song-guesser.html">Song Guesser</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding-top: 120px; min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Drake Singles</h1>
+                <p class="hero-subtitle">Complete collection of chart-topping hits and fan favorites</p>
+                <div class="text-center mt-4">
+                    <div class="d-flex justify-center gap-3 mb-4 flex-wrap">
+                        <a href="albums.html" class="btn btn-ghost">
+                            <i class="bi bi-vinyl"></i>
+                            Full Albums
+                        </a>
+                        <a href="fav-song-gen.html" class="btn btn-ghost">
+                            <i class="bi bi-heart"></i>
+                            Song Generator
+                        </a>
+                        <a href="song-guesser.html" class="btn btn-ghost">
+                            <i class="bi bi-gamepad2"></i>
+                            Song Game
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search singles..." />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control form-select" id="eraFilter">
+                        <option value="">All Eras</option>
+                        <option value="2009-2013">Early Drake (2009-2013)</option>
+                        <option value="2014-2018">Peak Drake (2014-2018)</option>
+                        <option value="2019-2023">Recent Drake (2019-2023)</option>
+                        <option value="2024-2025">Latest Drake (2024-2025)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Singles Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="singlesGrid">
+                <!-- Singles will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-5" style="background: var(--card-bg); margin-top: 2rem;">
+        <div class="container">
+            <p class="text-secondary mb-3">
+                Explore Drake's incredible catalog of hit singles
+            </p>
+            <p class="text-muted">&copy; 2025 Drake Singles Collection. Built for fans, by fans.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        // Comprehensive Drake Singles Database
+        const drakeSingles = [
+            // 2009-2013 (Early Drake)
+            { title: "Best I Ever Had", year: 2009, era: "2009-2013", album: "So Far Gone", peakChart: 2, streams: "1.2B+" },
+            { title: "Successful", year: 2009, era: "2009-2013", album: "So Far Gone", peakChart: 17, streams: "800M+" },
+            { title: "Over", year: 2010, era: "2009-2013", album: "Thank Me Later", peakChart: 14, streams: "600M+" },
+            { title: "Find Your Love", year: 2010, era: "2009-2013", album: "Thank Me Later", peakChart: 5, streams: "500M+" },
+            { title: "Headlines", year: 2011, era: "2009-2013", album: "Take Care", peakChart: 13, streams: "900M+" },
+            { title: "Take Care", year: 2011, era: "2009-2013", album: "Take Care", peakChart: 7, streams: "1.5B+" },
+            { title: "Make Me Proud", year: 2011, era: "2009-2013", album: "Take Care", peakChart: 9, streams: "400M+" },
+            { title: "The Motto", year: 2012, era: "2009-2013", album: "Take Care", peakChart: 14, streams: "800M+" },
+            { title: "HYFR", year: 2012, era: "2009-2013", album: "Take Care", peakChart: 62, streams: "300M+" },
+            { title: "Started From the Bottom", year: 2013, era: "2009-2013", album: "Nothing Was the Same", peakChart: 6, streams: "1.8B+" },
+            { title: "Hold On, We're Going Home", year: 2013, era: "2009-2013", album: "Nothing Was the Same", peakChart: 4, streams: "1.6B+" },
+
+            // 2014-2018 (Peak Drake)
+            { title: "0 to 100 / The Catch Up", year: 2014, era: "2014-2018", album: "Single", peakChart: 40, streams: "700M+" },
+            { title: "Energy", year: 2015, era: "2014-2018", album: "If You're Reading This It's Too Late", peakChart: 26, streams: "800M+" },
+            { title: "Know Yourself", year: 2015, era: "2014-2018", album: "If You're Reading This It's Too Late", peakChart: 44, streams: "600M+" },
+            { title: "Back to Back", year: 2015, era: "2014-2018", album: "Single", peakChart: 21, streams: "900M+" },
+            { title: "Hotline Bling", year: 2015, era: "2014-2018", album: "Views", peakChart: 2, streams: "2.2B+" },
+            { title: "Summer Sixteen", year: 2016, era: "2014-2018", album: "Views", peakChart: 6, streams: "800M+" },
+            { title: "One Dance", year: 2016, era: "2014-2018", album: "Views", peakChart: 1, streams: "3.1B+" },
+            { title: "Pop Style", year: 2016, era: "2014-2018", album: "Views", peakChart: 43, streams: "400M+" },
+            { title: "Controlla", year: 2016, era: "2014-2018", album: "Views", peakChart: 18, streams: "1.1B+" },
+            { title: "Too Good", year: 2016, era: "2014-2018", album: "Views", peakChart: 14, streams: "1.3B+" },
+            { title: "Fake Love", year: 2016, era: "2014-2018", album: "More Life", peakChart: 8, streams: "1.7B+" },
+            { title: "Passionfruit", year: 2017, era: "2014-2018", album: "More Life", peakChart: 8, streams: "1.4B+" },
+            { title: "More Life", year: 2017, era: "2014-2018", album: "More Life", peakChart: 26, streams: "500M+" },
+            { title: "God's Plan", year: 2018, era: "2014-2018", album: "Scorpion", peakChart: 1, streams: "3.8B+" },
+            { title: "Nice For What", year: 2018, era: "2014-2018", album: "Scorpion", peakChart: 1, streams: "2.1B+" },
+            { title: "I'm Upset", year: 2018, era: "2014-2018", album: "Scorpion", peakChart: 7, streams: "1.2B+" },
+            { title: "In My Feelings", year: 2018, era: "2014-2018", album: "Scorpion", peakChart: 1, streams: "2.9B+" },
+            { title: "Don't Matter To Me", year: 2018, era: "2014-2018", album: "Scorpion", peakChart: 9, streams: "1.1B+" },
+
+            // 2019-2023 (Recent Drake)
+            { title: "Money In The Grave", year: 2019, era: "2019-2023", album: "Single", peakChart: 7, streams: "800M+" },
+            { title: "Omertà", year: 2019, era: "2019-2023", album: "Care Package", peakChart: 48, streams: "300M+" },
+            { title: "When To Say When", year: 2020, era: "2019-2023", album: "Dark Lane Demo Tapes", peakChart: 24, streams: "400M+" },
+            { title: "Chicago Freestyle", year: 2020, era: "2019-2023", album: "Dark Lane Demo Tapes", peakChart: 14, streams: "500M+" },
+            { title: "Toosie Slide", year: 2020, era: "2019-2023", album: "Dark Lane Demo Tapes", peakChart: 1, streams: "2.2B+" },
+            { title: "Pain 1993", year: 2020, era: "2019-2023", album: "Single", peakChart: 7, streams: "600M+" },
+            { title: "Popstar", year: 2020, era: "2019-2023", album: "Single", peakChart: 3, streams: "800M+" },
+            { title: "Greece", year: 2020, era: "2019-2023", album: "Single", peakChart: 49, streams: "300M+" },
+            { title: "Laugh Now Cry Later", year: 2020, era: "2019-2023", album: "Single", peakChart: 2, streams: "1.5B+" },
+            { title: "What's Next", year: 2021, era: "2019-2023", album: "Scary Hours 2", peakChart: 1, streams: "1.8B+" },
+            { title: "Wants and Needs", year: 2021, era: "2019-2023", album: "Scary Hours 2", peakChart: 2, streams: "1.2B+" },
+            { title: "Lemon Pepper Freestyle", year: 2021, era: "2019-2023", album: "Scary Hours 2", peakChart: 3, streams: "800M+" },
+            { title: "Way 2 Sexy", year: 2021, era: "2019-2023", album: "Certified Lover Boy", peakChart: 1, streams: "1.9B+" },
+            { title: "Girls Want Girls", year: 2021, era: "2019-2023", album: "Certified Lover Boy", peakChart: 2, streams: "1.1B+" },
+            { title: "Fair Trade", year: 2021, era: "2019-2023", album: "Certified Lover Boy", peakChart: 3, streams: "900M+" },
+            { title: "Knife Talk", year: 2021, era: "2019-2023", album: "Certified Lover Boy", peakChart: 4, streams: "800M+" },
+            { title: "Champagne Poetry", year: 2021, era: "2019-2023", album: "Certified Lover Boy", peakChart: 5, streams: "700M+" },
+            { title: "Jimmy Cooks", year: 2022, era: "2019-2023", album: "Honestly, Nevermind", peakChart: 1, streams: "1.3B+" },
+            { title: "Falling Back", year: 2022, era: "2019-2023", album: "Honestly, Nevermind", peakChart: 4, streams: "600M+" },
+            { title: "Sticky", year: 2022, era: "2019-2023", album: "Honestly, Nevermind", peakChart: 19, streams: "400M+" },
+            { title: "Rich Flex", year: 2022, era: "2019-2023", album: "Her Loss", peakChart: 2, streams: "1.1B+" },
+            { title: "Major Distribution", year: 2022, era: "2019-2023", album: "Her Loss", peakChart: 4, streams: "600M+" },
+            { title: "On BS", year: 2022, era: "2019-2023", album: "Her Loss", peakChart: 6, streams: "500M+" },
+            { title: "Spin Bout U", year: 2022, era: "2019-2023", album: "Her Loss", peakChart: 5, streams: "700M+" },
+
+            // 2024-2025 (Latest Drake)
+            { title: "Search & Rescue", year: 2023, era: "2024-2025", album: "Single", peakChart: 2, streams: "800M+" },
+            { title: "First Person Shooter", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 1, streams: "1.2B+" },
+            { title: "IDGAF", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 3, streams: "900M+" },
+            { title: "Slime You Out", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 1, streams: "1.1B+" },
+            { title: "Another Late Night", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 5, streams: "600M+" },
+            { title: "8am in Charlotte", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 6, streams: "500M+" },
+            { title: "Virginia Beach", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 3, streams: "700M+" },
+            { title: "Polar Opposites", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 9, streams: "400M+" },
+            { title: "Fear of Heights", year: 2023, era: "2024-2025", album: "For All The Dogs", peakChart: 11, streams: "300M+" },
+            { title: "Red Button", year: 2024, era: "2024-2025", album: "100 Gigs For Your Headtop", peakChart: 15, streams: "200M+" },
+            { title: "Housekeeping Knows", year: 2024, era: "2024-2025", album: "100 Gigs For Your Headtop", peakChart: 22, streams: "150M+" },
+            { title: "SOD", year: 2024, era: "2024-2025", album: "100 Gigs For Your Headtop", peakChart: 18, streams: "180M+" },
+            { title: "Blue Green Red", year: 2024, era: "2024-2025", album: "100 Gigs For Your Headtop", peakChart: 25, streams: "120M+" }
+        ];
+
+        let filteredSingles = [...drakeSingles];
+
+        function renderSingles(singles) {
+            const grid = document.getElementById('singlesGrid');
+            grid.innerHTML = '';
+
+            singles.forEach(single => {
+                const singleCard = document.createElement('div');
+                singleCard.className = 'col-lg-4 col-md-6 mb-4';
+                singleCard.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">"${single.title}"</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Released: ${single.year}</small><br>
+                                <small class="text-muted">Album: ${single.album}</small><br>
+                                <small class="text-primary">Peak Chart: #${single.peakChart}</small><br>
+                                <small class="text-success">Streams: ${single.streams}</small>
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="https://open.spotify.com/search/${encodeURIComponent(single.title + ' Drake')}" 
+                                   target="_blank" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-spotify"></i>
+                                </a>
+                                <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(single.title + ' Drake')}" 
+                                   target="_blank" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                                <a href="https://music.apple.com/search?term=${encodeURIComponent(single.title + ' Drake')}" 
+                                   target="_blank" class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-music-note"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(singleCard);
+            });
+
+            if (singles.length === 0) {
+                grid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No singles found matching your criteria.</p></div>';
+            }
+        }
+
+        function filterSingles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const eraFilter = document.getElementById('eraFilter').value;
+
+            filteredSingles = drakeSingles.filter(single => {
+                const matchesSearch = single.title.toLowerCase().includes(searchTerm) ||
+                                    single.album.toLowerCase().includes(searchTerm);
+                const matchesEra = !eraFilter || single.era === eraFilter;
+
+                return matchesSearch && matchesEra;
+            });
+
+            renderSingles(filteredSingles);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterSingles);
+        document.getElementById('eraFilter').addEventListener('change', filterSingles);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSingles(drakeSingles);
+        });
+
+        // Mobile navigation
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-nav').classList.toggle('show');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('bi-list');
+            icon.classList.toggle('bi-x');
+        });
+
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle('show');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #b3b3b3;
+            margin-bottom: 2rem;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-3 {
+            gap: 1rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</body>
+</html>
