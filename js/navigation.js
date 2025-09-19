@@ -27,15 +27,22 @@ class NavigationManager {
             
             if (isCurrentlyOpen) {
                 navbarNav.classList.remove('show');
+                navbarNav.style.display = 'none';
             } else {
                 navbarNav.classList.add('show');
+                navbarNav.style.display = 'flex';
             }
             
             // Update toggle icon with smooth transition
             const icon = mobileToggle.querySelector('i');
             if (icon) {
-                icon.classList.toggle('bi-list');
-                icon.classList.toggle('bi-x');
+                if (isCurrentlyOpen) {
+                    icon.classList.remove('bi-x');
+                    icon.classList.add('bi-list');
+                } else {
+                    icon.classList.remove('bi-list');
+                    icon.classList.add('bi-x');
+                }
             }
 
             // Update ARIA attributes
@@ -101,6 +108,16 @@ class NavigationManager {
                     toggle.setAttribute('aria-expanded', false);
                 });
             }
+
+            // Prevent dropdown from opening on navigation
+            const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Allow normal navigation
+                    dropdown.classList.remove('show');
+                    toggle.setAttribute('aria-expanded', false);
+                });
+            });
         });
     }
 
