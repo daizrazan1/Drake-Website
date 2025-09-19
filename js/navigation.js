@@ -21,9 +21,17 @@ class NavigationManager {
 
         mobileToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            navbarNav.classList.toggle('show');
+            e.preventDefault();
             
-            // Update toggle icon
+            const isCurrentlyOpen = navbarNav.classList.contains('show');
+            
+            if (isCurrentlyOpen) {
+                navbarNav.classList.remove('show');
+            } else {
+                navbarNav.classList.add('show');
+            }
+            
+            // Update toggle icon with smooth transition
             const icon = mobileToggle.querySelector('i');
             if (icon) {
                 icon.classList.toggle('bi-list');
@@ -31,8 +39,7 @@ class NavigationManager {
             }
 
             // Update ARIA attributes
-            const isExpanded = navbarNav.classList.contains('show');
-            mobileToggle.setAttribute('aria-expanded', isExpanded);
+            mobileToggle.setAttribute('aria-expanded', !isCurrentlyOpen);
         });
 
         // Close mobile menu when clicking on nav links
@@ -250,7 +257,7 @@ function generateNavigation(activePage = '') {
                         <a class="nav-link ${activePage === 'ovo.html' ? 'active' : ''}" href="ovo.html" role="menuitem">OVO Artists</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'fav-song-gen.html' ? 'active' : ''}" href="fav-song-gen.html" role="menuitem">Fav Song Gen</a>
+                        <a class="nav-link ${activePage === 'song-recommender.html' ? 'active' : ''}" href="song-recommender.html" role="menuitem">Song Recommender</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a class="nav-link ${activePage === 'song-creator.html' ? 'active' : ''}" href="song-creator.html" role="menuitem">Song Creator</a>

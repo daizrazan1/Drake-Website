@@ -1,6 +1,6 @@
 // Drake Website Service Worker
-const CACHE_NAME = 'drake-website-v2';
-const STATIC_CACHE = 'drake-static-v1';
+const CACHE_NAME = 'drake-website-v3';
+const STATIC_CACHE = 'drake-static-v2';
 
 // Files to cache for offline functionality
 const urlsToCache = [
@@ -12,7 +12,7 @@ const urlsToCache = [
   '/signup.html',
   '/singles.html',
   '/song-creator.html',
-  '/fav-song-gen.html',
+  '/song-recommender.html',
   '/song-guesser.html',
   '/css/styles.css',
   '/css/modern-styles.css',
