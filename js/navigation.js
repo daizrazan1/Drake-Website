@@ -1,4 +1,4 @@
-// Modern Navigation Component with Mobile Support
+// Clean Navigation Component - Fixed for Drake Website
 class NavigationManager {
     constructor() {
         this.init();
@@ -10,33 +10,36 @@ class NavigationManager {
         this.handleOutsideClicks();
         this.handleKeyboardNavigation();
         this.setActivePage();
+        this.handleResize();
     }
 
-    // Mobile menu toggle functionality
+    // Fixed mobile menu toggle functionality
     setupMobileToggle() {
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navbarNav = document.querySelector('.navbar-nav');
 
         if (!mobileToggle || !navbarNav) return;
 
-        mobileToggle.addEventListener('click', (e) => {
+        // Remove any existing listeners
+        const newToggle = mobileToggle.cloneNode(true);
+        mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+
+        newToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             e.preventDefault();
             
-            const isCurrentlyOpen = navbarNav.classList.contains('show');
+            const isOpen = navbarNav.classList.contains('show');
             
-            if (isCurrentlyOpen) {
+            if (isOpen) {
                 navbarNav.classList.remove('show');
-                navbarNav.style.display = 'none';
             } else {
                 navbarNav.classList.add('show');
-                navbarNav.style.display = 'flex';
             }
             
-            // Update toggle icon with smooth transition
-            const icon = mobileToggle.querySelector('i');
+            // Update toggle icon
+            const icon = newToggle.querySelector('i');
             if (icon) {
-                if (isCurrentlyOpen) {
+                if (isOpen) {
                     icon.classList.remove('bi-x');
                     icon.classList.add('bi-list');
                 } else {
@@ -46,27 +49,27 @@ class NavigationManager {
             }
 
             // Update ARIA attributes
-            mobileToggle.setAttribute('aria-expanded', !isCurrentlyOpen);
+            newToggle.setAttribute('aria-expanded', !isOpen);
         });
 
-        // Close mobile menu when clicking on nav links
-        const navLinks = navbarNav.querySelectorAll('.nav-link');
+        // Close mobile menu when clicking nav links (only actual links, not dropdowns)
+        const navLinks = navbarNav.querySelectorAll('.nav-link:not(.dropdown-toggle)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
                     navbarNav.classList.remove('show');
-                    const icon = mobileToggle.querySelector('i');
+                    const icon = newToggle.querySelector('i');
                     if (icon) {
                         icon.classList.add('bi-list');
                         icon.classList.remove('bi-x');
                     }
-                    mobileToggle.setAttribute('aria-expanded', false);
+                    newToggle.setAttribute('aria-expanded', false);
                 }
             });
         });
     }
 
-    // Dropdown functionality for desktop and mobile
+    // Fixed dropdown functionality - only for actual dropdown menus
     setupDropdowns() {
         const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -76,7 +79,7 @@ class NavigationManager {
 
             if (!toggle || !menu) return;
 
-            // Click handler for mobile and desktop
+            // Only handle clicks for actual dropdown toggles with menu content
             toggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -97,7 +100,7 @@ class NavigationManager {
             });
 
             // Desktop hover behavior (only on non-touch devices)
-            if (!('ontouchstart' in window)) {
+            if (!('ontouchstart' in window) && window.innerWidth > 768) {
                 dropdown.addEventListener('mouseenter', () => {
                     dropdown.classList.add('show');
                     toggle.setAttribute('aria-expanded', true);
@@ -109,11 +112,10 @@ class NavigationManager {
                 });
             }
 
-            // Prevent dropdown from opening on navigation
+            // Close dropdown when clicking dropdown items
             const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
             dropdownItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    // Allow normal navigation
+                item.addEventListener('click', () => {
                     dropdown.classList.remove('show');
                     toggle.setAttribute('aria-expanded', false);
                 });
@@ -129,9 +131,10 @@ class NavigationManager {
 
             // Close mobile menu
             const navbarNav = document.querySelector('.navbar-nav');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            
             if (navbarNav && navbarNav.classList.contains('show')) {
                 navbarNav.classList.remove('show');
-                const mobileToggle = document.querySelector('.mobile-toggle');
                 if (mobileToggle) {
                     const icon = mobileToggle.querySelector('i');
                     if (icon) {
@@ -160,7 +163,9 @@ class NavigationManager {
             if (e.key === 'Escape') {
                 // Close mobile menu and dropdowns
                 const navbarNav = document.querySelector('.navbar-nav');
-                if (navbarNav) {
+                const mobileToggle = document.querySelector('.mobile-toggle');
+                
+                if (navbarNav && navbarNav.classList.contains('show')) {
                     navbarNav.classList.remove('show');
                 }
 
@@ -173,7 +178,6 @@ class NavigationManager {
                     }
                 });
 
-                const mobileToggle = document.querySelector('.mobile-toggle');
                 if (mobileToggle) {
                     const icon = mobileToggle.querySelector('i');
                     if (icon) {
@@ -218,11 +222,12 @@ class NavigationManager {
             if (window.innerWidth > 768) {
                 // Close mobile menu on desktop
                 const navbarNav = document.querySelector('.navbar-nav');
-                if (navbarNav) {
+                const mobileToggle = document.querySelector('.mobile-toggle');
+                
+                if (navbarNav && navbarNav.classList.contains('show')) {
                     navbarNav.classList.remove('show');
                 }
 
-                const mobileToggle = document.querySelector('.mobile-toggle');
                 if (mobileToggle) {
                     const icon = mobileToggle.querySelector('i');
                     if (icon) {
@@ -236,127 +241,10 @@ class NavigationManager {
     }
 }
 
-// Generate navigation HTML
-function generateNavigation(activePage = '') {
-    return `
-        <nav class="navbar">
-            <div class="container navbar-container">
-                <a class="navbar-brand" href="index.html">
-                    <i class="bi bi-music-note-beamed"></i> Drake
-                </a>
-                
-                <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <i class="bi bi-list"></i>
-                </button>
-                
-                <ul class="navbar-nav" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'index.html' ? 'active' : ''}" href="index.html" role="menuitem">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a class="nav-link dropdown-toggle ${activePage === 'albums.html' || activePage === 'singles.html' ? 'active' : ''}" 
-                           href="#" 
-                           role="menuitem" 
-                           aria-haspopup="true" 
-                           aria-expanded="false"
-                           id="albumsDropdown">
-                            Albums <i class="bi bi-chevron-down"></i>
-                        </a>
-                        <div class="dropdown-menu" role="menu" aria-labelledby="albumsDropdown">
-                            <a class="dropdown-item ${activePage === 'albums.html' ? 'active' : ''}" href="albums.html" role="menuitem">All Albums</a>
-                            <a class="dropdown-item ${activePage === 'singles.html' ? 'active' : ''}" href="singles.html" role="menuitem">Singles</a>
-                        </div>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'about.html' ? 'active' : ''}" href="about.html" role="menuitem">About</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'ovo.html' ? 'active' : ''}" href="ovo.html" role="menuitem">OVO Artists</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'song-recommender.html' ? 'active' : ''}" href="song-recommender.html" role="menuitem">Song Recommender</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'song-creator.html' ? 'active' : ''}" href="song-creator.html" role="menuitem">Song Creator</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link ${activePage === 'song-guesser.html' ? 'active' : ''}" href="song-guesser.html" role="menuitem">Song Guesser</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    `;
-}
-
 // Initialize navigation when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Insert navigation if not already present
-    if (!document.querySelector('.navbar') && document.getElementById('navigation-placeholder')) {
-        const placeholder = document.getElementById('navigation-placeholder');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        placeholder.innerHTML = generateNavigation(currentPage);
-    }
-    
-    // Initialize navigation functionality - critical for mobile menu and dropdowns
+    // Initialize navigation functionality
     const navManager = new NavigationManager();
-    navManager.handleResize(); // Also setup resize handler
     
     console.log('Navigation initialized successfully');
-});
-
-// Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { NavigationManager, generateNavigation };
-}
-// Navigation functionality for Drake website
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile navigation toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navbarNav = document.querySelector('.navbar-nav');
-    
-    if (mobileToggle && navbarNav) {
-        mobileToggle.addEventListener('click', function() {
-            navbarNav.classList.toggle('show');
-            const icon = this.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('bi-list');
-                icon.classList.toggle('bi-x');
-            }
-        });
-    }
-
-    // Dropdown functionality
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        if (toggle) {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdown.classList.toggle('show');
-            });
-        }
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                dropdown.classList.remove('show');
-            });
-        }
-    });
-
-    // Close mobile menu when clicking nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function() {
-            if (navbarNav) {
-                navbarNav.classList.remove('show');
-            }
-            const mobileIcon = mobileToggle?.querySelector('i');
-            if (mobileIcon) {
-                mobileIcon.classList.add('bi-list');
-                mobileIcon.classList.remove('bi-x');
-            }
-        });
-    });
 });

@@ -54,7 +54,7 @@
   --transition-slow: 0.6s ease;
 
   /* Z-index */
-  --z-dropdown: 1001;
+  --z-dropdown: 9999;
   --z-sticky: 1020;
   --z-fixed: 1030;
   --z-modal: 1040;
@@ -92,7 +92,7 @@ body {
   position: relative;
 }
 
-/* Simplified TV Effect for Performance */
+/* Ultra-simplified background for performance */
 body::before {
   content: '';
   position: fixed;
@@ -100,12 +100,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.01) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(100, 181, 246, 0.01) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(100, 181, 246, 0.02) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 /* OVO Artist Page Styles */
@@ -137,16 +135,14 @@ body::before {
 }
 
 .bg-dark .card-body {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .bg-dark .list-group-item {
-  background: rgba(100, 181, 246, 0.05) !important;
+  background: rgba(100, 181, 246, 0.08) !important;
   border-color: var(--accent-frost) !important;
-  backdrop-filter: blur(5px);
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .bg-dark .list-group-item:hover {
@@ -157,9 +153,8 @@ body::before {
 .bg-dark .btn-outline-light {
   border-color: rgba(100, 181, 246, 0.6);
   color: rgba(100, 181, 246, 0.9);
-  background: rgba(100, 181, 246, 0.05);
-  backdrop-filter: blur(10px);
-  transition: var(--transition-normal);
+  background: rgba(100, 181, 246, 0.08);
+  transition: var(--transition-fast);
 }
 
 .bg-dark .btn-outline-light:hover {
@@ -171,9 +166,7 @@ body::before {
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .drake-bg-1, .drake-bg-2, .drake-bg-3 {
-    animation: none;
-  }
+  /* Background overlay animations disabled */
 
   body::before, body::after {
     animation: none;
@@ -188,26 +181,7 @@ body::before {
   }
 }
 
-/* Drake Background Overlay Elements */
-.drake-bg-overlay {
-  position: fixed;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
-  z-index: -2;
-  opacity: 0.15;
-}
-
-.drake-bg-1 {
-  background-image: url('/attached_assets/GZQDxl-XAAASh5c_1758247855718.jfif');
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 400px;
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
-}
+/* Removed old background overlay elements - using hero image instead */
 
 
 
@@ -252,9 +226,7 @@ a:hover {
 
 /* Ice Theme Utility Classes */
 .ice-glass {
-  background: rgba(36, 52, 71, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(36, 52, 71, 0.9);
   border: 1px solid rgba(100, 181, 246, 0.3);
   box-shadow: 0 8px 32px rgba(100, 181, 246, 0.1);
 }
@@ -267,16 +239,8 @@ a:hover {
 }
 
 .retro-tv-glow {
-  box-shadow: 
-    0 0 20px rgba(100, 181, 246, 0.3),
-    0 0 40px rgba(100, 181, 246, 0.2),
-    0 0 80px rgba(100, 181, 246, 0.1);
-  animation: tvGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes tvGlow {
-  0% { filter: brightness(1) contrast(1); }
-  100% { filter: brightness(1.1) contrast(1.2); }
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);
+  /* Removed heavy animation for performance */
 }
 
 .drake-overlay {
@@ -292,14 +256,11 @@ a:hover {
   right: 0;
   bottom: 0;
   background: linear-gradient(45deg, transparent 30%, rgba(100, 181, 246, 0.1) 50%, transparent 70%);
-  animation: drakeShimmer 3s infinite;
   pointer-events: none;
+  /* Animation removed for performance */
 }
 
-@keyframes drakeShimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+/* Shimmer animation removed for performance */
 
 /* Layout Components */
 .container {
@@ -395,11 +356,9 @@ a:hover {
   box-shadow: 0 0 15px rgba(100, 181, 246, 0.3);
 }
 
-/* Enhanced Navigation with Better Mobile Support */
+/* Optimized Navigation for Performance */
 .navbar {
-  background: rgba(10, 25, 41, 0.95);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(10, 25, 41, 0.98);
   border-bottom: 2px solid var(--accent-ice);
   padding: var(--spacing-md) 0;
   position: fixed;
@@ -407,8 +366,8 @@ a:hover {
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  transition: var(--transition-normal);
-  box-shadow: 0 0 20px rgba(100, 181, 246, 0.2);
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.15);
 }
 
 .navbar-container {
@@ -502,7 +461,7 @@ a:hover {
   transform: translateY(-10px);
   transition: var(--transition-normal);
   min-width: 200px;
-  z-index: var(--z-dropdown);
+  z-index: 9999 !important;
 }
 
 .dropdown.show .dropdown-menu {
@@ -616,37 +575,62 @@ a:hover {
   h2 { font-size: 1.75rem; }
   h3 { font-size: 1.5rem; }
 
-  /* Fixed Mobile Navigation */
+  /* Enhanced Mobile Navigation */
   .mobile-toggle {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     z-index: 1001;
+    position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .mobile-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  .mobile-toggle:active {
+    transform: scale(0.98);
   }
 
   .navbar-nav {
-    display: none;
+    display: none !important;
     flex-direction: column;
     position: fixed;
-    top: 80px;
+    top: 75px;
     left: 0;
     right: 0;
-    background: var(--card-bg);
+    background: rgba(36, 52, 71, 0.98);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
     border: 2px solid var(--accent-ice);
     border-radius: 0;
     gap: var(--spacing-sm);
     z-index: 1000;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 75px);
     overflow-y: auto;
     width: 100%;
+    transition: opacity 0.2s ease;
   }
 
   .navbar-nav.show {
     display: flex !important;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .nav-item {
@@ -708,13 +692,8 @@ a:hover {
   margin: 0 auto;
   font-size: 3rem;
   color: var(--primary-bg);
-  animation: gameLogoGlow 2s ease-in-out infinite alternate;
-  box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
-}
-
-@keyframes gameLogoGlow {
-  0% { box-shadow: 0 0 20px rgba(100, 181, 246, 0.5); }
-  100% { box-shadow: 0 0 40px rgba(100, 181, 246, 0.8); }
+  /* Animation removed for performance */
+  box-shadow: 0 0 25px rgba(100, 181, 246, 0.6);
 }
 
 .difficulty-selection {
