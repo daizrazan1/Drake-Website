@@ -13,6 +13,7 @@ class SongGuesser {
         this.questionStartTime = null;
         this.answerTimes = [];
         this.timerInterval = null;
+        this.isAnswered = false;
         this.gameDatabase = this.initializeGameDatabase();
         this.init();
     }
@@ -455,9 +456,15 @@ class SongGuesser {
 
     // Select answer
     selectAnswer(selectedIndex) {
+        // Immediately clear timer and prevent multiple selections
         if (this.timerInterval) {
             clearInterval(this.timerInterval);
+            this.timerInterval = null;
         }
+        
+        // Prevent multiple answer selections
+        if (this.isAnswered) return;
+        this.isAnswered = true;
         
         const question = this.questions[this.currentQuestion];
         const isCorrect = selectedIndex === question.correct;
@@ -481,6 +488,7 @@ class SongGuesser {
         // Move to next question after delay
         setTimeout(() => {
             this.currentQuestion++;
+            this.isAnswered = false; // Reset for next question
             if (this.currentQuestion < this.totalQuestions) {
                 this.displayQuestion();
                 this.startTimer();

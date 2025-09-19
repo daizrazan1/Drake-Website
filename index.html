@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,12 @@
     <meta name="description" content="Drake's Official Fan Website - Discover music, play games, and explore Drake's incredible journey" />
     <meta name="author" content="Drake Fan" />
     <title>Drake - Official Fan Website</title>
-    
+
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#FFD700">
     <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
-    
+
     <!-- Styles -->
     <link href="css/modern-styles.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -25,11 +24,11 @@
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-music-note-beamed"></i> Drake
             </a>
-            
+
             <button class="mobile-toggle" aria-label="Toggle navigation menu">
                 <i class="bi bi-list"></i>
             </button>
-            
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="index.html">Home</a>
@@ -84,6 +83,7 @@
                 </div>
             </div>
         </div>
+        <div class="hero-overlay"></div>
     </section>
 
     <!-- Stats Section -->
@@ -125,7 +125,7 @@
                 <h2>Explore Drake's World</h2>
                 <p class="text-secondary">Interactive experiences for every Drake fan</p>
             </div>
-            
+
             <div class="row">
                 <div class="col-4">
                     <div class="feature-card">
@@ -137,7 +137,7 @@
                         <a href="albums.html" class="btn btn-ghost">Browse Albums</a>
                     </div>
                 </div>
-                
+
                 <div class="col-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -148,7 +148,7 @@
                         <a href="song-guesser.html" class="btn btn-ghost">Play Game</a>
                     </div>
                 </div>
-                
+
                 <div class="col-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -159,7 +159,7 @@
                         <a href="fav-song-gen.html" class="btn btn-ghost">Find Your Song</a>
                     </div>
                 </div>
-                
+
                 <div class="col-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -170,7 +170,7 @@
                         <a href="song-creator.html" class="btn btn-ghost">Create Song</a>
                     </div>
                 </div>
-                
+
                 <div class="col-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -181,7 +181,7 @@
                         <a href="ovo.html" class="btn btn-ghost">Meet the Artists</a>
                     </div>
                 </div>
-                
+
                 <div class="col-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -231,13 +231,13 @@
         // Animated Counter
         function animateCounters() {
             const counters = document.querySelectorAll('[data-count]');
-            
+
             counters.forEach(counter => {
                 const target = parseInt(counter.dataset.count);
                 const duration = 2000;
                 const increment = target / (duration / 16);
                 let current = 0;
-                
+
                 const updateCounter = () => {
                     if (current < target) {
                         current += increment;
@@ -247,11 +247,11 @@
                         counter.textContent = target;
                     }
                 };
-                
+
                 updateCounter();
             });
         }
-        
+
         // Initialize animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries) => {
@@ -264,11 +264,11 @@
                     }
                 });
             });
-            
+
             document.querySelectorAll('.stat-card, .feature-card').forEach(el => {
                 observer.observe(el);
             });
-            
+
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -281,7 +281,7 @@
             });
         });
     </script>
-    
+
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -292,12 +292,132 @@
     </script>
 
     <style>
+        :root {
+            --primary-color: #64b5f6; /* Light Blue */
+            --secondary-color: #e0e0e0; /* Light Gray */
+            --accent-gold: #FFD700; /* Drake's signature gold */
+            --background-dark: #0a0a0a;
+            --background-slightly-dark: #1a1a1a;
+            --card-bg: #1f1f1f;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #333333;
+            --radius-lg: 1rem;
+            --transition-normal: all 0.3s ease;
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-slightly-dark) 100%);
+            color: var(--text-primary);
             min-height: 100vh;
+            margin: 0; /* Ensure no default margin */
         }
-        
+
+        .navbar {
+            background: rgba(26, 26, 26, 0.8); /* Slightly transparent dark */
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .navbar-brand {
+            color: var(--accent-gold);
+            font-size: 1.75rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar-brand i {
+            font-size: 2rem;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-item .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-normal);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-lg);
+        }
+
+        .nav-item .nav-link:hover,
+        .nav-item .nav-link.active {
+            color: var(--primary-color);
+            background: rgba(100, 181, 246, 0.1);
+        }
+
+        .nav-item.dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 0.5rem 0;
+            min-width: 180px;
+            z-index: 1001; /* Ensure dropdown is above other content */
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: block;
+            transition: var(--transition-normal);
+        }
+
+        .dropdown-item:hover {
+            background: var(--background-slightly-dark);
+            color: var(--primary-color);
+        }
+
+        .nav-link i.bi-chevron-down {
+            margin-left: 0.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item.dropdown .nav-link:hover .bi-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .mobile-toggle {
+            display: none; /* Hidden by default */
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -308,72 +428,136 @@
             position: relative;
             overflow: hidden;
         }
-        
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(100, 181, 246, 0.1) 50%, transparent 70%);
+            animation: heroScanLine 4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes heroScanLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
         .hero-content {
             max-width: 800px;
             z-index: 2;
+            position: relative;
         }
-        
+
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FFD700, #ff6b35);
+            background: linear-gradient(135deg, var(--accent-gold), #ff6b35); /* Transitioning from gold to orange */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
             animation: fadeIn 1s ease-out;
         }
-        
+
         .hero-subtitle {
             font-size: 1.25rem;
-            color: #b3b3b3;
+            color: var(--text-secondary);
             margin-bottom: 2rem;
             animation: fadeIn 1s ease-out 0.3s both;
         }
-        
+
         .hero-cta {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeIn 1s ease-out 0.6s both;
+            animation: fadeInUp 1s ease-out 0.5s both;
         }
-        
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--background-dark);
+        }
+        .btn-primary:hover {
+            background: #42a5f5; /* Darker blue on hover */
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--background-slightly-dark);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        .btn-secondary:hover {
+            background: rgba(100, 181, 246, 0.1);
+            border-color: #64b5f6;
+            color: var(--primary-color);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        .btn-ghost:hover {
+            background: rgba(100, 181, 246, 0.2);
+            border-color: #64b5f6;
+            color: var(--primary-color);
+        }
+
         .stats-section {
             padding: 4rem 0;
-            background: var(--secondary-bg);
+            background: var(--background-slightly-dark);
         }
-        
+
         .stat-card {
             background: var(--card-bg);
             padding: 2rem;
             border-radius: var(--radius-lg);
             text-align: center;
             transition: var(--transition-normal);
+            border: 1px solid var(--border-color);
         }
-        
+
         .stat-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
+            border-color: var(--accent-gold);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--accent-gold);
             margin-bottom: 0.5rem;
         }
-        
+
         .stat-label {
             color: var(--text-secondary);
             font-weight: 500;
         }
-        
+
         .features-section {
             padding: 4rem 0;
         }
-        
+
         .feature-card {
             background: var(--card-bg);
             padding: 2rem;
@@ -382,44 +566,435 @@
             transition: var(--transition-normal);
             border: 1px solid var(--border-color);
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        
+
         .feature-card:hover {
-            border-color: var(--accent-gold);
+            border-color: var(--primary-color);
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .feature-icon {
             font-size: 3rem;
-            color: var(--accent-gold);
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
-        
+
         .feature-title {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
+
         .feature-description {
             color: var(--text-secondary);
+            flex-grow: 1; /* Allows description to take available space */
             margin-bottom: 1.5rem;
         }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
+
+        footer {
+            background: var(--background-slightly-dark) !important; /* Use !important to override inline style */
+            margin-top: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+        .mb-5 {
+            margin-bottom: 2rem;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .gap-3 {
+            gap: 1rem;
+        }
+
+        .col-3 {
+            width: 25%;
+            padding: 0 1rem; /* Add some horizontal padding */
+        }
+
+        .col-4 {
+            width: 33.33%;
+            padding: 0 1rem; /* Add some horizontal padding */
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem; /* Counteract column padding */
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .col-4 {
+                width: 50%;
             }
-            
+            .col-3 {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none; /* Hide nav links by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--card-bg);
+                padding: 1rem 0;
+                box-shadow: var(--shadow-xl);
+            }
+            .navbar-nav.active {
+                display: flex; /* Show nav links when active */
+            }
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+            .nav-item .nav-link {
+                padding: 1rem;
+                width: 100%;
+                display: block;
+            }
+            .mobile-toggle {
+                display: block; /* Show mobile toggle button */
+            }
+
+            .hero-title {
+                font-size: 2.5rem; /* Adjusted for better mobile fit */
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
-            
-            .stat-number {
+
+            .hero-cta .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .stat-card {
+                margin-bottom: 1.5rem; /* Add space between stacked stat cards */
+            }
+            .col-3, .col-4 {
+                width: 100%; /* Stack elements on small screens */
+                padding: 0 0.5rem; /* Adjust padding for stacking */
+            }
+            .row {
+                margin: 0 -0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
                 font-size: 2rem;
             }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Specific page styles (placeholder for future additions) */
+        .song-guesser-page, .song-creator-page {
+            padding: 60px 0;
+        }
+
+        .song-guesser-page h2, .song-creator-page h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        /* Song Guesser Page - Layout and Timer */
+        .quiz-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .quiz-timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .question-counter {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .answer-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .answer-btn {
+            background: var(--background-slightly-dark);
+            color: var(--text-primary);
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .answer-btn:hover {
+            background: var(--card-bg);
+            border-color: var(--primary-color);
+        }
+
+        .answer-btn.selected {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            border-color: var(--primary-color);
+        }
+
+        .answer-btn.correct {
+            background: #4caf50; /* Green */
+            border-color: #4caf50;
+        }
+
+        .answer-btn.incorrect {
+            background: #f44336; /* Red */
+            border-color: #f44336;
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .feedback-correct {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        .feedback-incorrect {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+
+        .next-question-btn {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 0.75rem 2rem;
+            background: var(--accent-gold);
+            color: var(--background-dark);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .next-question-btn:hover {
+            background: #e0c000;
+            transform: translateY(-2px);
+        }
+
+        /* Song Guesser Page - Specific Layout for pushed left elements */
+        .song-guesser-page .container {
+            text-align: left; /* Reset text alignment for content */
+        }
+
+        .song-guesser-page .feature-card {
+            display: flex; /* Ensure flexbox is applied */
+        }
+
+        /* Song Creator Page */
+        .song-creator-page .container {
+            max-width: 900px; /* Wider container for more controls */
+        }
+
+        .song-creator-controls {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-xl);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .creator-input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .creator-input-group label {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .creator-input-group input,
+        .creator-input-group textarea,
+        .creator-input-group select {
+            background: var(--background-slightly-dark);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .creator-input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .creator-controls-actions {
+            grid-column: 1 / -1; /* Span across all columns */
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .creator-controls-actions .btn {
+            padding: 0.75rem 2rem;
+            background: var(--accent-gold);
+            color: var(--background-dark);
+            border: none;
+            font-size: 1.1rem;
+        }
+        .creator-controls-actions .btn:hover {
+            background: #e0c000;
+        }
+
+        /* Add new singles to the singles page or a relevant section */
+        /* Assuming there's a singles.html or a section to display them */
+        .singles-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .single-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+        .single-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+        .single-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .single-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
     </style>
 </body>

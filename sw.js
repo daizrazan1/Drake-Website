@@ -1,5 +1,5 @@
 // Drake Website Service Worker
-const CACHE_NAME = 'drake-website-v1';
+const CACHE_NAME = 'drake-website-v2';
 const STATIC_CACHE = 'drake-static-v1';
 
 // Files to cache for offline functionality
@@ -10,11 +10,22 @@ const urlsToCache = [
   '/albums.html',
   '/ovo.html',
   '/signup.html',
+  '/singles.html',
+  '/song-creator.html',
+  '/fav-song-gen.html',
+  '/song-guesser.html',
   '/css/styles.css',
+  '/css/modern-styles.css',
   '/js/scripts.js',
+  '/js/navigation.js',
+  '/js/song-creator.js',
+  '/js/song-guesser.js',
   '/scripts.js',
   '/data.json',
-  '/manifest.json'
+  '/manifest.json',
+  '/images/baha.jpg',
+  '/drake-icon-192.png',
+  '/drake-icon-512.png'
 ];
 
 // Install event - cache resources
@@ -61,7 +72,7 @@ self.addEventListener('fetch', (event) => {
           console.log('Serving from cache:', event.request.url);
           return response;
         }
-        
+
         console.log('Fetching from network:', event.request.url);
         return fetch(event.request).then((response) => {
           // Don't cache if not a valid response
@@ -71,7 +82,7 @@ self.addEventListener('fetch', (event) => {
 
           // Clone the response
           const responseToCache = response.clone();
-          
+
           // Cache the fetched response
           caches.open(CACHE_NAME)
             .then((cache) => {
@@ -113,7 +124,7 @@ self.addEventListener('push', (event) => {
       badge: 'images/baha.jpg',
       tag: 'drake-notification'
     };
-    
+
     event.waitUntil(
       self.registration.showNotification(data.title, options)
     );

@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no" />
     <meta name="description" content="Generate your perfect Drake song based on your preferences!" />
     <meta name="author" content="Drake Fan" />
     <title>Drake - Favorite Song Generator</title>
 
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#FFD700">
+    <meta name="theme-color" content="#1e293b">
     <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
 
     <!-- Styles -->
     <link href="css/modern-styles.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Added for modal -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -81,7 +83,7 @@
                         <form id="songGenForm">
                             <div class="form-group mb-4">
                                 <label class="form-label">What's your current vibe?</label>
-                                <select class="form-control form-select" name="vibe" required>
+                                <select class="form-control form-select" name="vibe" id="vibe" required>
                                     <option value="">Choose your vibe...</option>
                                     <option value="sad">Sad & Emotional</option>
                                     <option value="hyped">Hyped & Energetic</option>
@@ -95,7 +97,7 @@
 
                             <div class="form-group mb-4">
                                 <label class="form-label">Preferred featured artist type?</label>
-                                <select class="form-control form-select" name="feature" required>
+                                <select class="form-control form-select" name="feature" id="feature" required>
                                     <option value="">Choose feature type...</option>
                                     <option value="solo">Solo Drake</option>
                                     <option value="young-thug">Young Thug</option>
@@ -111,7 +113,7 @@
 
                             <div class="form-group mb-4">
                                 <label class="form-label">What era of Drake do you prefer?</label>
-                                <select class="form-control form-select" name="era" required>
+                                <select class="form-control form-select" name="era" id="era" required>
                                     <option value="">Choose era...</option>
                                     <option value="early">Early Drake (2009-2013)</option>
                                     <option value="peak">Peak Drake (2014-2018)</option>
@@ -122,7 +124,7 @@
 
                             <div class="form-group mb-4">
                                 <label class="form-label">What time of day is it?</label>
-                                <select class="form-control form-select" name="time" required>
+                                <select class="form-control form-select" name="time" id="time" required>
                                     <option value="">Select time...</option>
                                     <option value="morning">Morning</option>
                                     <option value="afternoon">Afternoon</option>
@@ -185,154 +187,122 @@
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
     <script>
-        // Enhanced Drake Song Database with more songs from all albums and singles
+        // Song recommendation database with new singles and images
         const drakeDatabase = {
-            // Studio Albums
-            'So Far Gone': ['Best I Ever Had', 'Successful', 'I\'m Goin In', 'Fear', 'Uptown'],
-            'Thank Me Later': ['Over', 'The Resistance', 'Fireworks', 'Karaoke', 'The Calm', 'Thank Me Now'],
-            'Take Care': ['Take Care', 'Headlines', 'Make Me Proud', 'Underground Kings', 'We\'ll Be Fine', 'The Real Her', 'Look What You\'ve Done', 'HYFR', 'Crew Love'],
-            'Nothing Was the Same': ['Started From the Bottom', 'Wu-Tang Forever', 'Own It', 'Worst Behavior', 'From Time', 'Hold On We\'re Going Home', 'Connect', 'The Language', 'Too Much'],
-            'If You\'re Reading This It\'s Too Late': ['Energy', 'Know Yourself', '10 Bands', 'No Tellin\'', 'Madonna', '6 God', 'Star67', 'Preach', 'Legend'],
-            'Views': ['Hotline Bling', 'One Dance', 'Controlla', 'Faithful', 'Still Here', 'With You', 'U With Me?', 'Feel No Ways', 'Hype', 'Weston Road Flows', 'Redemption', 'Too Good'],
-            'More Life': ['Passionfruit', 'Jorja Interlude', 'Get It Together', 'Madiba Riddim', 'Blem', 'Free Smoke', 'No Long Talk', 'Gyalchester', 'Skepta Interlude', 'Portland', 'Sacrifices', 'Nothings Into Somethings', 'Teenage Fever', 'KMT', 'Lose You', 'Can\'t Have Everything', 'Glow', 'Since Way Back', 'Fake Love', 'Ice Melts', 'Do Not Disturb'],
-            'Scorpion': ['God\'s Plan', 'Nice For What', 'In My Feelings', 'Don\'t Matter To Me', 'Emotionless', 'Sandra\'s Rose', 'Talk Up', '8 Out Of 10', 'Mob Ties', 'Can\'t Take a Joke', 'Nonstop', 'Elevate', 'I\'m Upset', 'After Dark', 'Final Fantasy', 'March 14', 'Is There More', 'Peak', 'Summer Games', 'Jaded', 'That\'s How You Feel', 'Blue Tint', 'In My Feelings'],
-            'Certified Lover Boy': ['Champagne Poetry', 'Papi\'s Home', 'Girls Want Girls', 'In The Bible', 'Love All', 'Fair Trade', 'Way 2 Sexy', 'TSU', 'N 2 Deep', 'Pipe Down', 'Yebba\'s Heartbreak', 'No Friends In The Industry', 'Knife Talk', '7am On Bridle Path', 'Race My Mind', 'Fountains', 'Get Along Better', 'You Only Live Twice', 'IMY2', 'F*cking Fans', 'The Remorse'],
-            'Honestly, Nevermind': ['Intro', 'Falling Back', 'Texts Go Green', 'Currents', 'A Keeper', 'Calling My Name', 'Sticky', 'Massive', 'Flight\'s Booked', 'Overdrive', 'Down Hill', 'Tie That Binds', 'Liability', 'Jimmy Cooks'],
-            'Her Loss': ['Rich Flex', 'Major Distribution', 'On BS', 'BackOutsideBoyz', 'Privileged Rappers', 'Spin Bout U', 'Hours in Silence', 'Treacherous Twins', 'Circo Loco', 'Pussy & Millions', 'Broke Boys', 'Middle of the Ocean', 'Jumbotron Shit Poppin', 'More M\'s', 'Fried Rice', 'Side to Side'],
-            'For All The Dogs': ['Virginia Beach', 'Amen', 'Daylight', 'First Person Shooter', 'IDGAF', '7969 Santa', 'Slime You Out', 'Bahamas Promises', 'Gently', 'Rich Baby Daddy', 'Another Late Night', 'Members Only', 'What Would Pluto Do', 'Tried Our Best', 'Screw The World', 'Drew a Picasso', 'Fear of Heights', 'Polar Opposites', '8am in Charlotte', 'Stories About My Brother', 'Alpha'],
-
-            // Popular Singles
-            'singles': [
-                'Hotline Bling', 'One Dance', 'God\'s Plan', 'In My Feelings', 'Nice For What', 
-                'Started From the Bottom', 'Best I Ever Had', 'Headlines', 'Take Care',
-                'Hold On We\'re Going Home', 'Energy', 'Back to Back', 'Summer Sixteen',
-                'Controlla', 'Too Good', 'Fake Love', 'Passionfruit', 'More Life', 
-                'I\'m Upset', 'Don\'t Matter To Me', 'Emotionless', 'Nonstop',
-                'Mob Ties', 'Money In The Grave', 'Omertà', 'When To Say When',
-                'Chicago Freestyle', 'Toosie Slide', 'Pain 1993', 'Popstar', 'Greece',
-                'Laugh Now Cry Later', 'What\'s Next', 'Wants and Needs', 'Lemon Pepper Freestyle',
-                'Way 2 Sexy', 'Girls Want Girls', 'Fair Trade', 'Knife Talk',
-                'Jimmy Cooks', 'Honestly Nevermind', 'Falling Back', 'Sticky',
-                'Rich Flex', 'Major Distribution', 'Spin Bout U', 'On BS',
-                'First Person Shooter', 'IDGAF', 'Slime You Out', 'Another Late Night',
-                'Virginia Beach', '8am in Charlotte', 'Search & Rescue', 'Jumbotron Shit Poppin'
+            'Some Sexy Songs 4 U (2025)': [
+                { title: "CN Tower", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Something About You", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
+                { title: "Nokia", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" }
+            ],
+            'For All The Dogs (2023)': [
+                { title: "Virginia Beach", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "First Person Shooter", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "IDGAF", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "What Would Pluto Do", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "8am in Charlotte", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Slime You Out", genre: "R&B", mood: "Romantic", vibe: "Smooth", feature: "SZA", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Bahamas Promises", genre: "R&B", mood: "Romantic", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Gently", genre: "R&B", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Rich Baby Daddy", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Sexyy Red, Pi'erre Bourne", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "Another Late Night", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }
+            ],
+            'Scorpion (2018)': [
+                { title: "God's Plan", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "In My Feelings", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Nice for What", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Nonstop", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "Emotionless", genre: "R&B", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "8 Out Of 10", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
+                { title: "I'm Upset", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" }
+            ],
+            'Views (2016)': [
+                { title: "One Dance", genre: "Pop", mood: "Party", vibe: "Confident", feature: "Wizkid, Kyla", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Hotline Bling", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Too Good", genre: "Pop", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Controlla", genre: "Dancehall", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
+                { title: "Feel No Ways", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" }
+            ],
+            'Take Care (2011)': [
+                { title: "Take Care", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Headlines", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Crew Love", genre: "R&B", mood: "Chill", vibe: "Nostalgic", feature: "The Weeknd", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "Marvin's Room", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
+                { title: "The Motto", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Lil Wayne", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" }
+            ],
+            // Added new singles
+            'Singles': [
+                { title: "What Did I Miss", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
+                { title: "Which One", genre: "R&B", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
+                { title: "Somebody Loves Me Pt. 2", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
+                { title: "Dog House", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
+                { title: "First Person Shooter", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "IDGAF", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
+                { title: "8am in Charlotte", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }
             ]
         };
-
-        // Song recommendation algorithm
-        function getSongRecommendation(vibe, feature, era, time) {
-            let songs = [];
-
-            // Collect all songs from database
-            Object.values(drakeDatabase).forEach(albumSongs => {
-                if (Array.isArray(albumSongs)) {
-                    songs = songs.concat(albumSongs);
-                }
-            });
-
-            // Filter based on vibe
-            let filteredSongs = songs.filter(song => {
-                const songLower = song.toLowerCase();
-
-                switch(vibe) {
-                    case 'sad':
-                        return songLower.includes('take care') || songLower.includes('marvin') || 
-                               songLower.includes('doing it wrong') || songLower.includes('feel no ways') ||
-                               songLower.includes('jaded') || songLower.includes('emotionless') ||
-                               songLower.includes('when to say when') || songLower.includes('chicago freestyle');
-
-                    case 'hyped':
-                        return songLower.includes('energy') || songLower.includes('nonstop') ||
-                               songLower.includes('mob ties') || songLower.includes('going bad') ||
-                               songLower.includes('money in the grave') || songLower.includes('back to back') ||
-                               songLower.includes('summer sixteen') || songLower.includes('first person shooter');
-
-                    case 'happy':
-                        return songLower.includes('best i ever had') || songLower.includes('successful') ||
-                               songLower.includes('i\'m goin in') || songLower.includes('nice for what') ||
-                               songLower.includes('god\'s plan') || songLower.includes('toosie slide') ||
-                               songLower.includes('what\'s next') || songLower.includes('laugh now cry later');
-
-                    case 'party':
-                        return songLower.includes('one dance') || songLower.includes('controlla') ||
-                               songLower.includes('hotline bling') || songLower.includes('in my feelings') ||
-                               songLower.includes('way 2 sexy') || songLower.includes('sticky') ||
-                               songLower.includes('rich flex') || songLower.includes('jimmy cooks');
-
-                    case 'chill':
-                        return songLower.includes('passionfruit') || songLower.includes('blem') ||
-                               songLower.includes('get it together') || songLower.includes('jungle') ||
-                               songLower.includes('cameras') || songLower.includes('falling back') ||
-                               songLower.includes('currents') || songLower.includes('overdrive');
-
-                    case 'romantic':
-                        return songLower.includes('hold on') || songLower.includes('take care') ||
-                               songLower.includes('find your love') || songLower.includes('come thru') ||
-                               songLower.includes('too good') || songLower.includes('faithful') ||
-                               songLower.includes('get along better') || songLower.includes('fountains');
-
-                    case 'motivational':
-                        return songLower.includes('started from the bottom') || songLower.includes('headlines') ||
-                               songLower.includes('over') || songLower.includes('successful') ||
-                               songLower.includes('going bad') || songLower.includes('money in the grave') ||
-                               songLower.includes('7am') || songLower.includes('champagne poetry');
-
-                    default:
-                        return true;
-                }
-            });
-
-            // If no specific matches, return random selection from all songs
-            if (filteredSongs.length === 0) {
-                filteredSongs = songs;
-            }
-
-            // Return random song from filtered results
-            const randomIndex = Math.floor(Math.random() * filteredSongs.length);
-            return filteredSongs[randomIndex];
-        }
 
         // Form submission handler
         document.getElementById('songGenForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const formData = new FormData(this);
-            const vibe = formData.get('vibe');
-            const feature = formData.get('feature');
-            const era = formData.get('era');
-            const time = formData.get('time');
+            const album = document.getElementById('era').value; // Corrected to use 'era' for album selection
+            const genre = document.getElementById('vibe').value; // Placeholder, actual genre matching logic needs to be more robust
+            const mood = document.getElementById('vibe').value; // Using vibe for mood for simplicity
+            const vibe = document.getElementById('vibe').value; // Using vibe for vibe for simplicity
+            const feature = document.getElementById('feature').value;
 
-            const recommendedSong = getSongRecommendation(vibe, feature, era, time);
+            // Find matching songs
+            const albumSongs = drakeDatabase[album] || [];
+            let matchingSongs = albumSongs.filter(song => {
+                let score = 0;
+                // Basic matching logic, can be expanded
+                if (song.genre.toLowerCase() === genre.toLowerCase()) score += 2;
+                if (song.mood.toLowerCase() === mood.toLowerCase()) score += 2;
+                if (song.vibe.toLowerCase() === vibe.toLowerCase()) score += 2;
+                
+                // Feature matching - handle "Any Feature" and "Solo Drake"
+                let featureMatch = false;
+                if (feature === "any" && song.feature !== "None") featureMatch = true;
+                else if (feature === "solo" && song.feature === "None") featureMatch = true;
+                else if (song.feature.toLowerCase().includes(feature.toLowerCase())) featureMatch = true;
+                
+                if (featureMatch) score += 1;
+                
+                return score >= 3; // Require at least 3 matching criteria
+            });
 
-            // Find album for the song
-            let album = 'Unknown Album';
-            for (const [albumName, songs] of Object.entries(drakeDatabase)) {
-                if (songs.includes(recommendedSong)) {
-                    album = albumName;
-                    break;
-                }
+            // Fallback to any song from the album if no perfect match
+            if (matchingSongs.length === 0) {
+                matchingSongs = albumSongs;
             }
 
-            // Display result
-            document.getElementById('songResult').innerHTML = `
-                <h4 class="text-primary">"${recommendedSong}"</h4>
-                <p class="text-secondary mb-2">Album: ${album}</p>
-                <p class="mb-3">This song matches your ${vibe} vibe perfectly!</p>
-                <div class="d-flex justify-center gap-2 flex-wrap">
-                    <a href="https://open.spotify.com/search/${encodeURIComponent(recommendedSong + ' Drake')}" target="_blank" class="btn btn-secondary">
-                        <i class="bi bi-spotify"></i> Listen on Spotify
-                    </a>
-                    <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(recommendedSong + ' Drake')}" target="_blank" class="btn btn-secondary">
-                        <i class="bi bi-youtube"></i> Watch on YouTube
-                    </a>
-                    <button onclick="generateAnother()" class="btn btn-ghost">
-                        <i class="bi bi-arrow-repeat"></i> Try Again
-                    </button>
-                </div>
-            `;
+            // Select random song from matches
+            const selectedSong = matchingSongs.length > 0 ? matchingSongs[Math.floor(Math.random() * matchingSongs.length)] : null;
 
-            document.getElementById('result').classList.remove('d-none');
-            document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+            if (selectedSong) {
+                document.getElementById('songResult').innerHTML = `
+                    <h4 class="text-primary">"${selectedSong.title}"</h4>
+                    <p class="text-secondary mb-2">Album: ${album}</p>
+                    <p class="mb-3">Your perfect Drake song for a ${mood} mood!</p>
+                    <div class="d-flex justify-center gap-2 flex-wrap">
+                        <a href="https://open.spotify.com/search/${encodeURIComponent(selectedSong.title + ' Drake')}" target="_blank" class="btn btn-secondary">
+                            <i class="bi bi-spotify"></i> Listen on Spotify
+                        </a>
+                        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(selectedSong.title + ' Drake')}" target="_blank" class="btn btn-secondary">
+                            <i class="bi bi-youtube"></i> Watch on YouTube
+                        </a>
+                        <button onclick="generateAnother()" class="btn btn-ghost">
+                            <i class="bi bi-arrow-repeat"></i> Try Again
+                        </button>
+                    </div>
+                `;
+                document.getElementById('result').classList.remove('d-none');
+                document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('songResult').innerHTML = `<p class="text-danger">Could not find a matching song. Try adjusting your preferences!</p>`;
+                document.getElementById('result').classList.remove('d-none');
+                document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+            }
         });
 
         function generateAnother() {
@@ -368,12 +338,143 @@
     </script>
 
     <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            min-height: 100vh;
+        /* Theme: Icy White & Blue (Drake's Iceman Album) */
+        :root {
+            --primary-bg: #0f172a; /* Darker blue-grey */
+            --secondary-bg: #1e293b; /* Slightly lighter blue-grey */
+            --accent-color: #2563eb; /* Bright Blue */
+            --text-color: #e2e8f0; /* Off-white */
+            --secondary-text-color: #94a3b8; /* Light gray */
+            --card-bg: #111827; /* Very dark blue-grey */
+            --border-color: #334155; /* Medium blue-grey */
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .navbar {
+            background-color: rgba(15, 23, 43, 0.8); /* Semi-transparent dark blue */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: var(--accent-color);
+            font-size: 1.75rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar-brand i {
+            color: var(--text-color);
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--secondary-text-color);
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            min-width: 150px;
+            z-index: 1001;
+        }
+
+        .dropdown.show .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            color: var(--secondary-text-color);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--secondary-bg);
+            color: var(--accent-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
         .hero-section {
             min-height: 80vh;
             display: flex;
@@ -381,40 +482,296 @@
             justify-content: center;
             text-align: center;
             position: relative;
+            padding-top: 80px; /* Adjust for sticky nav */
+            overflow: hidden; /* For background effects */
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path/to/your/icy-tv-background.gif') center center / cover no-repeat; /* Placeholder for background image */
+            opacity: 0.3; /* Adjust opacity for desired effect */
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FFD700, #ff6b35);
+            background: linear-gradient(135deg, #a7f3d0, #60a5fa); /* Light green to light blue */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(96, 165, 250, 0.5); /* Soft blue glow */
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: #b3b3b3;
+            color: var(--secondary-text-color);
             margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* General Layout & Components */
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            display: block;
+            color: var(--text-color);
+        }
+
+        .form-control,
+        .form-select {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 231, 0.3);
+            outline: none;
+        }
+
+        .btn {
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        .btn-primary:hover {
+            background-color: #3b82f6; /* Lighter blue on hover */
+            border-color: #3b82f6;
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+            color: var(--accent-color);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-ghost:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-bg);
         }
 
         .justify-center {
             justify-content: center;
         }
 
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
         .gap-3 {
             gap: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-primary {
+            color: var(--accent-color);
+        }
+
+        .text-secondary {
+            color: var(--secondary-text-color);
+        }
+
+        .text-muted {
+            color: var(--secondary-text-color);
+            opacity: 0.7;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+
+        .mt-5 {
+            margin-top: 3rem !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .p-4 {
+            padding: 1.5rem !important;
+        }
+
+        .p-5 {
+            padding: 3rem !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                display: none; /* Hide by default for mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust based on nav height */
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             }
 
-            .flex-wrap {
-                flex-wrap: wrap;
+            .navbar-nav.show {
+                display: flex;
             }
+
+            .nav-item {
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 0.75rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .nav-link::after {
+                display: none; /* Remove underline effect on mobile nav */
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: block;
+                background: none;
+                border: none;
+                box-shadow: none;
+                margin-top: 0;
+                padding: 0 0 0 1rem; /* Indent dropdown items */
+            }
+            
+            .dropdown.show .dropdown-menu {
+                display: block;
+            }
+
+            .mobile-toggle {
+                display: block; /* Show toggle button */
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Specific fixes for song-guesser and song-creator layouts */
+        /* Assuming these pages might have specific styling needs. If they are not implemented, these are placeholders. */
+        .song-guesser-container, .song-creator-container {
+            padding: 2rem 0;
+        }
+
+        /* Old TV Style Effect (Example - can be refined) */
+        /* This is a conceptual addition. Actual implementation might involve more complex CSS or JS */
+        /* For the background, we can use a grainy texture or scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('path/to/your/tv-static.gif') repeat; /* Placeholder for static/grain */
+            opacity: 0.05; /* Subtle effect */
+            z-index: 9999;
+        }
+
+        /* Add glow effect to some elements for the "icy" feel */
+        .glow-accent {
+            text-shadow: 0 0 10px var(--accent-color), 0 0 20px rgba(37, 99, 231, 0.6);
+        }
+
+        .glow-text-white {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
     </style>
 </body>

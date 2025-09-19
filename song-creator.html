@@ -66,14 +66,17 @@
         </nav>
 
         <!-- Header -->
-        <header class="py-5 bg-gradient-primary">
+        <header class="py-5 bg-gradient-primary" style="background: linear-gradient(rgba(10, 25, 41, 0.9), rgba(26, 35, 50, 0.95)), url('attached_assets/Drake-Iceman-Episode1_1758241159234.jpg') center/cover;">
             <div class="container px-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xxl-6">
                         <div class="text-center my-5">
-                            <h1 class="fw-bolder mb-3">AI Song Creator</h1>
-                            <p class="lead fw-normal text-muted mb-4">Build your perfect Drake-style track with our intelligent music creator. Answer a few questions and watch your song come to life.</p>
-                            <div class="creator-stats d-flex justify-content-center gap-4 mb-4">
+                            <div class="iceman-title-container mb-4">
+                                <h1 class="fw-bolder mb-3 iceman-title">AI Song Creator</h1>
+                                <div class="iceman-subtitle">ICEMAN EDITION</div>
+                            </div>
+                            <p class="lead fw-normal mb-4" style="color: var(--text-secondary);">Build your perfect Drake-style track with our intelligent music creator. Answer a few questions and watch your song come to life.</p>
+                            <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
                                 <div class="stat-item text-center">
                                     <div class="stat-number">1000+</div>
                                     <div class="stat-label">Songs Created</div>
@@ -228,5 +231,62 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Song Creator JS -->
     <script src="js/song-creator.js"></script>
+    
+    <style>
+        .iceman-title-container {
+            position: relative;
+        }
+        
+        .iceman-title {
+            background: linear-gradient(45deg, #64b5f6, #81d4fa, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5rem;
+            text-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
+            animation: iceGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .iceman-subtitle {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: var(--accent-ice);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: 1px solid var(--accent-ice);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            animation: tvFlicker 2s infinite;
+        }
+        
+        @keyframes iceGlow {
+            0% { filter: drop-shadow(0 0 10px rgba(100, 181, 246, 0.3)); }
+            100% { filter: drop-shadow(0 0 20px rgba(129, 212, 250, 0.6)); }
+        }
+        
+        @keyframes tvFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .creator-stats {
+            background: rgba(100, 181, 246, 0.1);
+            border: 1px solid var(--accent-ice);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .iceman-title {
+                font-size: 2.5rem;
+            }
+            .creator-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </body>
 </html>
