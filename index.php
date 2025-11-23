@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/drake-ovo.jpg" alt="OVO" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 8px;"> Drake's Website
             </a>
 
@@ -33,31 +33,31 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link active" href="index.php">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
                         Albums <i class="bi bi-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="albums.html">All Albums</a>
-                        <a class="dropdown-item" href="singles.html">Singles</a>
+                        <a class="dropdown-item" href="albums.php">All Albums</a>
+                        <a class="dropdown-item" href="singles.php">Singles</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ovo.html">OVO Artists</a>
+                    <a class="nav-link" href="ovo.php">OVO Artists</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="song-recommender.html">Song Recommender</a>
+                    <a class="nav-link" href="song-recommender.php">Song Recommender</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="song-creator.html">Song Creator</a>
+                    <a class="nav-link" href="song-creator.php">Song Creator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="song-guesser.html">Song Guesser</a>
+                    <a class="nav-link" href="song-guesser.php">Song Guesser</a>
                 </li>
             </ul>
         </div>
@@ -142,7 +142,7 @@
                         </div>
                         <h3 class="feature-title">Complete Discography</h3>
                         <p class="feature-description">Explore every album, track, and collaboration from Drake's incredible career.</p>
-                        <a href="albums.html" class="btn btn-ghost">Browse Albums</a>
+                        <a href="albums.php" class="btn btn-ghost">Browse Albums</a>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@
                         </div>
                         <h3 class="feature-title">Song Guesser Game</h3>
                         <p class="feature-description">Test your Drake knowledge with our interactive music guessing game.</p>
-                        <a href="song-guesser.html" class="btn btn-ghost">Play Game</a>
+                        <a href="song-guesser.php" class="btn btn-ghost">Play Game</a>
                     </div>
                 </div>
 
@@ -164,7 +164,7 @@
                         </div>
                         <h3 class="feature-title">Song Recommender</h3>
                         <p class="feature-description">Get personalized Drake song recommendations based on your preferences.</p>
-                        <a href="song-recommender.html" class="btn btn-ghost">Find Your Song</a>
+                        <a href="song-recommender.php" class="btn btn-ghost">Find Your Song</a>
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@
                         </div>
                         <h3 class="feature-title">Song Creator</h3>
                         <p class="feature-description">Create your own Drake-style song with AI assistance and custom lyrics.</p>
-                        <a href="song-creator.html" class="btn btn-ghost">Create Song</a>
+                        <a href="song-creator.php" class="btn btn-ghost">Create Song</a>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                         </div>
                         <h3 class="feature-title">OVO Sound Artists</h3>
                         <p class="feature-description">Discover the talented artists under Drake's OVO Sound label.</p>
-                        <a href="ovo.html" class="btn btn-ghost">Meet the Artists</a>
+                        <a href="ovo.php" class="btn btn-ghost">Meet the Artists</a>
                     </div>
                 </div>
 
@@ -197,7 +197,7 @@
                         </div>
                         <h3 class="feature-title">Singles Collection</h3>
                         <p class="feature-description">Browse through Drake's extensive collection of hit singles and chart-toppers.</p>
-                        <a href="singles.html" class="btn btn-ghost">View Singles</a>
+                        <a href="singles.php" class="btn btn-ghost">View Singles</a>
                     </div>
                 </div>
             </div>
@@ -1004,7 +1004,7 @@
         }
 
         /* Add new singles to the singles page or a relevant section */
-        /* Assuming there's a singles.html or a section to display them */
+        /* Assuming there's a singles.php or a section to display them */
         .singles-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

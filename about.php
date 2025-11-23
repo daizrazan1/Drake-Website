@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <i class="bi bi-music-note-beamed"></i> Drake
             </a>
             
@@ -44,31 +44,31 @@
             
             <ul class="navbar-nav" role="menubar">
                 <li class="nav-item" role="none">
-                    <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                    <a class="nav-link" href="index.php" role="menuitem">Home</a>
                 </li>
                 <li class="nav-item dropdown" role="none">
                     <a class="nav-link dropdown-toggle" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" id="albumsDropdown">
                         Albums <i class="bi bi-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu" role="menu" aria-labelledby="albumsDropdown">
-                        <a class="dropdown-item" href="albums.html" role="menuitem">All Albums</a>
-                        <a class="dropdown-item" href="singles.html" role="menuitem">Singles</a>
+                        <a class="dropdown-item" href="albums.php" role="menuitem">All Albums</a>
+                        <a class="dropdown-item" href="singles.php" role="menuitem">Singles</a>
                     </div>
                 </li>
                 <li class="nav-item" role="none">
-                    <a class="nav-link active" href="about.html" role="menuitem">About</a>
+                    <a class="nav-link active" href="about.php" role="menuitem">About</a>
                 </li>
                 <li class="nav-item" role="none">
-                    <a class="nav-link" href="ovo.html" role="menuitem">OVO Artists</a>
+                    <a class="nav-link" href="ovo.php" role="menuitem">OVO Artists</a>
                 </li>
                 <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-recommender.html" role="menuitem">Song Recommender</a>
+                    <a class="nav-link" href="song-recommender.php" role="menuitem">Song Recommender</a>
                 </li>
                 <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-creator.html" role="menuitem">Song Creator</a>
+                    <a class="nav-link" href="song-creator.php" role="menuitem">Song Creator</a>
                 </li>
                 <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-guesser.html" role="menuitem">Song Guesser</a>
+                    <a class="nav-link" href="song-guesser.php" role="menuitem">Song Guesser</a>
                 </li>
             </ul>
         </div>

@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <i class="bi bi-music-note-beamed"></i> Drake
             </a>
 
@@ -33,31 +33,31 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
                         Albums <i class="bi bi-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="albums.html">All Albums</a>
-                        <a class="dropdown-item" href="singles.html">Singles</a>
+                        <a class="dropdown-item" href="albums.php">All Albums</a>
+                        <a class="dropdown-item" href="singles.php">Singles</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ovo.html">OVO Artists</a>
+                    <a class="nav-link" href="ovo.php">OVO Artists</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="song-recommender.html">Song Recommender</a>
+                    <a class="nav-link active" href="song-recommender.php">Song Recommender</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="song-creator.html">Song Creator</a>
+                    <a class="nav-link" href="song-creator.php">Song Creator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="song-guesser.html">Song Guesser</a>
+                    <a class="nav-link" href="song-guesser.php">Song Guesser</a>
                 </li>
             </ul>
         </div>
@@ -178,15 +178,15 @@
 
             <div class="text-center mt-5">
                 <div class="d-flex justify-center gap-3 mb-4 flex-wrap">
-                    <a href="albums.html" class="btn btn-ghost">
+                    <a href="albums.php" class="btn btn-ghost">
                         <i class="bi bi-music-note-beamed"></i>
                         Albums
                     </a>
-                    <a href="song-guesser.html" class="btn btn-ghost">
+                    <a href="song-guesser.php" class="btn btn-ghost">
                         <i class="bi bi-gamepad2"></i>
                         Song Guesser
                     </a>
-                    <a href="song-creator.html" class="btn btn-ghost">
+                    <a href="song-creator.php" class="btn btn-ghost">
                         <i class="bi bi-mic"></i>
                         Song Creator
                     </a>
