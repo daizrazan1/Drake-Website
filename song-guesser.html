@@ -66,10 +66,10 @@
         </nav>
 
         <!-- Game Start Screen -->
-        <div id="startScreen" class="game-screen" style="padding-top: 100px; background: var(--primary-bg); width: 100%; overflow-x: hidden;">
-            <div class="container px-3 px-md-4 py-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
+        <div id="startScreen" class="game-screen" style="padding-top: 100px; background: var(--primary-bg); width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+            <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 2rem 1rem;">
+                <div class="row justify-content-center" style="margin: 0;">
+                    <div style="width: 100%; max-width: 800px;">
                         <div class="text-center">
                             <div class="game-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
                                 <i class="bi bi-music-note-beamed" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
@@ -117,12 +117,12 @@
         </div>
 
         <!-- Game Play Screen -->
-        <div id="gameScreen" class="game-screen d-none" style="padding-top: 100px; background: var(--primary-bg); min-height: 100vh; width: 100%; overflow-x: hidden;">
-            <div class="container px-3 px-md-4 py-3">
+        <div id="gameScreen" class="game-screen d-none" style="padding-top: 100px; background: var(--primary-bg); min-height: 100vh; width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+            <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 1.5rem 1rem;">
                 <!-- Game Header -->
                 <div class="game-header mb-4">
-                    <div class="row align-items-center">
-                        <div class="col-md-4">
+                    <div class="row align-items-center" style="margin: 0;">
+                        <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0;">
                             <div class="game-progress">
                                 <span class="question-counter">Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">10</span></span>
                                 <div class="progress-bar-game">
@@ -130,14 +130,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 text-center">
+                        <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0; text-align: center; vertical-align: top;">
                             <div class="timer-container">
                                 <div class="timer-circle">
                                     <span class="timer-text" id="timerText">15</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 text-end">
+                        <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0; text-align: right; vertical-align: top;">
                             <div class="score-display">
                                 <div class="score-label">Score</div>
                                 <div class="score-value" id="currentScore">0</div>
@@ -147,8 +147,8 @@
                 </div>
 
                 <!-- Question Card -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                <div class="row justify-content-center" style="margin: 0;">
+                    <div style="width: 100%; max-width: 850px;">
                         <div class="question-card-game">
                             <div class="question-type-badge" id="questionTypeBadge">
                                 <i class="bi bi-music-note-list"></i> Lyrics
@@ -173,10 +173,10 @@
         </div>
 
         <!-- Results Screen -->
-        <div id="resultsScreen" class="game-screen d-none" style="padding-top: 100px; background: var(--primary-bg); min-height: 100vh; width: 100%; overflow-x: hidden;">
-            <div class="container px-3 px-md-4 py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
+        <div id="resultsScreen" class="game-screen d-none" style="padding-top: 100px; background: var(--primary-bg); min-height: 100vh; width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+            <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 2rem 1rem;">
+                <div class="row justify-content-center" style="margin: 0;">
+                    <div style="width: 100%; max-width: 800px;">
                         <div class="text-center">
                             <div class="results-icon-large mb-4" id="resultsIcon">
                                 <i class="bi bi-trophy"></i>
@@ -193,20 +193,20 @@
                                 </div>
                                 
                                 <div class="performance-stats">
-                                    <div class="row text-center">
-                                        <div class="col-4">
+                                    <div class="row text-center" style="margin: 0;">
+                                        <div style="width: 100%; max-width: 32%; display: inline-block;">
                                             <div class="stat-item">
                                                 <div class="stat-number" id="correctAnswers">0</div>
                                                 <div class="stat-label">Correct</div>
                                             </div>
                                         </div>
-                                        <div class="col-4">
+                                        <div style="width: 100%; max-width: 32%; display: inline-block;">
                                             <div class="stat-item">
                                                 <div class="stat-number" id="avgTime">0s</div>
                                                 <div class="stat-label">Avg Time</div>
                                             </div>
                                         </div>
-                                        <div class="col-4">
+                                        <div style="width: 100%; max-width: 32%; display: inline-block;">
                                             <div class="stat-item">
                                                 <div class="stat-number" id="accuracy">0%</div>
                                                 <div class="stat-label">Accuracy</div>
@@ -243,16 +243,16 @@
         </div>
 
         <!-- How to Play Section -->
-        <section class="py-5" id="howToPlay" style="background: var(--secondary-bg); width: 100%; overflow-x: hidden;">
-            <div class="container px-3 px-md-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
+        <section class="py-5" id="howToPlay" style="background: var(--secondary-bg); width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+            <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 2rem 1rem;">
+                <div class="row justify-content-center" style="margin: 0;">
+                    <div style="width: 100%; max-width: 1000px;">
                         <div class="text-center mb-5">
                             <h2 class="fw-bolder" style="color: var(--accent-ice);">How to Play</h2>
                             <p class="lead" style="color: var(--text-secondary);">Master the Drake Song Guesser in 3 simple steps</p>
                         </div>
-                        <div class="row gx-3 gx-md-4">
-                            <div class="col-lg-4 mb-4">
+                        <div class="row gx-2 gx-md-3" style="margin: 0;">
+                            <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0 1rem 2rem 0; box-sizing: border-box;">
                                 <div class="text-center">
                                     <div class="feature-icon mb-3" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
                                         <i class="bi bi-music-note-list" style="font-size: 1.8rem; color: var(--primary-bg);"></i>
@@ -261,7 +261,7 @@
                                     <p style="color: var(--text-secondary);">Get lyrics, album info, or hints about the song. Pay attention to details!</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4 mb-4">
+                            <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0 1rem 2rem 1rem; box-sizing: border-box; vertical-align: top;">
                                 <div class="text-center">
                                     <div class="feature-icon mb-3" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
                                         <i class="bi bi-stopwatch" style="font-size: 1.8rem; color: var(--primary-bg);"></i>
@@ -270,7 +270,7 @@
                                     <p style="color: var(--text-secondary);">You have 15 seconds per question. Faster answers earn more points!</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4 mb-4">
+                            <div style="width: 100%; max-width: 32%; display: inline-block; padding: 0 0 2rem 1rem; box-sizing: border-box; vertical-align: top;">
                                 <div class="text-center">
                                     <div class="feature-icon mb-3" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
                                         <i class="bi bi-trophy" style="font-size: 1.8rem; color: var(--primary-bg);"></i>
