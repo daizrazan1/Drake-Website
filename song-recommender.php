@@ -19,7 +19,7 @@
     <!-- Added for modal -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="width: 100%; overflow-x: hidden;">
+<body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">
@@ -63,39 +63,39 @@
         </div>
     </nav>
 
-        <!-- Header -->
-        <header class="py-5" style="padding-top: 120px; background: var(--primary-bg); min-height: 60vh; display: flex; align-items: center;">
-            <div class="container px-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="text-center">
-                            <div class="creator-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
-                                <i class="bi bi-search" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
+    <!-- Header -->
+    <header class="py-5" style="padding-top: 120px; background: var(--primary-bg); min-height: 60vh; display: flex; align-items: center;">
+        <div class="container px-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="text-center">
+                        <div class="creator-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
+                            <i class="bi bi-search" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
+                        </div>
+                        <h1 class="fw-bolder mb-3" style="color: var(--accent-ice); font-size: 2.5rem;">Song Recommender</h1>
+                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Find your perfect Drake song. Answer a few questions and discover your ideal track based on your mood and preferences.</p>
+                        <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
+                            <div class="stat-item text-center">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Drake Songs</div>
                             </div>
-                            <h1 class="fw-bolder mb-3" style="color: var(--accent-ice); font-size: 2.5rem;">Song Recommender</h1>
-                            <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Find your perfect Drake song. Answer a few questions and discover your ideal track based on your mood and preferences.</p>
-                            <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">100+</div>
-                                    <div class="stat-label">Drake Songs</div>
-                                </div>
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">7</div>
-                                    <div class="stat-label">Vibes</div>
-                                </div>
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">Smart</div>
-                                    <div class="stat-label">Matching</div>
-                                </div>
+                            <div class="stat-item text-center">
+                                <div class="stat-number">7</div>
+                                <div class="stat-label">Vibes</div>
+                            </div>
+                            <div class="stat-item text-center">
+                                <div class="stat-number">Smart</div>
+                                <div class="stat-label">Matching</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
     <!-- Song Generator Form -->
-    <section class="py-5" style="width: 100%; overflow-x: hidden;">
+    <section class="py-5">
         <div class="container px-3 px-md-4">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -375,7 +375,7 @@
             background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
             color: var(--text-color);
             min-height: 100vh;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+             /* Prevent horizontal scroll */
         }
 
         .navbar {
