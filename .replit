@@ -1,14 +1,50 @@
 run = "php -S 0.0.0.0:8000 -t ."
 
 entrypoint = "index.php"
+modules = ["web", "nodejs-20", "php-8.2", "nix", "python-3.11"]
 
 [nix]
-channel = "stable-22_11"
+channel = "stable-25_05"
 
 [deployment]
 run = ["php", "-S", "0.0.0.0:8000", "-t", "."]
 deploymentTarget = "cloudrun"
 
 [[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
 localPort = 8000
 externalPort = 80
+
+[[ports]]
+localPort = 38981
+externalPort = 3000
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Drake Website Server"
+
+[[workflows.workflow]]
+name = "Drake Website Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 -m http.server 5000"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[agent]
+expertMode = true

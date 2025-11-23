@@ -16,7 +16,7 @@
     <link href="css/modern-styles.css" rel="stylesheet" />
 </head>
 <body class="d-flex flex-column">
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0" style="width: 100%; overflow-x: hidden;">
         <!-- Navigation -->
         <nav class="navbar">
             <div class="container navbar-container">
@@ -97,9 +97,9 @@
         </header>
 
         <!-- Song Creator Section -->
-        <section class="py-5" id="song-creator" style="background: var(--primary-bg); min-height: 70vh;">
-            <div class="container px-5 mb-5">
-                <div class="row gx-5 justify-content-center">
+        <section class="py-5" id="song-creator" style="background: var(--primary-bg); min-height: 70vh; width: 100%; overflow-x: hidden;">
+            <div class="container px-3 px-md-4 mb-5">
+                <div class="row gx-3 gx-md-4 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
                         
                         <!-- Progress Bar -->
@@ -166,9 +166,9 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="py-5" style="background: var(--secondary-bg);">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
+        <section class="py-5" style="background: var(--secondary-bg); width: 100%; overflow-x: hidden;">
+            <div class="container px-3 px-md-4">
+                <div class="row gx-3 gx-md-4 justify-content-center">
                     <div class="col-lg-10 col-xl-8">
                         <div class="text-center mb-5">
                             <h2 class="fw-bolder" style="color: var(--accent-ice);">How It Works</h2>
@@ -233,6 +233,17 @@
     <script src="js/song-creator.js"></script>
     
     <style>
+        * {
+            max-width: 100%;
+        }
+        
+        body, html {
+            overflow-x: hidden !important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
         .iceman-title-container {
             position: relative;
         }

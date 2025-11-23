@@ -90,6 +90,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Ultra-simplified background for performance */
@@ -268,6 +272,7 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  box-sizing: border-box;
 }
 
 .container-fluid {
@@ -279,18 +284,50 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   margin: 0 calc(var(--spacing-md) * -0.5);
+  width: 100%;
 }
 
 .col {
   flex: 1;
   padding: 0 calc(var(--spacing-md) * 0.5);
   margin-bottom: var(--spacing-md);
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .col-12 { width: 100%; }
 .col-6 { width: 50%; }
 .col-4 { width: 33.333%; }
 .col-3 { width: 25%; }
+
+/* Responsive columns */
+@media (max-width: 992px) {
+  .col-lg-2 { width: 50%; }
+  .col-lg-4 { width: 100%; }
+  .col-lg-6 { width: 100%; }
+  .col-lg-8 { width: 100%; }
+  .col-lg-10 { width: 100%; }
+  .col-md-4 { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .col-md-4 { width: 100%; }
+  .col-md-6 { width: 100%; }
+  .col-lg-2 { width: 100%; }
+  .col-lg-4 { width: 100%; }
+  .col-lg-6 { width: 100%; }
+  .col-lg-8 { width: 100%; }
+  .col-lg-10 { width: 100%; }
+  .col-xl-6 { width: 100%; }
+  .col-xl-8 { width: 100%; }
+  .col-4 { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 80px;
+  }
+}
 
 /* TV-Style Card Component */
 .card {
@@ -365,6 +402,7 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: var(--z-fixed);
   transition: var(--transition-fast);
   box-shadow: 0 4px 12px rgba(100, 181, 246, 0.15);
@@ -375,6 +413,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
 
 .navbar-brand {
@@ -393,6 +434,8 @@ a:hover {
   padding: 0;
   gap: var(--spacing-lg);
   align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
 }
 
 .nav-item {
@@ -408,6 +451,22 @@ a:hover {
   text-decoration: none;
   display: block;
   border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .nav-link {
+    font-size: 0.85rem;
+    padding: var(--spacing-sm) 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 0.8rem;
+    padding: var(--spacing-sm) 0.4rem;
+  }
 }
 
 .nav-link:hover,
