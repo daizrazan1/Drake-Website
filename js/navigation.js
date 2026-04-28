@@ -241,10 +241,69 @@ class NavigationManager {
     }
 }
 
+// ---------- Smooth scroll-reveal for non-grid sections ----------
+function setupScrollReveal() {
+    const targets = document.querySelectorAll(
+        '.section, .page-header, .hero, .iceman-banner, .bio-block, .recommend-result, .card'
+    );
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+        targets.forEach(el => el.classList.add('is-visible'));
+        return;
+    }
+    targets.forEach(el => el.classList.add('reveal'));
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(el => io.observe(el));
+}
+
+// ---------- Smoother in-page anchor scrolling ----------
+function setupSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+            const id = a.getAttribute('href').slice(1);
+            if (!id) return;
+            const target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
+}
+
+// ---------- Subtle parallax on the hero (very gentle) ----------
+function setupHeroParallax() {
+    const hero = document.querySelector('.iceman-banner, .hero');
+    if (!hero) return;
+    const title = hero.querySelector('h1, .iceman-title');
+    if (!title) return;
+
+    let raf = null;
+    const onScroll = () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+            const y = Math.min(window.scrollY, 600);
+            title.style.transform = `translateY(${y * 0.08}px)`;
+            raf = null;
+        });
+    };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    window.addEventListener('scroll', onScroll, { passive: true });
+}
+
 // Initialize navigation when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize navigation functionality
     const navManager = new NavigationManager();
-    
+    setupScrollReveal();
+    setupSmoothAnchors();
+    setupHeroParallax();
     console.log('Navigation initialized successfully');
 });

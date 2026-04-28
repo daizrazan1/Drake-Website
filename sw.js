@@ -1,5 +1,5 @@
 // Drake Fan Site — Service Worker
-const CACHE_NAME = 'drake-site-v4';
+const CACHE_NAME = 'drake-site-v5';
 
 const urlsToCache = [
   '/',
