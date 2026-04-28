@@ -3,201 +3,238 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Drake's Official Fan Website - Discover music, play games, and explore Drake's incredible journey" />
+    <meta name="description" content="Drake Fan Site — explore albums, singles, OVO Sound, and stream original tracks. Iceman coming soon." />
     <meta name="author" content="Drake Fan" />
-    <title>Drake - Official Fan Website</title>
+    <title>Drake — Iceman Coming Soon</title>
 
-    <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#FFD700">
+    <meta name="theme-color" content="#b5ddd4">
     <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
 
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/modern-styles.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Hero Background -->
-    
+    <div class="grain"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container navbar-container">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/drake-ovo.jpg" alt="OVO" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 8px;"> Drake's Website
-            </a>
+        <div class="navbar-container">
+            <a class="navbar-brand" href="index.php">DRAKE</a>
 
             <button class="mobile-toggle" aria-label="Toggle navigation menu">
                 <i class="bi bi-list"></i>
             </button>
 
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.php">Home</a>
-                </li>
+                <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
-                        Albums <i class="bi bi-chevron-down"></i>
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">Discography</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="albums.php">All Albums</a>
+                        <a class="dropdown-item" href="albums.php">Albums</a>
                         <a class="dropdown-item" href="singles.php">Singles</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.php">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ovo.php">OVO Artists</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="song-recommender.php">Song Recommender</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="song-creator.php">Song Creator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="song-guesser.php">Song Guesser</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="ovo.php">OVO Sound</a></li>
+                <li class="nav-item"><a class="nav-link" href="song-recommender.php">Recommender</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="py-5" style="padding-top: 120px; background: var(--primary-bg); min-height: 60vh; display: flex; align-items: center;">
-        <div class="container px-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-6">
-                    <div class="text-center">
-                        <div class="creator-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
-                            <i class="bi bi-disc" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
-                        </div>
-                        <h1 class="fw-bolder mb-3" style="color: var(--accent-ice); font-size: 2.5rem;">Drake's Website</h1>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Discover the music, explore the journey, and play the games. Your ultimate Drake fan destination.</p>
-                        <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                            <div class="stat-item text-center">
-                                <div class="stat-number">19</div>
-                                <div class="stat-label">Albums</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">250+</div>
-                                <div class="stat-label">Songs</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">OVO</div>
-                                <div class="stat-label">Sound</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Iceman Coming Soon Banner -->
+    <section class="iceman-banner">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="stat-card fade-in">
-                        <div class="stat-number" data-count="19">0</div>
-                        <div class="stat-label">Studio Albums</div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="stat-card fade-in">
-                        <div class="stat-number" data-count="500">0</div>
-                        <div class="stat-label">Total Songs</div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="stat-card fade-in">
-                        <div class="stat-number" data-count="5">0</div>
-                        <div class="stat-label">Grammy Awards</div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="stat-card fade-in">
-                        <div class="stat-number" data-count="34">0</div>
-                        <div class="stat-label">Billboard Awards</div>
-                    </div>
-                </div>
+            <p class="hero-eyebrow">A New Era · 2026</p>
+            <h1 class="iceman-title chromatic-strong">ICEMAN</h1>
+            <p class="hero-sub">The next chapter from Drake. A frozen sound, a thawed heart. Episode releases approaching.</p>
+            <p class="iceman-meta">— Coming Soon —</p>
+        </div>
+    </section>
+
+    <!-- Hero Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-eyebrow">— Welcome to the archive —</span>
+                <h2>Drake Fan Site</h2>
+                <p>An obsessive fan archive: every album, every single, every era. From <em>So Far Gone</em> to <em>Iceman</em> — and a small drop of original music made by yours truly.</p>
+            </div>
+
+            <div class="hero-meta">
+                <div class="meta-item"><div class="meta-num">19</div><div class="meta-label">Albums</div></div>
+                <div class="meta-item"><div class="meta-num">250+</div><div class="meta-label">Songs</div></div>
+                <div class="meta-item"><div class="meta-num">5</div><div class="meta-label">Grammys</div></div>
+                <div class="meta-item"><div class="meta-num">OVO</div><div class="meta-label">Sound</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- My Music — Download Cards -->
+    <section class="section" id="my-music" style="border-top: 3px solid var(--ink-dark); border-bottom: 3px solid var(--ink-dark);">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2>Explore Drake's World</h2>
-                <p class="text-secondary">Interactive experiences for every Drake fan</p>
+            <div class="section-title">
+                <span class="section-eyebrow">— Original Tracks —</span>
+                <h2>My Music</h2>
+                <p>A few songs of my own, inspired by the OVO sound. Drop the file path into <code style="font-family: var(--mono); background: var(--paper); padding: 2px 6px; border: 1px solid var(--ink-dark);">music/</code> and the buttons below will let visitors download.</p>
+            </div>
+
+            <div class="download-grid">
+
+                <!-- Track 1 -->
+                <article class="track-card">
+                    <div class="track-art">
+                        <span class="track-art-placeholder">Cover · 01</span>
+                    </div>
+                    <div class="track-meta">
+                        <span class="track-num">Track 01</span>
+                        <h3>Untitled One</h3>
+                        <p class="track-info">A late-night cut. Replace with your own title and audio file.</p>
+                    </div>
+                    <div class="track-actions">
+                        <a class="btn btn-sm" href="music/track-01.mp3" download>
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <a class="btn btn-sm btn-outline" href="music/track-01.mp3" target="_blank">
+                            <i class="bi bi-play-fill"></i> Play
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Track 2 -->
+                <article class="track-card">
+                    <div class="track-art">
+                        <span class="track-art-placeholder">Cover · 02</span>
+                    </div>
+                    <div class="track-meta">
+                        <span class="track-num">Track 02</span>
+                        <h3>Untitled Two</h3>
+                        <p class="track-info">Replace this card text with the song's name and a short note.</p>
+                    </div>
+                    <div class="track-actions">
+                        <a class="btn btn-sm" href="music/track-02.mp3" download>
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <a class="btn btn-sm btn-outline" href="music/track-02.mp3" target="_blank">
+                            <i class="bi bi-play-fill"></i> Play
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Track 3 -->
+                <article class="track-card">
+                    <div class="track-art">
+                        <span class="track-art-placeholder">Cover · 03</span>
+                    </div>
+                    <div class="track-meta">
+                        <span class="track-num">Track 03</span>
+                        <h3>Untitled Three</h3>
+                        <p class="track-info">Add your audio to <span class="text-mono">music/track-03.mp3</span> to enable the download.</p>
+                    </div>
+                    <div class="track-actions">
+                        <a class="btn btn-sm" href="music/track-03.mp3" download>
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <a class="btn btn-sm btn-outline" href="music/track-03.mp3" target="_blank">
+                            <i class="bi bi-play-fill"></i> Play
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Track 4 -->
+                <article class="track-card">
+                    <div class="track-art">
+                        <span class="track-art-placeholder">Cover · 04</span>
+                    </div>
+                    <div class="track-meta">
+                        <span class="track-num">Track 04</span>
+                        <h3>Untitled Four</h3>
+                        <p class="track-info">Add a fourth track here, or remove this card if you only have three.</p>
+                    </div>
+                    <div class="track-actions">
+                        <a class="btn btn-sm" href="music/track-04.mp3" download>
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <a class="btn btn-sm btn-outline" href="music/track-04.mp3" target="_blank">
+                            <i class="bi bi-play-fill"></i> Play
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-eyebrow">— The archive —</span>
+                <h2>Explore</h2>
+                <p>Three corners of the catalogue.</p>
             </div>
 
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-music-note-beamed"></i>
+                <div class="col-4 col-md-6 col-12">
+                    <div class="card">
+                        <span class="card-tag">Section 01</span>
+                        <div class="card-icon"><i class="bi bi-disc"></i></div>
+                        <h3>Albums</h3>
+                        <p>Studio albums, mixtapes, and collaborations from <em>So Far Gone</em> to <em>$$$4U</em>.</p>
+                        <div style="margin-top: auto; padding-top: 1rem;">
+                            <a href="albums.php" class="btn btn-outline btn-sm">Open</a>
                         </div>
-                        <h3 class="feature-title">Complete Discography</h3>
-                        <p class="feature-description">Explore every album, track, and collaboration from Drake's incredible career.</p>
-                        <a href="albums.php" class="btn btn-ghost">Browse Albums</a>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-gamepad2"></i>
+                <div class="col-4 col-md-6 col-12">
+                    <div class="card">
+                        <span class="card-tag">Section 02</span>
+                        <div class="card-icon"><i class="bi bi-music-note-beamed"></i></div>
+                        <h3>Singles</h3>
+                        <p>The hits, the loosies, the leaks. Filter by era, search by name.</p>
+                        <div style="margin-top: auto; padding-top: 1rem;">
+                            <a href="singles.php" class="btn btn-outline btn-sm">Open</a>
                         </div>
-                        <h3 class="feature-title">Song Guesser Game</h3>
-                        <p class="feature-description">Test your Drake knowledge with our interactive music guessing game.</p>
-                        <a href="song-guesser.php" class="btn btn-ghost">Play Game</a>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-heart-fill"></i>
+                <div class="col-4 col-md-6 col-12">
+                    <div class="card">
+                        <span class="card-tag">Section 03</span>
+                        <div class="card-icon"><i class="bi bi-people"></i></div>
+                        <h3>OVO Sound</h3>
+                        <p>The label and the family — PARTYNEXTDOOR, Majid Jordan, Roy Woods, dvsn and more.</p>
+                        <div style="margin-top: auto; padding-top: 1rem;">
+                            <a href="ovo.php" class="btn btn-outline btn-sm">Open</a>
                         </div>
-                        <h3 class="feature-title">Song Recommender</h3>
-                        <p class="feature-description">Get personalized Drake song recommendations based on your preferences.</p>
-                        <a href="song-recommender.php" class="btn btn-ghost">Find Your Song</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="row">
+                <div class="col-6 col-12">
+                    <div class="card">
+                        <span class="card-tag">Find your track</span>
+                        <h3>Song Recommender</h3>
+                        <p>Tell us your mood, your era, the kind of feature you like — and we'll match you with the right Drake song.</p>
+                        <div style="margin-top: auto; padding-top: 1rem;">
+                            <a href="song-recommender.php" class="btn btn-sm">Open Recommender</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-mic-fill"></i>
+                <div class="col-6 col-12">
+                    <div class="card">
+                        <span class="card-tag">The man</span>
+                        <h3>About Drake</h3>
+                        <p>Toronto. Forest Hill. Degrassi. <em>So Far Gone</em>. The 6. The legacy.</p>
+                        <div style="margin-top: auto; padding-top: 1rem;">
+                            <a href="about.php" class="btn btn-sm btn-outline">Read Bio</a>
                         </div>
-                        <h3 class="feature-title">Song Creator</h3>
-                        <p class="feature-description">Create your own Drake-style song with AI assistance and custom lyrics.</p>
-                        <a href="song-creator.php" class="btn btn-ghost">Create Song</a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <h3 class="feature-title">OVO Sound Artists</h3>
-                        <p class="feature-description">Discover the talented artists under Drake's OVO Sound label.</p>
-                        <a href="ovo.php" class="btn btn-ghost">Meet the Artists</a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <h3 class="feature-title">Singles Collection</h3>
-                        <p class="feature-description">Browse through Drake's extensive collection of hit singles and chart-toppers.</p>
-                        <a href="singles.php" class="btn btn-ghost">View Singles</a>
                     </div>
                 </div>
             </div>
@@ -205,834 +242,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center p-5" style="background: var(--card-bg); margin-top: 2rem;">
+    <footer>
         <div class="container">
-            <p class="text-secondary mb-3">
-                Follow Drake on social media for the latest updates
-            </p>
-            <div class="d-flex justify-center gap-3 mb-4">
-                <a href="https://www.instagram.com/champagnepapi" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Instagram">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://twitter.com/drake" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Twitter">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Spotify">
-                    <i class="bi bi-spotify"></i>
-                </a>
-                <a href="https://www.youtube.com/DrakeOfficial" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="YouTube">
-                    <i class="bi bi-youtube"></i>
-                </a>
+            <p>— Follow Drake —</p>
+            <div class="social-row">
+                <a href="https://www.instagram.com/champagnepapi" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/drake" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                <a href="https://www.youtube.com/DrakeOfficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
-            <p class="text-muted">&copy; 2025 Drake Fan Website. Built with 💛 for fans, by fans.</p>
+            <p>&copy; 2026 Drake Fan Site · Built by fans, for fans</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/navigation.js"></script>
-    <script>
-        // Mobile Navigation Toggle
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar-nav').classList.toggle('active');
-        });
-
-        // Animated Counter
-        function animateCounters() {
-            const counters = document.querySelectorAll('[data-count]');
-
-            counters.forEach(counter => {
-                const target = parseInt(counter.dataset.count);
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-
-                updateCounter();
-            });
-        }
-
-        // Initialize animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                        if (entry.target.querySelector('[data-count]')) {
-                            setTimeout(animateCounters, 500);
-                        }
-                    }
-                });
-            });
-
-            document.querySelectorAll('.stat-card, .feature-card').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Smooth scrolling for anchor links (but prevent error on bare #)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Prevent action if it's just a bare hash
-                    if (href === '#') {
-                        e.preventDefault();
-                        return;
-                    }
-                    
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => console.log('SW registered:', registration))
-                .catch(error => console.log('SW registration failed:', error));
-        }
-    </script>
-
-    <style>
-        :root {
-            --primary-color: #64b5f6; /* Light Blue */
-            --secondary-color: #e0e0e0; /* Light Gray */
-            --accent-gold: #FFD700; /* Drake's signature gold */
-            --background-dark: #0a0a0a;
-            --background-slightly-dark: #1a1a1a;
-            --card-bg: #1f1f1f;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
-            --border-color: #333333;
-            --radius-lg: 1rem;
-            --transition-normal: all 0.3s ease;
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-slightly-dark) 100%);
-            color: var(--text-primary);
-            min-height: 100vh;
-            margin: 0; /* Ensure no default margin */
-        }
-
-        .navbar {
-            background: rgba(26, 26, 26, 0.8); /* Slightly transparent dark */
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1.5rem;
-        }
-
-        .navbar-brand {
-            color: var(--accent-gold);
-            font-size: 1.75rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar-brand i {
-            font-size: 2rem;
-        }
-
-        .navbar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-item .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition-normal);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-lg);
-        }
-
-        .nav-item .nav-link:hover,
-        .nav-item .nav-link.active {
-            color: var(--primary-color);
-            background: rgba(100, 181, 246, 0.1);
-        }
-
-        .nav-item.dropdown .dropdown-menu {
-            display: none;
-            position: absolute;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            padding: 0.5rem 0;
-            min-width: 180px;
-            z-index: 1001; /* Ensure dropdown is above other content */
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            display: block;
-            transition: var(--transition-normal);
-        }
-
-        .dropdown-item:hover {
-            background: var(--background-slightly-dark);
-            color: var(--primary-color);
-        }
-
-        .nav-link i.bi-chevron-down {
-            margin-left: 0.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-item.dropdown .nav-link:hover .bi-chevron-down {
-            transform: rotate(180deg);
-        }
-
-        .mobile-toggle {
-            display: none; /* Hidden by default */
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.75rem;
-            cursor: pointer;
-        }
-
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            filter: brightness(0.4) contrast(1.1);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(10, 25, 41, 0.8) 0%, 
-                rgba(100, 181, 246, 0.2) 50%, 
-                rgba(10, 25, 41, 0.8) 100%
-            );
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        @keyframes heroScanLine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 3;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-gold), #ff6b35); /* Transitioning from gold to orange */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-lg);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-normal);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--background-dark);
-        }
-        .btn-primary:hover {
-            background: #42a5f5; /* Darker blue on hover */
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: var(--background-slightly-dark);
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-        .btn-secondary:hover {
-            background: rgba(100, 181, 246, 0.1);
-            border-color: #64b5f6;
-            color: var(--primary-color);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-        .btn-ghost:hover {
-            background: rgba(100, 181, 246, 0.2);
-            border-color: #64b5f6;
-            color: var(--primary-color);
-        }
-
-        .stats-section {
-            padding: 4rem 0;
-            background: var(--background-slightly-dark);
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: var(--transition-normal);
-            border: 1px solid var(--border-color);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-gold);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .features-section {
-            padding: 4rem 0;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: var(--transition-normal);
-            border: 1px solid var(--border-color);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .feature-description {
-            color: var(--text-secondary);
-            flex-grow: 1; /* Allows description to take available space */
-            margin-bottom: 1.5rem;
-        }
-
-        footer {
-            background: var(--background-slightly-dark) !important; /* Use !important to override inline style */
-            margin-top: 2rem;
-            padding: 3rem 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: var(--transition-normal);
-        }
-
-        .footer-social a:hover {
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .footer-text {
-            color: var(--text-secondary);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-3 {
-            margin-bottom: 1rem;
-        }
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-        .mb-5 {
-            margin-bottom: 2rem;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-        .justify-content-between {
-            justify-content: space-between;
-        }
-
-        .gap-3 {
-            gap: 1rem;
-        }
-
-        .col-3 {
-            width: 25%;
-            padding: 0 1rem; /* Add some horizontal padding */
-        }
-
-        .col-4 {
-            width: 33.33%;
-            padding: 0 1rem; /* Add some horizontal padding */
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -1rem; /* Counteract column padding */
-        }
-
-        .text-secondary {
-            color: var(--text-secondary);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        /* Media Queries */
-        @media (max-width: 992px) {
-            .col-4 {
-                width: 50%;
-            }
-            .col-3 {
-                width: 50%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-nav {
-                display: none; /* Hide nav links by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--card-bg);
-                padding: 1rem 0;
-                box-shadow: var(--shadow-xl);
-            }
-            .navbar-nav.active {
-                display: flex; /* Show nav links when active */
-            }
-            .nav-item {
-                width: 100%;
-                text-align: center;
-            }
-            .nav-item .nav-link {
-                padding: 1rem;
-                width: 100%;
-                display: block;
-            }
-            .mobile-toggle {
-                display: block; /* Show mobile toggle button */
-            }
-
-            .hero-title {
-                font-size: 2.5rem; /* Adjusted for better mobile fit */
-            }
-
-            .flex-wrap {
-                flex-wrap: wrap;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .hero-cta .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .stat-card {
-                margin-bottom: 1.5rem; /* Add space between stacked stat cards */
-            }
-            .col-3, .col-4 {
-                width: 100%; /* Stack elements on small screens */
-                padding: 0 0.5rem; /* Adjust padding for stacking */
-            }
-            .row {
-                margin: 0 -0.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        /* Specific page styles (placeholder for future additions) */
-        .song-guesser-page, .song-creator-page {
-            padding: 60px 0;
-        }
-
-        .song-guesser-page h2, .song-creator-page h2 {
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            color: var(--primary-color);
-        }
-
-        /* Song Guesser Page - Layout and Timer */
-        .quiz-container {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            max-width: 700px;
-            margin: 2rem auto;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-
-        .quiz-timer {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-        }
-
-        .question-counter {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .question-text {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
-        }
-
-        .answer-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .answer-btn {
-            background: var(--background-slightly-dark);
-            color: var(--text-primary);
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            text-align: left;
-            cursor: pointer;
-            transition: var(--transition-normal);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .answer-btn:hover {
-            background: var(--card-bg);
-            border-color: var(--primary-color);
-        }
-
-        .answer-btn.selected {
-            background: var(--primary-color);
-            color: var(--background-dark);
-            border-color: var(--primary-color);
-        }
-
-        .answer-btn.correct {
-            background: #4caf50; /* Green */
-            border-color: #4caf50;
-        }
-
-        .answer-btn.incorrect {
-            background: #f44336; /* Red */
-            border-color: #f44336;
-        }
-
-        .quiz-feedback {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .feedback-correct {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4caf50;
-        }
-
-        .feedback-incorrect {
-            background: rgba(244, 67, 54, 0.2);
-            color: #f44336;
-        }
-
-        .next-question-btn {
-            display: block;
-            margin: 2rem auto 0;
-            padding: 0.75rem 2rem;
-            background: var(--accent-gold);
-            color: var(--background-dark);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition-normal);
-        }
-
-        .next-question-btn:hover {
-            background: #e0c000;
-            transform: translateY(-2px);
-        }
-
-        /* Song Guesser Page - Specific Layout for pushed left elements */
-        .song-guesser-page .container {
-            text-align: left; /* Reset text alignment for content */
-        }
-
-        .song-guesser-page .feature-card {
-            display: flex; /* Ensure flexbox is applied */
-        }
-
-        /* Song Creator Page */
-        .song-creator-page .container {
-            max-width: 900px; /* Wider container for more controls */
-        }
-
-        .song-creator-controls {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-xl);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .creator-input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .creator-input-group label {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .creator-input-group input,
-        .creator-input-group textarea,
-        .creator-input-group select {
-            background: var(--background-slightly-dark);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 0.75rem;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .creator-input-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .creator-controls-actions {
-            grid-column: 1 / -1; /* Span across all columns */
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .creator-controls-actions .btn {
-            padding: 0.75rem 2rem;
-            background: var(--accent-gold);
-            color: var(--background-dark);
-            border: none;
-            font-size: 1.1rem;
-        }
-        .creator-controls-actions .btn:hover {
-            background: #e0c000;
-        }
-
-        /* Add new singles to the singles page or a relevant section */
-        /* Assuming there's a singles.php or a section to display them */
-        .singles-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .single-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: var(--transition-normal);
-        }
-        .single-item:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-4px);
-        }
-        .single-item h4 {
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        .single-item p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-    </style>
 </body>
 </html>

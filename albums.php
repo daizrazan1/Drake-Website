@@ -1,539 +1,172 @@
+<?php
+$data = json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+$albums = $data['artist']['albums'] ?? [];
+
+$covers = [
+    'Some Sexy Songs 4 U' => 'https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png',
+    'For All the Dogs' => 'https://upload.wikimedia.org/wikipedia/en/0/05/Drake_-_For_All_The_Dogs.png',
+    '100 Gigs' => 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png',
+    'Her Loss' => 'https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png',
+    'Honestly, Nevermind' => 'https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png',
+    'Certified Lover Boy' => 'https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png',
+    'Scary Hours 2' => 'https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png',
+    'Dark Lane Demo Tapes' => 'https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png',
+    'Care Package' => 'https://upload.wikimedia.org/wikipedia/en/8/8b/Drake_Care_Package_cover.jpg',
+    'Scorpion' => 'https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg',
+    'More Life' => 'https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg',
+    'Views' => 'https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg',
+    'What A Time To Be Alive' => 'https://upload.wikimedia.org/wikipedia/en/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg',
+    'If You\'re Reading This It\'s Too Late' => 'https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png',
+    'Nothing Was the Same' => 'https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png',
+    'Take Care' => 'https://upload.wikimedia.org/wikipedia/en/0/04/Drake_-_Take_Care_cover.png',
+    'Thank Me Later' => 'https://upload.wikimedia.org/wikipedia/en/6/63/Drake_-_Thank_Me_Later.png',
+    'So Far Gone' => 'https://upload.wikimedia.org/wikipedia/en/c/c3/Drake_-_So_Far_Gone.png',
+];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Drake's Albums" />
-    <meta name="author" content="Replit AI" />
-    <title>Drake - Albums</title>
+    <meta name="description" content="Drake's complete album discography." />
+    <meta name="author" content="Drake Fan" />
+    <title>Drake — Albums</title>
+
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#2c2c2c">
-    <link rel="icon" type="image/jpeg" href="images/baha.jpg?v=2" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#b5ddd4">
+    <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/modern-styles.css" rel="stylesheet" />
-    <style>
-        /* Consistent with site theme */
-        .favorite-btn.active {
-            color: var(--accent-ice);
-        }
-        .like-count {
-            font-size: 0.9em;
-            margin-left: 10px;
-            color: var(--text-secondary);
-        }
-        
-        /* Album page specific styles */
-        body {
-            padding-top: 90px;
-        }
-    </style>
 </head>
 <body>
-    
-    <!-- Navigation -->
+    <div class="grain"></div>
+
     <nav class="navbar">
-        <div class="container navbar-container">
-            <a class="navbar-brand" href="index.php">
-                <i class="bi bi-music-note-beamed"></i> Drake
-            </a>
-            
-            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <i class="bi bi-list"></i>
-            </button>
-            
-            <ul class="navbar-nav" role="menubar">
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="index.php" role="menuitem">Home</a>
-                </li>
-                <li class="nav-item dropdown" role="none">
-                    <a class="nav-link dropdown-toggle active" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" id="albumsDropdown">
-                        Albums <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu" role="menu" aria-labelledby="albumsDropdown">
-                        <a class="dropdown-item active" href="albums.php" role="menuitem">All Albums</a>
-                        <a class="dropdown-item" href="singles.php" role="menuitem">Singles</a>
+        <div class="navbar-container">
+            <a class="navbar-brand" href="index.php">DRAKE</a>
+            <button class="mobile-toggle" aria-label="Toggle navigation menu"><i class="bi bi-list"></i></button>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" aria-haspopup="true">Discography</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="albums.php">Albums</a>
+                        <a class="dropdown-item" href="singles.php">Singles</a>
                     </div>
                 </li>
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="about.php" role="menuitem">About</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="ovo.php" role="menuitem">OVO Artists</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-recommender.php" role="menuitem">Song Recommender</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-creator.php" role="menuitem">Song Creator</a>
-                </li>
-                <li class="nav-item" role="none">
-                    <a class="nav-link" href="song-guesser.php" role="menuitem">Song Guesser</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="ovo.php">OVO Sound</a></li>
+                <li class="nav-item"><a class="nav-link" href="song-recommender.php">Recommender</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Header -->
-    <header class="py-5" style="padding-top: 120px; background: var(--primary-bg); min-height: 60vh; display: flex; align-items: center;">
-        <div class="container px-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-6">
-                    <div class="text-center">
-                        <div class="creator-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
-                            <i class="bi bi-vinyl" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
-                        </div>
-                        <h1 class="fw-bolder mb-3" style="color: var(--accent-ice); font-size: 2.5rem;">Drake's Albums</h1>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Explore Drake's complete discography of albums and projects spanning his legendary career.</p>
-                        <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                            <div class="stat-item text-center">
-                                <div class="stat-number">19</div>
-                                <div class="stat-label">Studio Albums</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">Multiple</div>
-                                <div class="stat-label">Projects</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">Timeless</div>
-                                <div class="stat-label">Classics</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="hero-eyebrow">— Discography —</p>
+            <h1 class="chromatic-strong">Albums</h1>
+            <p>Studio albums, mixtapes, EPs, and collaborations — every chapter from 2009 to today.</p>
         </div>
     </header>
 
-    <main class="bg-dark" style="padding-top: 50px;">
-        <div class="container px-4 px-lg-5 text-center text-white">
-            <div class="row row-cols-1 row-cols-md-4 g-3">
-                <!-- Some Sexy Songs 4 U (2025) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" class="card-img-top" alt="Some Sexy Songs 4 U">
-                        <div class="card-body">
-                            <h5 class="card-title">Some Sexy Songs 4 U (2025)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#sexySongsSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Some Sexy Songs 4 U"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Some Sexy Songs 4 U">0 likes</span>
-                            <div class="collapse" id="sexySongsSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">CN Tower</li>
-                                    <li class="list-group-item bg-dark text-white">Moth Balls</li>
-                                    <li class="list-group-item bg-dark text-white">Something About You</li>
-                                    <li class="list-group-item bg-dark text-white">Nokia</li>
-                                    <li class="list-group-item bg-dark text-white">Spider-Man Superman</li>
-                                </ul>
-                            </div>
-                        </div>
+    <section class="section">
+        <div class="container">
+            <div class="album-grid">
+                <?php foreach ($albums as $i => $album):
+                    $title = $album['title'];
+                    $year  = $album['release_year'];
+                    $type  = ucfirst($album['type']);
+                    $songs = $album['all_songs'] ?? [];
+                    $cover = $covers[$title] ?? '';
+                    $aid   = 'album-' . $i;
+                ?>
+                <article class="album-card">
+                    <?php if ($cover): ?>
+                        <img src="<?= htmlspecialchars($cover) ?>" alt="<?= htmlspecialchars($title) ?>" loading="lazy" onerror="this.style.display='none'">
+                    <?php endif; ?>
+                    <div class="album-year"><?= htmlspecialchars($type) ?> · <?= htmlspecialchars((string)$year) ?></div>
+                    <h3><?= htmlspecialchars($title) ?></h3>
+                    <?php if (!empty($album['collaborator'])): ?>
+                        <p style="font-style: italic; color: var(--ink-soft); font-size: 0.9rem; margin: 0;">with <?= htmlspecialchars($album['collaborator']) ?></p>
+                    <?php endif; ?>
+
+                    <div class="album-actions">
+                        <button class="btn btn-sm btn-outline" type="button" onclick="toggleSongs('<?= $aid ?>')">
+                            <i class="bi bi-list-ul"></i> Tracklist
+                        </button>
+                        <button class="btn btn-sm btn-outline favorite-btn" data-album="<?= htmlspecialchars($title, ENT_QUOTES) ?>">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="like-count" data-album="<?= htmlspecialchars($title, ENT_QUOTES) ?>">0</span>
                     </div>
-                </div>
-                <!-- For All the Dogs (2023) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" class="card-img-top" alt="For All the Dogs">
-                        <div class="card-body">
-                            <h5 class="card-title">For All the Dogs (2023)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#forAllTheDogsSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="For All the Dogs"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="For All the Dogs">0 likes</span>
-                            <div class="collapse" id="forAllTheDogsSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Virginia Beach</li>
-                                    <li class="list-group-item bg-dark text-white">Slime You Out</li>
-                                    <li class="list-group-item bg-dark text-white">First Person Shooter</li>
-                                    <li class="list-group-item bg-dark text-white">IDGAF</li>
-                                    <li class="list-group-item bg-dark text-white">8AM in Charlotte</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 100 Gigs (2023) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Drake_-_100_Gigs.png" class="card-img-top" alt="100 Gigs">
-                        <div class="card-body">
-                            <h5 class="card-title">100 Gigs (2023)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#hundredGigsSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="100 Gigs"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="100 Gigs">0 likes</span>
-                            <div class="collapse" id="hundredGigsSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">It's Up</li>
-                                    <li class="list-group-item bg-dark text-white">Blue Green Red</li>
-                                    <li class="list-group-item bg-dark text-white">Housekeeping Knows</li>
-                                    <li class="list-group-item bg-dark text-white">No Face</li>
-                                    <li class="list-group-item bg-dark text-white">The Motion</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Her Loss (2022) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Drake_and_21_Savage_-_Her_Loss.png" class="card-img-top" alt="Her Loss">
-                        <div class="card-body">
-                            <h5 class="card-title">Her Loss (2022)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#herLossSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Her Loss"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Her Loss">0 likes</span>
-                            <div class="collapse" id="herLossSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Rich Flex</li>
-                                    <li class="list-group-item bg-dark text-white">Major Distribution</li>
-                                    <li class="list-group-item bg-dark text-white">On BS</li>
-                                    <li class="list-group-item bg-dark text-white">Spin Bout U</li>
-                                    <li class="list-group-item bg-dark text-white">Circo Loco</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Honestly, Nevermind (2022) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Honestly%2C_Nevermind_-_Drake.png" class="card-img-top" alt="Honestly, Nevermind">
-                        <div class="card-body">
-                            <h5 class="card-title">Honestly, Nevermind (2022)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#honestlySongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Honestly, Nevermind"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Honestly, Nevermind">0 likes</span>
-                            <div class="collapse" id="honestlySongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Falling Back</li>
-                                    <li class="list-group-item bg-dark text-white">Texts Go Green</li>
-                                    <li class="list-group-item bg-dark text-white">Massive</li>
-                                    <li class="list-group-item bg-dark text-white">Sticky</li>
-                                    <li class="list-group-item bg-dark text-white">Jimmy Cooks</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Scary Hours 2 (2021) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/1/1a/Drake_-_Scary_Hours_2.png" class="card-img-top" alt="Scary Hours 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Scary Hours 2 (2021)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#scaryHours2Songs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Scary Hours 2"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Scary Hours 2">0 likes</span>
-                            <div class="collapse" id="scaryHours2Songs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">What's Next</li>
-                                    <li class="list-group-item bg-dark text-white">Wants and Needs</li>
-                                    <li class="list-group-item bg-dark text-white">Lemon Pepper Freestyle</li>
-                                    <li class="list-group-item bg-dark text-white">What's Next (Extended)</li>
-                                    <li class="list-group-item bg-dark text-white">Wants and Needs (Remix)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Certified Lover Boy (2021) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/7/79/Drake_-_Certified_Lover_Boy.png" class="card-img-top" alt="Certified Lover Boy">
-                        <div class="card-body">
-                            <h5 class="card-title">Certified Lover Boy (2021)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#clbSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Certified Lover Boy"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Certified Lover Boy">0 likes</span>
-                            <div class="collapse" id="clbSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Way 2 Sexy</li>
-                                    <li class="list-group-item bg-dark text-white">Fair Trade</li>
-                                    <li class="list-group-item bg-dark text-white">Knife Talk</li>
-                                    <li class="list-group-item bg-dark text-white">Girls Want Girls</li>
-                                    <li class="list-group-item bg-dark text-white">No Friends in the Industry</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dark Lane Demo Tapes (2020) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png" class="card-img-top" alt="Dark Lane Demo Tapes">
-                        <div class="card-body">
-                            <h5 class="card-title">Dark Lane Demo Tapes (2020)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#darkLaneSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Dark Lane Demo Tapes"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Dark Lane Demo Tapes">0 likes</span>
-                            <div class="collapse" id="darkLaneSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Chicago Freestyle</li>
-                                    <li class="list-group-item bg-dark text-white">Toosie Slide</li>
-                                    <li class="list-group-item bg-dark text-white">Pain 1993</li>
-                                    <li class="list-group-item bg-dark text-white">When to Say When</li>
-                                    <li class="list-group-item bg-dark text-white">Demons</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Care Package (2019) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Drake_Care_Package_cover.jpg/220px-Drake_Care_Package_cover.jpg" class="card-img-top" alt="Care Package">
-                        <div class="card-body">
-                            <h5 class="card-title">Care Package (2019)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#carePackageSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Care Package"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Care Package">0 likes</span>
-                            <div class="collapse" id="carePackageSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Dreams Money Can Buy</li>
-                                    <li class="list-group-item bg-dark text-white">The Motion</li>
-                                    <li class="list-group-item bg-dark text-white">Trust Issues</li>
-                                    <li class="list-group-item bg-dark text-white">Jodeci Freestyle</li>
-                                    <li class="list-group-item bg-dark text-white">Girls Love Beyoncé</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Scorpion (2018) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" class="card-img-top" alt="Scorpion">
-                        <div class="card-body">
-                            <h5 class="card-title">Scorpion (2018)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#scorpionSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Scorpion"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Scorpion">0 likes</span>
-                            <div class="collapse" id="scorpionSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">God's Plan</li>
-                                    <li class="list-group-item bg-dark text-white">Nice for What</li>
-                                    <li class="list-group-item bg-dark text-white">Nonstop</li>
-                                    <li class="list-group-item bg-dark text-white">In My Feelings</li>
-                                    <li class="list-group-item bg-dark text-white">I'm Upset</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- More Life (2017) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg" class="card-img-top" alt="More Life">
-                        <div class="card-body">
-                            <h5 class="card-title">More Life (2017)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#moreLifeSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="More Life"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="More Life">0 likes</span>
-                            <div class="collapse" id="moreLifeSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Passionfruit</li>
-                                    <li class="list-group-item bg-dark text-white">Free Smoke</li>
-                                    <li class="list-group-item bg-dark text-white">Fake Love</li>
-                                    <li class="list-group-item bg-dark text-white">Portland</li>
-                                    <li class="list-group-item bg-dark text-white">Gyalchester</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Views (2016) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" class="card-img-top" alt="Views">
-                        <div class="card-body">
-                            <h5 class="card-title">Views (2016)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#viewsSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Views"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Views">0 likes</span>
-                            <div class="collapse" id="viewsSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">One Dance</li>
-                                    <li class="list-group-item bg-dark text-white">Hotline Bling</li>
-                                    <li class="list-group-item bg-dark text-white">Controlla</li>
-                                    <li class="list-group-item bg-dark text-white">Too Good</li>
-                                    <li class="list-group-item bg-dark text-white">Feel No Ways</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- What A Time To Be Alive (2015) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg/220px-Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg" class="card-img-top" alt="What A Time To Be Alive">
-                        <div class="card-body">
-                            <h5 class="card-title">What A Time To Be Alive (2015)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#wattbaSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="What A Time To Be Alive"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="What A Time To Be Alive">0 likes</span>
-                            <div class="collapse" id="wattbaSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Scholarships</li>
-                                    <li class="list-group-item bg-dark text-white">Diamonds Dancing</li>
-                                    <li class="list-group-item bg-dark text-white">Plastic Bag</li>
-                                    <li class="list-group-item bg-dark text-white">Jumpman</li>
-                                    <li class="list-group-item bg-dark text-white">Change Locations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- If You're Reading This It's Too Late (2015) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png" class="card-img-top" alt="If You're Reading This It's Too Late">
-                        <div class="card-body">
-                            <h5 class="card-title">If You're Reading This It's Too Late (2015)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#iyrtitlSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="If You're Reading This It's Too Late"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="If You're Reading This It's Too Late">0 likes</span>
-                            <div class="collapse" id="iyrtitlSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Energy</li>
-                                    <li class="list-group-item bg-dark text-white">10 Bands</li>
-                                    <li class="list-group-item bg-dark text-white">Know Yourself</li>
-                                    <li class="list-group-item bg-dark text-white">No Tellin'</li>
-                                    <li class="list-group-item bg-dark text-white">6 God</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nothing Was the Same (2013) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png" class="card-img-top" alt="Nothing Was the Same">
-                        <div class="card-body">
-                            <h5 class="card-title">Nothing Was the Same (2013)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#nothingWasTheSameSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Nothing Was the Same"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Nothing Was the Same">0 likes</span>
-                            <div class="collapse" id="nothingWasTheSameSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Started From the Bottom</li>
-                                    <li class="list-group-item bg-dark text-white">Hold On, We're Going Home</li>
-                                    <li class="list-group-item bg-dark text-white">Worst Behavior</li>
-                                    <li class="list-group-item bg-dark text-white">Tuscan Leather</li>
-                                    <li class="list-group-item bg-dark text-white">From Time</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Take Care (2011) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" class="card-img-top" alt="Take Care">
-                        <div class="card-body">
-                            <h5 class="card-title">Take Care (2011)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#takeCareSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Take Care"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Take Care">0 likes</span>
-                            <div class="collapse" id="takeCareSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Headlines</li>
-                                    <li class="list-group-item bg-dark text-white">Crew Love</li>
-                                    <li class="list-group-item bg-dark text-white">Marvins Room</li>
-                                    <li class="list-group-item bg-dark text-white">Take Care</li>
-                                    <li class="list-group-item bg-dark text-white">HYFR</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thank Me Later (2010) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/9/9c/Drake_-_Thank_Me_Later_cover.jpg" class="card-img-top" alt="Thank Me Later">
-                        <div class="card-body">
-                            <h5 class="card-title">Thank Me Later (2010)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#thankMeLaterSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="Thank Me Later"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="Thank Me Later">0 likes</span>
-                            <div class="collapse" id="thankMeLaterSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Fireworks</li>
-                                    <li class="list-group-item bg-dark text-white">Karaoke</li>
-                                    <li class="list-group-item bg-dark text-white">Over</li>
-                                    <li class="list-group-item bg-dark text-white">Find Your Love</li>
-                                    <li class="list-group-item bg-dark text-white">Miss Me</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- So Far Gone (2009) -->
-                <div class="col">
-                    <div class="card bg-dark text-white h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png" class="card-img-top" alt="So Far Gone">
-                        <div class="card-body">
-                            <h5 class="card-title">So Far Gone (2009)</h5>
-                            <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#soFarGoneSongs">See Songs</button>
-                            <button class="btn btn-outline-light btn-sm favorite-btn" data-album="So Far Gone"><i class="bi bi-heart"></i></button>
-                            <span class="like-count" data-album="So Far Gone">0 likes</span>
-                            <div class="collapse" id="soFarGoneSongs">
-                                <ul class="list-group list-group-flush bg-dark text-white">
-                                    <li class="list-group-item bg-dark text-white">Best I Ever Had</li>
-                                    <li class="list-group-item bg-dark text-white">Successful</li>
-                                    <li class="list-group-item bg-dark text-white">Houstatlantavegas</li>
-                                    <li class="list-group-item bg-dark text-white">Uptown</li>
-                                    <li class="list-group-item bg-dark text-white">The Calm</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                    <ul class="album-songs" id="<?= $aid ?>" style="display: none;">
+                        <?php foreach ($songs as $song): ?>
+                            <li><?= htmlspecialchars($song) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+                <?php endforeach; ?>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Navigation JS -->
+    <footer>
+        <div class="container">
+            <p>— Follow Drake —</p>
+            <div class="social-row">
+                <a href="https://www.instagram.com/champagnepapi" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/drake" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener noreferrer"><i class="bi bi-spotify"></i></a>
+                <a href="https://www.youtube.com/DrakeOfficial" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
+            </div>
+            <p>&copy; 2026 Drake Fan Site</p>
+        </div>
+    </footer>
+
     <script src="js/navigation.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript for favorite system -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load initial like counts from count.json (assuming it's fetched from a server)
-            fetch('count.json')
-                .then(response => response.json())
-                .then(data => {
-                    document.querySelectorAll('.like-count').forEach(span => {
-                        const album = span.getAttribute('data-album');
-                        span.textContent = `${data[album] || 0} likes`;
-                    });
-                })
-                .catch(error => console.error('Error loading count.json:', error));
+        function toggleSongs(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+        }
 
-            // Handle favorite button clicks
-            document.querySelectorAll('.favorite-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const album = button.getAttribute('data-album');
-                    button.classList.toggle('active');
+        // Likes (localStorage based)
+        const LIKES_KEY = 'drake_album_likes_v1';
+        function loadLikes() {
+            try { return JSON.parse(localStorage.getItem(LIKES_KEY)) || {}; } catch (_) { return {}; }
+        }
+        function saveLikes(likes) { localStorage.setItem(LIKES_KEY, JSON.stringify(likes)); }
 
-                    // Update like count locally
-                    const likeSpan = button.nextElementSibling;
-                    let currentLikes = parseInt(likeSpan.textContent) || 0;
-                    currentLikes = button.classList.contains('active') ? currentLikes + 1 : currentLikes - 1;
-                    likeSpan.textContent = `${currentLikes} likes`;
+        function renderLikes() {
+            const likes = loadLikes();
+            document.querySelectorAll('.like-count').forEach(el => {
+                const a = el.dataset.album;
+                el.textContent = (likes[a] || 0) + ' ❤';
+            });
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                const a = btn.dataset.album;
+                if (likes[a] && likes[a] > 0) {
+                    btn.querySelector('i').classList.remove('bi-heart');
+                    btn.querySelector('i').classList.add('bi-heart-fill');
+                }
+            });
+        }
 
-                    // Send updated like count to server (simulated)
-                    fetch('updateLikes.php', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ album: album, likes: currentLikes })
-                    })
-                    .catch(error => console.error('Error updating likes:', error));
-                });
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const likes = loadLikes();
+                const album = btn.dataset.album;
+                likes[album] = (likes[album] || 0) + 1;
+                saveLikes(likes);
+                renderLikes();
             });
         });
+
+        renderLikes();
     </script>
-    
-    <!-- Navigation JS for mobile functionality -->
-    <script src="js/navigation.js"></script>
 </body>
 </html>

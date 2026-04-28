@@ -2,823 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no" />
-    <meta name="description" content="Generate your perfect Drake song based on your preferences!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Get a Drake song recommendation based on your mood, era, and feature preference." />
     <meta name="author" content="Drake Fan" />
-    <title>Drake - Song Recommender</title>
+    <title>Drake — Recommender</title>
 
-    <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color" content="#b5ddd4">
     <link rel="icon" type="image/x-icon" href="/drake-icon-192.png" />
 
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/modern-styles.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Added for modal -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="grain"></div>
+
     <nav class="navbar">
-        <div class="container navbar-container">
-            <a class="navbar-brand" href="index.php">
-                <i class="bi bi-music-note-beamed"></i> Drake
-            </a>
-
-            <button class="mobile-toggle" aria-label="Toggle navigation menu">
-                <i class="bi bi-list"></i>
-            </button>
-
+        <div class="navbar-container">
+            <a class="navbar-brand" href="index.php">DRAKE</a>
+            <button class="mobile-toggle" aria-label="Toggle navigation menu"><i class="bi bi-list"></i></button>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">
-                        Albums <i class="bi bi-chevron-down"></i>
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true">Discography</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="albums.php">All Albums</a>
+                        <a class="dropdown-item" href="albums.php">Albums</a>
                         <a class="dropdown-item" href="singles.php">Singles</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.php">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ovo.php">OVO Artists</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="song-recommender.php">Song Recommender</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="song-creator.php">Song Creator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="song-guesser.php">Song Guesser</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="ovo.php">OVO Sound</a></li>
+                <li class="nav-item"><a class="nav-link active" href="song-recommender.php">Recommender</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="py-5" style="padding-top: 120px; background: var(--primary-bg); min-height: 60vh; display: flex; align-items: center;">
-        <div class="container px-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-6">
-                    <div class="text-center">
-                        <div class="creator-logo mb-4" style="background: linear-gradient(135deg, var(--accent-ice), var(--accent-frost)); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);">
-                            <i class="bi bi-search" style="font-size: 2.5rem; color: var(--primary-bg);"></i>
-                        </div>
-                        <h1 class="fw-bolder mb-3" style="color: var(--accent-ice); font-size: 2.5rem;">Song Recommender</h1>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Find your perfect Drake song. Answer a few questions and discover your ideal track based on your mood and preferences.</p>
-                        <div class="creator-stats d-flex justify-content-center gap-4 mb-4 flex-wrap">
-                            <div class="stat-item text-center">
-                                <div class="stat-number">100+</div>
-                                <div class="stat-label">Drake Songs</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">7</div>
-                                <div class="stat-label">Vibes</div>
-                            </div>
-                            <div class="stat-item text-center">
-                                <div class="stat-number">Smart</div>
-                                <div class="stat-label">Matching</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header class="page-header">
+        <div class="container">
+            <p class="hero-eyebrow">— Find Your Track —</p>
+            <h1 class="chromatic-strong">Recommender</h1>
+            <p>Tell us your mood, your era, and the kind of feature you like — we'll match you with the right Drake song.</p>
         </div>
     </header>
 
-    <!-- Song Generator Form -->
-    <section class="py-5">
-        <div class="container px-3 px-md-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <h2 class="card-title text-center mb-4">Song Preference Quiz</h2>
-                        <form id="songGenForm">
-                            <div class="form-group mb-4">
-                                <label class="form-label">What's your current vibe?</label>
-                                <select class="form-control form-select" name="vibe" id="vibe" required>
-                                    <option value="">Choose your vibe...</option>
-                                    <option value="sad">Sad & Emotional</option>
-                                    <option value="hyped">Hyped & Energetic</option>
-                                    <option value="happy">Happy & Uplifting</option>
-                                    <option value="party">Party & Club Ready</option>
-                                    <option value="chill">Chill & Relaxed</option>
-                                    <option value="romantic">Romantic & Intimate</option>
-                                    <option value="motivational">Motivational & Inspiring</option>
-                                </select>
-                            </div>
+    <section class="section">
+        <div class="container" style="max-width: 720px;">
+            <div class="card">
+                <span class="card-tag">Quiz · 4 Questions</span>
+                <h3 style="text-transform: none; letter-spacing: 0.04em;">Tell us about your mood</h3>
 
-                            <div class="form-group mb-4">
-                                <label class="form-label">Preferred featured artist type?</label>
-                                <select class="form-control form-select" name="feature" id="feature" required>
-                                    <option value="">Choose feature type...</option>
-                                    <option value="solo">Solo Drake</option>
-                                    <option value="young-thug">Young Thug</option>
-                                    <option value="yeat">Yeat</option>
-                                    <option value="chris-brown">Chris Brown</option>
-                                    <option value="gunna">Gunna</option>
-                                    <option value="the-weeknd">The Weeknd</option>
-                                    <option value="rick-ross">Rick Ross</option>
-                                    <option value="female-vocalist">Female R&B Vocalist</option>
-                                    <option value="any">Any Feature</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group mb-4">
-                                <label class="form-label">What era of Drake do you prefer?</label>
-                                <select class="form-control form-select" name="era" id="era" required>
-                                    <option value="">Choose era...</option>
-                                    <option value="early">Early Drake (2009-2013)</option>
-                                    <option value="peak">Peak Drake (2014-2018)</option>
-                                    <option value="recent">Recent Drake (2019-2023)</option>
-                                    <option value="latest">Latest Drake (2024-2025)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group mb-4">
-                                <label class="form-label">What time of day is it?</label>
-                                <select class="form-control form-select" name="time" id="time" required>
-                                    <option value="">Select time...</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
-                                    <option value="night">Late Night</option>
-                                </select>
-                            </div>
-
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-music-note-beamed me-2"></i>
-                                    Generate My Song
-                                </button>
-                            </div>
-                        </form>
-
-                        <div id="result" class="d-none mt-5">
-                            <div class="text-center">
-                                <h3 class="mb-3">Your Perfect Drake Song:</h3>
-                                <div class="card" style="background: var(--secondary-bg);">
-                                    <div id="songResult" class="p-4">
-                                        <!-- Song result will appear here -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <form id="recForm" style="margin-top: 1.5rem;">
+                    <div class="form-group">
+                        <label class="form-label" for="vibe">What's your current vibe?</label>
+                        <select class="form-control form-select" name="vibe" id="vibe" required>
+                            <option value="">Choose your vibe…</option>
+                            <option value="sad">Sad &amp; Emotional</option>
+                            <option value="hyped">Hyped &amp; Energetic</option>
+                            <option value="happy">Happy &amp; Uplifting</option>
+                            <option value="party">Party &amp; Club Ready</option>
+                            <option value="chill">Chill &amp; Relaxed</option>
+                            <option value="romantic">Romantic &amp; Intimate</option>
+                            <option value="motivational">Motivational</option>
+                        </select>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="feature">Preferred feature?</label>
+                        <select class="form-control form-select" name="feature" id="feature" required>
+                            <option value="">Choose feature type…</option>
+                            <option value="solo">Solo Drake</option>
+                            <option value="young-thug">Young Thug</option>
+                            <option value="yeat">Yeat</option>
+                            <option value="chris-brown">Chris Brown</option>
+                            <option value="gunna">Gunna</option>
+                            <option value="the-weeknd">The Weeknd</option>
+                            <option value="rick-ross">Rick Ross</option>
+                            <option value="female-vocalist">Female R&amp;B vocalist</option>
+                            <option value="any">Any</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="era">Which Drake era?</label>
+                        <select class="form-control form-select" name="era" id="era" required>
+                            <option value="">Choose era…</option>
+                            <option value="early">Early (2009–2013)</option>
+                            <option value="peak">Peak (2014–2018)</option>
+                            <option value="recent">Recent (2019–2023)</option>
+                            <option value="latest">Latest (2024–2025)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="length">Song length preference?</label>
+                        <select class="form-control form-select" name="length" id="length" required>
+                            <option value="">Choose length…</option>
+                            <option value="short">Short (under 3 min)</option>
+                            <option value="medium">Medium (3–4 min)</option>
+                            <option value="long">Long (over 4 min)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">
+                        <i class="bi bi-search"></i> Find My Drake Song
+                    </button>
+                </form>
             </div>
 
-            <div class="text-center mt-5">
-                <div class="d-flex justify-center gap-3 mb-4 flex-wrap">
-                    <a href="albums.php" class="btn btn-ghost">
-                        <i class="bi bi-music-note-beamed"></i>
-                        Albums
-                    </a>
-                    <a href="song-guesser.php" class="btn btn-ghost">
-                        <i class="bi bi-gamepad2"></i>
-                        Song Guesser
-                    </a>
-                    <a href="song-creator.php" class="btn btn-ghost">
-                        <i class="bi bi-mic"></i>
-                        Song Creator
-                    </a>
-                </div>
-            </div>
+            <div id="result" style="display: none;"></div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center p-5" style="background: var(--card-bg); margin-top: 2rem;">
+    <footer>
         <div class="container">
-            <p class="text-secondary mb-3">
-                Discover your perfect Drake song match
-            </p>
-            <p class="text-muted">&copy; 2025 Drake Song Generator. Built for fans, by fans.</p>
+            <p>— Follow Drake —</p>
+            <div class="social-row">
+                <a href="https://www.instagram.com/champagnepapi" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/drake" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener noreferrer"><i class="bi bi-spotify"></i></a>
+                <a href="https://www.youtube.com/DrakeOfficial" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
+            </div>
+            <p>&copy; 2026 Drake Fan Site</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/navigation.js"></script>
     <script>
-        // Song recommendation database with new singles and images
-        const drakeDatabase = {
-            'Some Sexy Songs 4 U (2025)': [
-                { title: "CN Tower", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
-                { title: "Something About You", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "PartyNextDoor", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" },
-                { title: "Nokia", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/6/6a/PartyNextDoor_and_Drake_-_Some_Sexy_Songs_4_U.png" }
-            ],
-            'For All The Dogs (2023)': [
-                { title: "Virginia Beach", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "First Person Shooter", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "IDGAF", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "What Would Pluto Do", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "8am in Charlotte", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "Slime You Out", genre: "R&B", mood: "Romantic", vibe: "Smooth", feature: "SZA", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "Bahamas Promises", genre: "R&B", mood: "Romantic", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "Gently", genre: "R&B", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "Rich Baby Daddy", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Sexyy Red, Pi'erre Bourne", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "Another Late Night", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Future", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }
-            ],
-            'Scorpion (2018)': [
-                { title: "God's Plan", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "In My Feelings", genre: "Rap", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "Nice for What", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "Nonstop", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "Emotionless", genre: "R&B", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "8 Out Of 10", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" },
-                { title: "I'm Upset", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg" }
-            ],
-            'Views (2016)': [
-                { title: "One Dance", genre: "Pop", mood: "Party", vibe: "Confident", feature: "Wizkid, Kyla", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
-                { title: "Hotline Bling", genre: "Pop", mood: "Chill", vibe: "Nostalgic", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
-                { title: "Too Good", genre: "Pop", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
-                { title: "Controlla", genre: "Dancehall", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" },
-                { title: "Feel No Ways", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/a/af/Drake_-_Views_cover.jpg" }
-            ],
-            'Take Care (2011)': [
-                { title: "Take Care", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "Rihanna", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
-                { title: "Headlines", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
-                { title: "Crew Love", genre: "R&B", mood: "Chill", vibe: "Nostalgic", feature: "The Weeknd", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
-                { title: "Marvin's Room", genre: "R&B", mood: "Sad", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" },
-                { title: "The Motto", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "Lil Wayne", image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg" }
-            ],
-            // Added new singles
-            'Singles': [
-                { title: "What Did I Miss", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
-                { title: "Which One", genre: "R&B", mood: "Chill", vibe: "Smooth", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
-                { title: "Somebody Loves Me Pt. 2", genre: "R&B", mood: "Romantic", vibe: "Nostalgic", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
-                { title: "Dog House", genre: "Hip-Hop", mood: "Hype", vibe: "Party", feature: "None", image: "https://i.scdn.co/image/ab67616d0000b273d30662646307203f18583355" },
-                { title: "First Person Shooter", genre: "Hip-Hop", mood: "Hype", vibe: "Confident", feature: "J. Cole", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "IDGAF", genre: "Rap", mood: "Hype", vibe: "Confident", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" },
-                { title: "8am in Charlotte", genre: "Hip-Hop", mood: "Chill", vibe: "Introspective", feature: "None", image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png" }
-            ]
+        const songs = {
+            sad:          ['Marvins Room', 'Take Care', 'Doing It Wrong', 'From Time', 'Jaded', '8AM in Charlotte', 'Teenage Fever', 'After Dark'],
+            hyped:        ['Started From the Bottom', 'Energy', 'Nonstop', '0 to 100', 'Worst Behavior', '6 God', 'Rich Flex', 'First Person Shooter'],
+            happy:        ['Best I Ever Had', 'God\'s Plan', 'One Dance', 'Hold On, We\'re Going Home', 'Hotline Bling', 'Toosie Slide'],
+            party:        ['In My Feelings', 'Way 2 Sexy', 'Nice For What', 'Sticky', 'Toosie Slide', 'I\'m Upset', 'Slime You Out'],
+            chill:        ['Passionfruit', 'Chicago Freestyle', 'Feel No Ways', 'Madiba Riddim', 'Falling Back', 'Currents'],
+            romantic:     ['Hold On, We\'re Going Home', 'Find Your Love', 'Doing It Wrong', 'Get It Together', 'Teenage Fever', 'Texts Go Green'],
+            motivational: ['Started From the Bottom', 'Lord Knows', 'Lose You', 'Light Up', '6PM in New York', 'Jungle']
         };
 
-        // Form submission handler
-        document.getElementById('songGenForm').addEventListener('submit', function(e) {
+        const era_filter = {
+            early:  ['Best I Ever Had', 'Marvins Room', 'Take Care', 'Started From the Bottom', 'Find Your Love', 'Headlines', 'HYFR', 'From Time', 'Hold On, We\'re Going Home', 'Worst Behavior', 'Doing It Wrong', 'Light Up', '6 God'],
+            peak:   ['Hotline Bling', 'One Dance', 'Energy', 'Know Yourself', '0 to 100', 'Back to Back', 'Passionfruit', 'God\'s Plan', 'Nice For What', 'In My Feelings', 'I\'m Upset', 'Nonstop', 'Feel No Ways', 'Madiba Riddim', 'Get It Together', 'Lose You', 'Jaded', 'After Dark', '6PM in New York', 'Jungle'],
+            recent: ['Toosie Slide', 'Chicago Freestyle', 'Way 2 Sexy', 'Sticky', 'Falling Back', 'Texts Go Green', 'Currents', 'Rich Flex', 'Teenage Fever'],
+            latest: ['Slime You Out', 'First Person Shooter', '8AM in Charlotte', 'What Did I Miss?', 'Which One', 'Dog House']
+        };
+
+        document.getElementById('recForm').addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const album = document.getElementById('era').value; // Corrected to use 'era' for album selection
-            const genre = document.getElementById('vibe').value; // Placeholder, actual genre matching logic needs to be more robust
-            const mood = document.getElementById('vibe').value; // Using vibe for mood for simplicity
-            const vibe = document.getElementById('vibe').value; // Using vibe for vibe for simplicity
+            const vibe    = document.getElementById('vibe').value;
+            const era     = document.getElementById('era').value;
             const feature = document.getElementById('feature').value;
+            const length  = document.getElementById('length').value;
 
-            // Find matching songs
-            const albumSongs = drakeDatabase[album] || [];
-            let matchingSongs = albumSongs.filter(song => {
-                let score = 0;
-                // Basic matching logic, can be expanded
-                if (song.genre.toLowerCase() === genre.toLowerCase()) score += 2;
-                if (song.mood.toLowerCase() === mood.toLowerCase()) score += 2;
-                if (song.vibe.toLowerCase() === vibe.toLowerCase()) score += 2;
-                
-                // Feature matching - handle "Any Feature" and "Solo Drake"
-                let featureMatch = false;
-                if (feature === "any" && song.feature !== "None") featureMatch = true;
-                else if (feature === "solo" && song.feature === "None") featureMatch = true;
-                else if (song.feature.toLowerCase().includes(feature.toLowerCase())) featureMatch = true;
-                
-                if (featureMatch) score += 1;
-                
-                return score >= 3; // Require at least 3 matching criteria
-            });
+            let pool = songs[vibe] || [];
+            const eraPool = era_filter[era] || [];
+            const filtered = pool.filter(s => eraPool.includes(s));
+            const finalPool = filtered.length ? filtered : pool;
+            const pick = finalPool[Math.floor(Math.random() * finalPool.length)] || 'God\'s Plan';
 
-            // Fallback to any song from the album if no perfect match
-            if (matchingSongs.length === 0) {
-                matchingSongs = albumSongs;
-            }
-
-            // Select random song from matches
-            const selectedSong = matchingSongs.length > 0 ? matchingSongs[Math.floor(Math.random() * matchingSongs.length)] : null;
-
-            if (selectedSong) {
-                document.getElementById('songResult').innerHTML = `
-                    <h4 class="text-primary">"${selectedSong.title}"</h4>
-                    <p class="text-secondary mb-2">Album: ${album}</p>
-                    <p class="mb-3">Your perfect Drake song for a ${mood} mood!</p>
-                    <div class="d-flex justify-center gap-2 flex-wrap">
-                        <a href="https://open.spotify.com/search/${encodeURIComponent(selectedSong.title + ' Drake')}" target="_blank" class="btn btn-secondary">
-                            <i class="bi bi-spotify"></i> Listen on Spotify
+            const result = document.getElementById('result');
+            result.style.display = 'block';
+            result.innerHTML = `
+                <div class="recommend-result">
+                    <p style="font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.5rem;">— Your Drake song —</p>
+                    <h3>You should listen to</h3>
+                    <p class="song-title">"${pick}"</p>
+                    <p style="color: var(--ink-mid); font-style: italic; font-size: 0.95rem; margin: 0.5rem 0 1.5rem;">
+                        Vibe: ${vibe} · Era: ${era} · Length: ${length}${feature !== 'any' && feature !== 'solo' ? ' · feat. ' + feature.replace('-', ' ') : ''}
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a class="btn btn-sm" target="_blank" rel="noopener" href="https://open.spotify.com/search/${encodeURIComponent(pick + ' Drake')}">
+                            <i class="bi bi-spotify"></i> Spotify
                         </a>
-                        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(selectedSong.title + ' Drake')}" target="_blank" class="btn btn-secondary">
-                            <i class="bi bi-youtube"></i> Watch on YouTube
+                        <a class="btn btn-sm btn-outline" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(pick + ' Drake')}">
+                            <i class="bi bi-youtube"></i> YouTube
                         </a>
-                        <button onclick="generateAnother()" class="btn btn-ghost">
-                            <i class="bi bi-arrow-repeat"></i> Try Again
-                        </button>
+                        <a class="btn btn-sm btn-outline" target="_blank" rel="noopener" href="https://music.apple.com/search?term=${encodeURIComponent(pick + ' Drake')}">
+                            <i class="bi bi-music-note"></i> Apple Music
+                        </a>
                     </div>
-                `;
-                document.getElementById('result').classList.remove('d-none');
-                document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                document.getElementById('songResult').innerHTML = `<p class="text-danger">Could not find a matching song. Try adjusting your preferences!</p>`;
-                document.getElementById('result').classList.remove('d-none');
-                document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        function generateAnother() {
-            document.getElementById('result').classList.add('d-none');
-            document.getElementById('songGenForm').reset();
-        }
-
-        // Mobile navigation
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar-nav').classList.toggle('show');
-            const icon = this.querySelector('i');
-            icon.classList.toggle('bi-list');
-            icon.classList.toggle('bi-x');
-        });
-
-        // Dropdown functionality
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdown.classList.toggle('show');
-            });
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('show');
-                });
-            }
+                </div>
+            `;
+            result.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
-
-    <style>
-        /* Theme: Icy White & Blue (Drake's Iceman Album) */
-        :root {
-            --primary-bg: #0f172a; /* Darker blue-grey */
-            --secondary-bg: #1e293b; /* Slightly lighter blue-grey */
-            --accent-color: #2563eb; /* Bright Blue */
-            --text-color: #e2e8f0; /* Off-white */
-            --secondary-text-color: #94a3b8; /* Light gray */
-            --card-bg: #111827; /* Very dark blue-grey */
-            --border-color: #334155; /* Medium blue-grey */
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
-            color: var(--text-color);
-            min-height: 100vh;
-             /* Prevent horizontal scroll */
-        }
-
-        .navbar {
-            background-color: rgba(15, 23, 43, 0.8); /* Semi-transparent dark blue */
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            box-sizing: border-box;
-        }
-
-        .navbar-brand {
-            color: var(--accent-color);
-            font-size: 1.75rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar-brand i {
-            color: var(--text-color);
-        }
-
-        .navbar-nav {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-            max-width: 600px;
-        }
-
-        .nav-item {
-            margin: 0;
-        }
-
-        .nav-link {
-            color: var(--secondary-text-color);
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem 0.5rem;
-            transition: color 0.3s ease;
-            position: relative;
-            white-space: nowrap;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 1024px) {
-            .nav-link {
-                font-size: 0.85rem;
-                padding: 0.5rem 0.4rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-link {
-                font-size: 0.8rem;
-                padding: 0.5rem 0.3rem;
-            }
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .dropdown-toggle {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            margin-top: 0.5rem;
-            min-width: 150px;
-            z-index: 1001;
-        }
-
-        .dropdown.show .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item {
-            color: var(--secondary-text-color);
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: var(--secondary-bg);
-            color: var(--accent-color);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.75rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding-top: 80px; /* Adjust for sticky nav */
-            overflow: hidden; /* For background effects */
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('path/to/your/icy-tv-background.gif') center center / cover no-repeat; /* Placeholder for background image */
-            opacity: 0.3; /* Adjust opacity for desired effect */
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #a7f3d0, #60a5fa); /* Light green to light blue */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 15px rgba(96, 165, 250, 0.5); /* Soft blue glow */
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--secondary-text-color);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        /* General Layout & Components */
-        .container {
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            margin-bottom: 2rem;
-        }
-
-        .card-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-            display: block;
-            color: var(--text-color);
-        }
-
-        .form-control,
-        .form-select {
-            background-color: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-control:focus,
-        .form-select:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 231, 0.3);
-            outline: none;
-        }
-
-        .btn {
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--primary-bg);
-        }
-
-        .btn-primary:hover {
-            background-color: #3b82f6; /* Lighter blue on hover */
-            border-color: #3b82f6;
-            color: var(--primary-bg);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-bg);
-            border-color: var(--border-color);
-            color: var(--text-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--border-color);
-            color: var(--accent-color);
-        }
-
-        .btn-ghost {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-        }
-
-        .btn-ghost:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-bg);
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-
-        .gap-2 {
-            gap: 0.5rem;
-        }
-
-        .gap-3 {
-            gap: 1rem;
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-primary {
-            color: var(--accent-color);
-        }
-
-        .text-secondary {
-            color: var(--secondary-text-color);
-        }
-
-        .text-muted {
-            color: var(--secondary-text-color);
-            opacity: 0.7;
-        }
-
-        .d-none {
-            display: none !important;
-        }
-
-        .mt-5 {
-            margin-top: 3rem !important;
-        }
-
-        .mb-4 {
-            margin-bottom: 1.5rem !important;
-        }
-
-        .mb-3 {
-            margin-bottom: 1rem !important;
-        }
-
-        .mb-2 {
-            margin-bottom: 0.5rem !important;
-        }
-        
-        .p-4 {
-            padding: 1.5rem !important;
-        }
-
-        .p-5 {
-            padding: 3rem !important;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .navbar-nav {
-                display: none; /* Hide by default for mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 60px; /* Adjust based on nav height */
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                padding: 1rem;
-                text-align: center;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            }
-
-            .navbar-nav.show {
-                display: flex;
-            }
-
-            .nav-item {
-                margin-bottom: 1rem;
-                width: 100%;
-            }
-
-            .nav-link {
-                padding: 0.75rem;
-                display: block;
-                width: 100%;
-            }
-            
-            .nav-link::after {
-                display: none; /* Remove underline effect on mobile nav */
-            }
-
-            .dropdown-menu {
-                position: static;
-                display: block;
-                background: none;
-                border: none;
-                box-shadow: none;
-                margin-top: 0;
-                padding: 0 0 0 1rem; /* Indent dropdown items */
-            }
-            
-            .dropdown.show .dropdown-menu {
-                display: block;
-            }
-
-            .mobile-toggle {
-                display: block; /* Show toggle button */
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-        }
-        
-        /* Specific fixes for song-guesser and song-creator layouts */
-        /* Assuming these pages might have specific styling needs. If they are not implemented, these are placeholders. */
-        .song-guesser-container, .song-creator-container {
-            padding: 2rem 0;
-        }
-
-        /* Old TV Style Effect (Example - can be refined) */
-        /* This is a conceptual addition. Actual implementation might involve more complex CSS or JS */
-        /* For the background, we can use a grainy texture or scanline effect */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: url('path/to/your/tv-static.gif') repeat; /* Placeholder for static/grain */
-            opacity: 0.05; /* Subtle effect */
-            z-index: 9999;
-        }
-
-        /* Add glow effect to some elements for the "icy" feel */
-        .glow-accent {
-            text-shadow: 0 0 10px var(--accent-color), 0 0 20px rgba(37, 99, 231, 0.6);
-        }
-
-        .glow-text-white {
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-    </style>
 </body>
 </html>

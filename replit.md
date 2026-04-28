@@ -1,51 +1,57 @@
-# Overview
+# Drake Fan Site
 
-This is a fan website dedicated to the Canadian rapper Drake, built as a class project for learning purposes. The site showcases Drake's music career, including his discography, information about his record label OVO Sound, and interactive features like a favorite song generator. The website is designed as a Progressive Web App (PWA) with offline capabilities and mobile-responsive design.
+A PHP-based fan site for Drake, deployed as a Progressive Web App. The site catalogues his discography (albums + singles), the OVO Sound roster, an interactive song recommender, and a "My Music" section with downloadable original tracks made by the site owner. The current era teases Drake's 2026 album _Iceman_.
 
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
 
+# Visual Identity
+
+The site uses a deliberately lo-fi, photocopied-zine / VHS aesthetic:
+
+- **Background**: pale teal (`#b5ddd4`) with subtle radial vignette
+- **Primary text**: wide-spaced white serif (Cormorant Garamond)
+- **Chromatic fringing**: cyan + magenta RGB-shift `text-shadow` on all headings, animated on key titles (`.chromatic-strong`)
+- **Overlays**: full-viewport CSS scanlines + SVG fractal-noise grain
+- **Cards**: warm paper (`#f4eedc`) with hard 3px ink-dark borders and offset VHS shadows
+- **Buttons**: dark ink fill, chromatic text, lift-on-hover
+- **Marquee**: animated "ICEMAN · COMING SOON" strip framing the hero on the home page
+
+All design tokens live in `:root` at the top of `css/modern-styles.css`.
+
 # System Architecture
 
-## Frontend Architecture
-The application follows a traditional multi-page web architecture using static HTML files with client-side JavaScript for interactivity. The design uses Bootstrap 5 for responsive layout and styling, combined with custom CSS for Drake-themed branding. Each page maintains consistent navigation and visual design patterns.
+## Tech Stack
+- **PHP 8.2** built-in dev server (`php -S 0.0.0.0:5000`)
+- Static HTML rendered server-side from PHP, no framework
+- Vanilla JS for interactivity (search, filters, recommender, like counts in localStorage)
+- PWA: `manifest.json` + `sw.js` (cache version `drake-site-v4`)
 
-The site structure includes:
-- **index.html**: Landing page with hero section and overview
-- **about.html**: Artist biography and social media links
-- **albums.html**: Interactive album gallery with like functionality
-- **ovo.html**: OVO Sound artists showcase with collapsible song lists
-- **signup.html**: Favorite song generator form
+## Pages
+- **index.php** — Iceman coming-soon marquee hero, "My Music" download grid (4 track cards pointing at `music/track-0X.mp3`), and explore cards linking to the rest of the site.
+- **about.php** — Drake biography: Beginnings → Rise → Iceman Era → Discography list → By the Numbers.
+- **albums.php** — Reads `data.json`, loops through ~19 albums into a grid. Each card shows cover art (Wikipedia URLs mapped in PHP), tracklist toggle, and a localStorage-backed like button.
+- **singles.php** — JS-rendered grid of ~65 singles with text search and era filter (4 eras). Streaming links to Spotify / YouTube / Apple Music.
+- **ovo.php** — OVO Sound roster (9 artists) with PHP-driven cards and toggleable top-songs lists.
+- **song-recommender.php** — 4-question form (vibe / feature / era / length) → JS picks a song from a curated table, links out to streaming services.
 
-## Progressive Web App Features
-The application implements PWA capabilities through a service worker (sw.js) that enables offline functionality by caching static resources. The manifest.json file defines app metadata, icons, and shortcuts for mobile installation. This allows users to install the website as a native-like app on their devices.
+## Data
+- **data.json** — Drake's full discography (albums, release years, song lists). Used by `albums.php`.
+- **count.json** + **updateLikes.php** — Legacy server-side like counter. Albums page now uses localStorage instead, but the files are kept for backward compatibility.
 
-## Data Management
-Artist and album information is stored in static JSON files:
-- **data.json**: Complete discography with albums, release years, and hit songs
-- **count.json**: Like counters for albums (appears to track user engagement)
+## Music Downloads
+- The home page expects audio files at `music/track-01.mp3` through `music/track-04.mp3`. A `music/README.txt` documents this for the site owner.
 
-The application uses client-side JavaScript to fetch and display this data dynamically, avoiding the need for a backend database for this educational project.
-
-## Styling and User Experience
-The design emphasizes Drake's brand aesthetic with dark themes, OVO-inspired styling, and smooth animations. Custom CSS includes zoom animations for the OVO owl logo and fade-in effects for content. The site is fully responsive and optimized for both desktop and mobile viewing.
+## Removed
+The previous build had a Song Creator and Song Guesser page; both were removed along with their JS, the legacy 245KB `styles.css`, an old `Drake-Website/` duplicate folder, `signup.html`, `fav-song-gen.html`, and an upload zip.
 
 # External Dependencies
 
-## CDN Resources
-- **Bootstrap 5.3.0**: CSS framework for responsive design and components
-- **Bootstrap Icons 1.5.0**: Icon library for social media and UI elements
-- **SimpleLightbox 2.1.0**: Image gallery functionality
-- **Google Fonts**: Merriweather and Merriweather Sans typography
+- **Google Fonts**: Cormorant Garamond + EB Garamond
+- **Bootstrap Icons 1.11.3** (icon font only — no Bootstrap CSS/JS)
+- **Wikipedia / public CDNs**: album cover art and OVO artist photos
 
-## Third-party Services
-- **External Image Hosting**: Various image CDNs for Drake photos and album artwork
-- **Social Media Integration**: Links to Drake's official Instagram, Twitter, Spotify, and YouTube accounts
+# Deployment
 
-## Browser APIs
-- **Service Worker API**: For offline functionality and caching
-- **Web App Manifest**: For PWA installation capabilities
-- **Local Storage**: Potential for storing user preferences and interaction data
-
-The architecture prioritizes simplicity and educational value, using modern web standards while avoiding complex backend infrastructure. The PWA features demonstrate mobile-first design principles and offline-capable web applications.
+Deployed to Vercel and synced to GitHub repo `daizrazan1/Drake-Website`. Replit `[deployment]` is configured for Cloud Run with `php -S 0.0.0.0:8000 -t .`.
