@@ -77,7 +77,7 @@
             <div class="section-title">
                 <span class="section-eyebrow">— Original Tracks —</span>
                 <h2>My Music</h2>
-                <p>A few songs of my own, inspired by the OVO sound. Drop the file path into <code style="font-family: var(--mono); background: var(--paper); padding: 2px 6px; border: 1px solid var(--ink-dark);">music/</code> and the buttons below will let visitors download.</p>
+                <p>Original tracks — OVO-inspired sounds, made right here.</p>
             </div>
 
             <div class="download-grid">
@@ -89,15 +89,16 @@
                     </div>
                     <div class="track-meta">
                         <span class="track-num">Track 01</span>
-                        <h3>Untitled One</h3>
-                        <p class="track-info">A late-night cut. Replace with your own title and audio file.</p>
+                        <h3>Lake Como</h3>
+                        <p class="track-info">An original track — OVO-inspired vibes.</p>
                     </div>
+                    <audio controls style="width:100%; margin: 0.5rem 0; accent-color: var(--ink-dark);">
+                        <source src="music/track-01.m4a" type="audio/mp4">
+                        Your browser does not support the audio element.
+                    </audio>
                     <div class="track-actions">
-                        <a class="btn btn-sm" href="music/track-01.mp3" download>
+                        <a class="btn btn-sm" href="music/track-01.m4a" download="Lake Como.m4a">
                             <i class="bi bi-download"></i> Download
-                        </a>
-                        <a class="btn btn-sm btn-outline" href="music/track-01.mp3" target="_blank">
-                            <i class="bi bi-play-fill"></i> Play
                         </a>
                     </div>
                 </article>
