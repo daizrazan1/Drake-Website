@@ -299,11 +299,31 @@ function setupHeroParallax() {
     window.addEventListener('scroll', onScroll, { passive: true });
 }
 
+// ---------- Service Worker ----------
+function setupServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('/sw.js')
+        .then((reg) => {
+            reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                if (!newWorker) return;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                        window.location.reload();
+                    }
+                });
+            });
+        })
+        .catch(() => {});
+}
+
 // Initialize navigation when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     const navManager = new NavigationManager();
     setupScrollReveal();
     setupSmoothAnchors();
     setupHeroParallax();
+    setupServiceWorker();
     console.log('Navigation initialized successfully');
 });
